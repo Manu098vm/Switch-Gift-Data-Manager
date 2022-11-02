@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchGiftDataManager.Core", "SwitchGiftDataManager.Core\SwitchGiftDataManager.Core.csproj", "{40C66FF0-A353-46EA-B958-24586D4DD19D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchGiftDataManager.WinForm", "SwitchGiftDataManager.WinForm\SwitchGiftDataManager.WinForm.csproj", "{6716CC9C-FE4B-4CF6-B02D-CC47182A2EC8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{40C66FF0-A353-46EA-B958-24586D4DD19D} = {40C66FF0-A353-46EA-B958-24586D4DD19D}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C228A89E-40A6-44D8-B4D2-E86AE8E84C3F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchGiftDataManager.CommandLine", "SwitchGiftDataManager.CommandLine\SwitchGiftDataManager.CommandLine.csproj", "{61B325BA-48B8-425F-BA22-505453B8A9A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40C66FF0-A353-46EA-B958-24586D4DD19D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C66FF0-A353-46EA-B958-24586D4DD19D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C66FF0-A353-46EA-B958-24586D4DD19D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C66FF0-A353-46EA-B958-24586D4DD19D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6716CC9C-FE4B-4CF6-B02D-CC47182A2EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6716CC9C-FE4B-4CF6-B02D-CC47182A2EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6716CC9C-FE4B-4CF6-B02D-CC47182A2EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6716CC9C-FE4B-4CF6-B02D-CC47182A2EC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B325BA-48B8-425F-BA22-505453B8A9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B325BA-48B8-425F-BA22-505453B8A9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B325BA-48B8-425F-BA22-505453B8A9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B325BA-48B8-425F-BA22-505453B8A9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01702004-A955-4F4E-851F-66A6BE55BB42}
+	EndGlobalSection
+EndGlobal
