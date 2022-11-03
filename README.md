@@ -31,7 +31,11 @@ This paragraph refers to the Windows Form app. The Command Line app usage is sim
 * Click the `Save as BCAT Package` button and browse to your dumped BCAT
 * A folder called "Forged_BCAT_{Game}" should appear next to your dumped BCAT
 * Restore the Forged Bcat with JKSV and enjoy the old events
+* To redeem the old fashion events, open your game -> Menu -> Mystery Gift -> redeem via Internet
 * When you're done, restore your original BCAT package with JKSV (not doing so may cause sync issues)
+
+**N.B**: BCAT Sync usually occurs between 12:00 AM (UTC) and 01:00 AM (UTC). I strongly suggest to not follow this procedure during that timeframe to avoid a desync.
+If you experience a desync, download the latest BCAT for your game from my [bcat_updates](https://github.com/Manu098vm/bcat_updates) repo or from [citrusbolt](https://github.com/citrusbolt)'s [website](http://citrusbolt.net/bcat/) and add the missing files to your dumped BCAT, then restore it with JKSV.
 
 If you find any bug or you need support, please write in the relevant topic in the Project Pokémon forums.
 Alternatively, feel free to contact me on Discord by DMs (SkyLink98#5946 - **only for bug reports**) or in my [server](https://discord.gg/F9nMfvw9sS).
@@ -46,6 +50,7 @@ Alternatively, feel free to contact me on Discord by DMs (SkyLink98#5946 - **onl
 The .CommandLine project is currently just a simple script that calls the .Core functions and can run on any popular OS. Feel free to improve it and/or submit a pull request if you'd like :-)
 
 ## Credits
+* [PNZeml](https://github.com/PNZeml) for the CRC-16/CCITT-FALSE with lookup table [implementation](https://gist.github.com/tijnkooijmans/10981093?permalink_comment_id=3996072#gistcomment-3996072)
 * [kwsch](https://github.com/kwsch), [sora10pls](https://github.com/sora10pls) and all the [PKHeX](https://github.com/kwsch/PKHeX) and [pkNX](https://github.com/kwsch/pkNX) devs and contributors
 for a lot of offsets and resources
 * [PP-theSLAYER](https://github.com/PP-theSLAYER) for his researches in the Sword and Shield fashion block and for the clothing names resources
