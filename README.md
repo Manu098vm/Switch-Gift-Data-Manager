@@ -41,7 +41,9 @@ Alternatively, feel free to contact me on Discord by DMs (SkyLink98#5946 - **onl
 * .WinForm is a Windows Form application and can only be built in Windows Operating Systems. 
 * .Core and .CommandLine can be built in any platform OS.
 * Use the Debug build configuration when editing or developing code related to the .WinForm project. Build as Release only once the code is complete.
-* The .CommandLine project is currently just a simple script that calls the .Core functions and can run in any OS. Feel free to improve it and/or submit a pull request if you'd like :-)
+* To build the projects, open the .sln file in the root directory with an IDE such as Visual Studio 2022, click `Build` -> `Build Solution`.
+
+The .CommandLine project is currently just a simple script that calls the .Core functions and can run on any popular OS. Feel free to improve it and/or submit a pull request if you'd like :-)
 
 ## Credits
 * [kwsch](https://github.com/kwsch), [sora10pls](https://github.com/sora10pls) and all the [PKHeX](https://github.com/kwsch/PKHeX) and [pkNX](https://github.com/kwsch/pkNX) devs and contributors
