@@ -171,7 +171,14 @@ namespace SwitchGiftDataManager.WinForm
             MessageBox.Show("Scarlet and Violet features still not available.");
         }
 
-        private void BtnSave_Click(object sender, EventArgs e) => new SaveWindow(GetCurrentList(), CurrentGame).Show();
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            var saveForm = new SaveWindow(GetCurrentList(), CurrentGame);
+            saveForm.FormClosed += (s, e) => this.Enabled = true;
+            saveForm.Location = this.Location;
+            saveForm.Show();
+        }
 
         private void BtnApply_Click(object sender, EventArgs e)
         {

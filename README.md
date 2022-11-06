@@ -5,39 +5,43 @@ This tool aims to make past Mystery Gift event contents back again in all the Po
 Since those games won't allow event injection in the SAV file, this tool creates a forged BCAT package, injectable with homebrews like [JKSV](https://github.com/J-D-K/JKSV/releases).
 This does not involve hacking the game ROM nor hacking the game SAV.
 
-### Compatible files:
+### Compatible files
 * Let's Go Pikachu and Let's Go Eevee wondercard full files (.wb7full)
 * Sword and Shield wondercard files (.wc8)
 * Brilliant Diamond and Shining Pearl wondercard files (.wb8)
 * Legends Arceus wondercard files (.wa8)
+* BCAT wondercard files, either with mutiple or single wondercards (no file format extension)
 
-### Compatible games:
+### Compatible games
 * Pokémon Let's Go Pikachu and Eevee
 * Pokémon Sword and Shield
 * Pokémon Brilliant Diamond and Shining Pearl
 * Pokémon Legends Arceus
-* A support for Pokémon Scarlet and Violet is planned for the future - no guarantee here - don't ask for eta.
+* Support for Pokémon Scarlet and Violet is planned for the future - no guarantee here - don't ask for eta.
 
 ## Disclosure
 Neither I nor the Project Pokémon staff takes any responsibility for possible adverse outcomes or bans due to the use of this tool. Use at your own discretion.
+**N.B:** Some BCAT files contain sensible console-specific informations, which you should keep safe. Don't share your BCAT to others!
 
 ## Usage
 This paragraph refers to the Windows Form app. The Command Line app usage is similar and should be fairly intuitive.
-* Ensure to have the required [.NET 6.0 runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) correctly installed
+* Ensure you have the required [.NET 6.0 runtimes](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) correctly installed
 * Dump your game's BCAT with [JKSV](https://github.com/J-D-K/JKSV/releases) and keep some copies somewhere safe
 * Open the tool and select your game of choice
 * Import wondercard files of your choice (by drag & drop or by clicking the `Open Files` button)
 * Eventually edit the wondercard id (WCID) if you have duplicated WCs and click `Apply`
 * Click the `Save as BCAT Package` button and browse to your dumped BCAT
 * A folder called "Forged_BCAT_{Game}" should appear next to your dumped BCAT
-* Restore the Forged Bcat with JKSV and enjoy the old events
+* Restore the Forged Bcat with JKSV
 * To redeem the old fashion events, open your game -> Menu -> Mystery Gift -> redeem via Internet
 * When you're done, restore your original BCAT package with JKSV (not doing so may cause sync issues)
 
-**N.B**: BCAT Sync usually occurs between 12:00 AM (UTC) and 01:00 AM (UTC). I strongly suggest to not follow this procedure during that timeframe to avoid a desync.
-If you experience a desync, download the latest BCAT for your game from my [bcat_updates](https://github.com/Manu098vm/bcat_updates) repo or from [citrusbolt](https://github.com/citrusbolt)'s [website](http://citrusbolt.net/bcat/) and add the missing files to your dumped BCAT, then restore it with JKSV.
+**N.B**: BCAT Sync usually occurs between 12:00 AM (UTC) and 01:00 AM (UTC). I suggest to not follow this procedure during that timeframe to avoid a desync.
+If you experience a desync, follow one of these methods to resync:
+* Open JKSV, select BCAT, hover over your game and press X to open the menu, then click `Reset Save Data`. 
+* Download the latest BCAT for your game from my [bcat_updates](https://github.com/Manu098vm/bcat_updates) repo or from [citrusbolt](https://github.com/citrusbolt)'s [website](http://citrusbolt.net/bcat/) and add the missing files to your dumped BCAT, then restore it with JKSV.
 
-If you find any bug or you need support, please write in the relevant topic in the Project Pokémon forums.
+If you find any bug or you need support, please write in the [relevant topic in the Project Pokémon forums](https://projectpokemon.org/home/forums/topic/62491-switch-gift-data-manager-import-wondercards-into-switch-games-by-faking-bcat-packages/).
 Alternatively, feel free to contact me on Discord by DMs (SkyLink98#5946 - **only for bug reports**) or in my [server](https://discord.gg/F9nMfvw9sS).
 
 ## Building

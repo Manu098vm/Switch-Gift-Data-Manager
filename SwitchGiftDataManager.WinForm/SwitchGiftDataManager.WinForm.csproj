@@ -17,9 +17,15 @@
 	<Company>Project Pokémon</Company>
 	<PackageProjectUrl>https://github.com/Manu098vm/Switch-Gift-Data-Manager</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/Manu098vm/Switch-Gift-Data-Manager</RepositoryUrl>
+	<Configurations>Debug;Release;WSL</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WSL|AnyCPU'">
     <DebugType>embedded</DebugType>
     <Optimize>True</Optimize>
   </PropertyGroup>
@@ -55,6 +61,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -65,6 +76,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Update="Resources\icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

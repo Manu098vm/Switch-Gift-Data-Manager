@@ -133,7 +133,7 @@ namespace SwitchGiftDataManager.Core
             if (WCList is not null && WCList.Count > 0)
                 foreach (var wc in WCList)
                 {
-                    var str = wc.Type!.ToString()!.Equals("Pokemon") ? ((PokemonGift)wc.Content!).GetSpeciesName() : ((List<OtherGift>)wc.Content!)[0].Type!.ToString()!;
+                    var str = wc.Type!.ToString()!.Equals("Pokemon") ? ((PokemonGift)wc.Content!).GetSpeciesName() : wc.Type!.ToString()!;
                     list.Add($"{Game} #{wc.WCID}: {str}");
                 }
             return list;
@@ -148,7 +148,7 @@ namespace SwitchGiftDataManager.Core
             var el4 = "";
             var el5 = "";
 
-            if (WCList is not null && WCList.Count > 0 && WCList.Count >= index - 1)
+            if (WCList is not null && WCList.Count > 0 && WCList.Count >= index)
             {
                 var wc = WCList.ElementAt(index);
                 wcid = wc.WCID.ToString();

@@ -16,11 +16,13 @@ namespace SwitchGiftDataManager.WinForm
             Package = bcat;
             Game = game;
 
-            if(Game is Games.LGPE)
+            if (Game is Games.LGPE)
             {
                 RadioUnique.Checked = true;
                 RadioMultiple.Enabled = false;
             }
+            else if (Game is Games.BDSP)
+                RadioUnique.Enabled = false;
         }
 
         private void BtnCancel_Click(object sender, EventArgs e) => this.Close();

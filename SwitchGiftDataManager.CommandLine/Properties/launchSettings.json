@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "SwitchGiftDataManager.CommandLine": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}

@@ -20,13 +20,13 @@ namespace SwitchGiftDataManager.CommandLine
             Log(msg);
 
             Games game = (Games)int.Parse(Console.ReadLine()!);
-            if(game is Games.None || game > Games.SCVI)
+            if (game is Games.None || game > Games.SCVI)
             {
                 Log("Invalid input. Aborted.");
                 Console.ReadKey();
                 return;
             }
-            else if(game is Games.SCVI)
+            else if (game is Games.SCVI)
             {
                 Log("Scarlet and Violet are still not supported by this program. Please wait patiently.");
                 Console.ReadKey();
@@ -44,7 +44,7 @@ namespace SwitchGiftDataManager.CommandLine
             if (File.Exists(path))
                 bcat.TryAddWondercards(File.ReadAllBytes(path));
             else if (CheckValidPath(path))
-                foreach(var file in Directory.GetFiles(path))
+                foreach (var file in Directory.GetFiles(path))
                     if (!bcat.TryAddWondercards(File.ReadAllBytes(file)))
                         Log($"{file} could not be loaded.");
 
@@ -58,7 +58,7 @@ namespace SwitchGiftDataManager.CommandLine
             bcat.Sort();
             Log($"{Environment.NewLine}Enter the source (full) path to your dumped BCAT:");
             var sourcepath = Console.ReadLine()!;
-            if(!CheckValidBcatPath(sourcepath))
+            if (!CheckValidBcatPath(sourcepath))
             {
                 Log("Not a valid BCAT folder path. Aborted.");
                 Console.ReadKey();
@@ -74,7 +74,7 @@ namespace SwitchGiftDataManager.CommandLine
                 return;
             }
 
-            if (game is not Games.LGPE)
+            if (game is not (Games.LGPE or Games.BDSP))
             {
                 msg = $"{Environment.NewLine}Select a build option:{Environment.NewLine}{Environment.NewLine}" +
                     $"1 - Merge as one file{Environment.NewLine}" +
@@ -82,7 +82,12 @@ namespace SwitchGiftDataManager.CommandLine
                 Log(msg);
             }
 
-            var opt = game is not Games.LGPE ? int.Parse(Console.ReadLine()!) : 2;
+            var opt = game switch {
+                Games.LGPE => 2,
+                Games.BDSP => 1,
+                _ => int.Parse(Console.ReadLine()!),
+            };
+
             if(opt < 1 || opt > 2)
             {
                 Log("Invalid input. Aborted.");
