@@ -1,4 +1,5 @@
 ﻿using System.Buffers.Binary;
+using System.Reflection.Metadata.Ecma335;
 using Enums;
 
 namespace SwitchGiftDataManager.Core
@@ -30,7 +31,7 @@ namespace SwitchGiftDataManager.Core
                 Games.SWSH => new WC8(data),
                 Games.BDSP => new WB8(data),
                 Games.PLA => new WA8(data),
-                //Games.SCVI => new WC9(data),
+                Games.SCVI => new WC9(data),
                 _ => throw new ArgumentOutOfRangeException(),
             };
         }
@@ -119,10 +120,8 @@ namespace SwitchGiftDataManager.Core
                 return Games.SWSH;
             else if (data.Length % (int)Wondercard.GetSize(Games.BDSP) == 0)
                 return Games.BDSP;
-            else if (data.Length % (int)Wondercard.GetSize(Games.PLA) == 0)
-                return Games.PLA;
             else if (data.Length % (int)Wondercard.GetSize(Games.SCVI) == 0)
-                return Games.SCVI;
+                return data[Wondercard.GenOffset] != 0 ? Games.PLA : Games.SCVI;
             else
                 return Games.None;
         }
@@ -147,6 +146,8 @@ namespace SwitchGiftDataManager.Core
             var el3 = "";
             var el4 = "";
             var el5 = "";
+            var el6 = "";
+            var el7 = "";
 
             if (WCList is not null && WCList.Count > 0 && WCList.Count >= index)
             {
@@ -179,11 +180,15 @@ namespace SwitchGiftDataManager.Core
                             el4 = str;
                         else if (el5.Equals(""))
                             el5 = str;
+                        else if (el6.Equals(""))
+                            el6 = str;
+                        else if (el7.Equals(""))
+                            el7 = str;
                     }
                 }
             }
 
-            return new List<string> { wcid, el1, el2, el3, el4, el5 };
+            return new List<string> { wcid, el1, el2, el3, el4, el5, el6, el7 };
         }
 
         public List<ushort>? GetDuplicatedWCID()
@@ -211,6 +216,7 @@ namespace SwitchGiftDataManager.Core
                 Games.SWSH => "normal",
                 Games.BDSP => "99",
                 Games.PLA => "normal",
+                Games.SCVI => "normal",
                 _ => throw new ArgumentOutOfRangeException(),
             };
         }
@@ -223,6 +229,7 @@ namespace SwitchGiftDataManager.Core
                 Games.SWSH => "distribution_internet",
                 Games.BDSP => "99",
                 Games.PLA => "distribution_internet",
+                Games.SCVI => "distribution_internet",
                 _ => throw new ArgumentOutOfRangeException(),
             };
         }

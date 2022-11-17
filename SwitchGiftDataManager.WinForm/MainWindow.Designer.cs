@@ -41,6 +41,8 @@
             this.GrpBCAT = new System.Windows.Forms.GroupBox();
             this.BtnApply = new System.Windows.Forms.Button();
             this.GrpContent = new System.Windows.Forms.GroupBox();
+            this.LblInfo7 = new System.Windows.Forms.Label();
+            this.LblInfo6 = new System.Windows.Forms.Label();
             this.LblInfo5 = new System.Windows.Forms.Label();
             this.LblInfo4 = new System.Windows.Forms.Label();
             this.LblInfo3 = new System.Windows.Forms.Label();
@@ -147,9 +149,9 @@
         " game.                        ");
             this.ListBoxWC.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListBoxWC_DrawItem);
             this.ListBoxWC.SelectedIndexChanged += new System.EventHandler(this.ListBoxWC_SelectedIndexChanged);
+            this.ListBoxWC.DragDrop += new System.Windows.Forms.DragEventHandler(this.FileDragDrop);
+            this.ListBoxWC.DragEnter += new System.Windows.Forms.DragEventHandler(this.FileDragEnter);
             this.ListBoxWC.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBoxWC_MouseUp);
-            this.ListBoxWC.DragEnter += new DragEventHandler(this.FileDragEnter);
-            this.ListBoxWC.DragDrop += new DragEventHandler(this.FileDragDrop);
             // 
             // BtnOpen
             // 
@@ -192,7 +194,7 @@
             // BtnApply
             // 
             this.BtnApply.Enabled = false;
-            this.BtnApply.Location = new System.Drawing.Point(426, 355);
+            this.BtnApply.Location = new System.Drawing.Point(426, 368);
             this.BtnApply.Name = "BtnApply";
             this.BtnApply.Size = new System.Drawing.Size(97, 32);
             this.BtnApply.TabIndex = 11;
@@ -202,6 +204,8 @@
             // 
             // GrpContent
             // 
+            this.GrpContent.Controls.Add(this.LblInfo7);
+            this.GrpContent.Controls.Add(this.LblInfo6);
             this.GrpContent.Controls.Add(this.LblInfo5);
             this.GrpContent.Controls.Add(this.LblInfo4);
             this.GrpContent.Controls.Add(this.LblInfo3);
@@ -210,15 +214,37 @@
             this.GrpContent.Enabled = false;
             this.GrpContent.Location = new System.Drawing.Point(294, 99);
             this.GrpContent.Name = "GrpContent";
-            this.GrpContent.Size = new System.Drawing.Size(358, 250);
+            this.GrpContent.Size = new System.Drawing.Size(358, 263);
             this.GrpContent.TabIndex = 10;
             this.GrpContent.TabStop = false;
             this.GrpContent.Text = "Gift Content";
             // 
+            // LblInfo7
+            // 
+            this.LblInfo7.AutoSize = true;
+            this.LblInfo7.Location = new System.Drawing.Point(158, 230);
+            this.LblInfo7.Name = "LblInfo7";
+            this.LblInfo7.Size = new System.Drawing.Size(49, 20);
+            this.LblInfo7.TabIndex = 6;
+            this.LblInfo7.Text = "Info_7";
+            this.LblInfo7.Visible = false;
+            this.LblInfo7.SizeChanged += new System.EventHandler(this.LblInfo_SizeChanged);
+            // 
+            // LblInfo6
+            // 
+            this.LblInfo6.AutoSize = true;
+            this.LblInfo6.Location = new System.Drawing.Point(158, 198);
+            this.LblInfo6.Name = "LblInfo6";
+            this.LblInfo6.Size = new System.Drawing.Size(49, 20);
+            this.LblInfo6.TabIndex = 5;
+            this.LblInfo6.Text = "Info_6";
+            this.LblInfo6.Visible = false;
+            this.LblInfo6.SizeChanged += new System.EventHandler(this.LblInfo_SizeChanged);
+            // 
             // LblInfo5
             // 
             this.LblInfo5.AutoSize = true;
-            this.LblInfo5.Location = new System.Drawing.Point(152, 188);
+            this.LblInfo5.Location = new System.Drawing.Point(158, 165);
             this.LblInfo5.Name = "LblInfo5";
             this.LblInfo5.Size = new System.Drawing.Size(49, 20);
             this.LblInfo5.TabIndex = 4;
@@ -229,7 +255,7 @@
             // LblInfo4
             // 
             this.LblInfo4.AutoSize = true;
-            this.LblInfo4.Location = new System.Drawing.Point(152, 153);
+            this.LblInfo4.Location = new System.Drawing.Point(158, 132);
             this.LblInfo4.Name = "LblInfo4";
             this.LblInfo4.Size = new System.Drawing.Size(49, 20);
             this.LblInfo4.TabIndex = 3;
@@ -240,7 +266,7 @@
             // LblInfo3
             // 
             this.LblInfo3.AutoSize = true;
-            this.LblInfo3.Location = new System.Drawing.Point(152, 118);
+            this.LblInfo3.Location = new System.Drawing.Point(158, 99);
             this.LblInfo3.Name = "LblInfo3";
             this.LblInfo3.Size = new System.Drawing.Size(49, 20);
             this.LblInfo3.TabIndex = 2;
@@ -251,7 +277,7 @@
             // LblInfo2
             // 
             this.LblInfo2.AutoSize = true;
-            this.LblInfo2.Location = new System.Drawing.Point(152, 83);
+            this.LblInfo2.Location = new System.Drawing.Point(158, 66);
             this.LblInfo2.Name = "LblInfo2";
             this.LblInfo2.Size = new System.Drawing.Size(49, 20);
             this.LblInfo2.TabIndex = 1;
@@ -262,7 +288,7 @@
             // LblInfo1
             // 
             this.LblInfo1.AutoSize = true;
-            this.LblInfo1.Location = new System.Drawing.Point(152, 48);
+            this.LblInfo1.Location = new System.Drawing.Point(158, 33);
             this.LblInfo1.Name = "LblInfo1";
             this.LblInfo1.Size = new System.Drawing.Size(49, 20);
             this.LblInfo1.TabIndex = 0;
@@ -346,14 +372,15 @@
             this.MinimizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Switch Gift Data Manager v1.0.0";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.FileDragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.FileDragEnter);
             this.GrpBCAT.ResumeLayout(false);
             this.GrpBCAT.PerformLayout();
             this.GrpContent.ResumeLayout(false);
             this.GrpContent.PerformLayout();
             this.ContextMenuStripWC.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.DragEnter += new DragEventHandler(this.FileDragEnter);
-            this.DragDrop += new DragEventHandler(this.FileDragDrop);
+
         }
 
         #endregion
@@ -381,5 +408,7 @@
         private OpenFileDialog OpenFileDialogWC;
         private ToolStripMenuItem BtnRemoveAll;
         private ToolTip ToolTipWcid;
+        private Label LblInfo7;
+        private Label LblInfo6;
     }
 }

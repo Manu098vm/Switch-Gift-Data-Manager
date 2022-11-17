@@ -164,12 +164,7 @@ namespace SwitchGiftDataManager.WinForm
 
         private void BtnPLA_Click(object sender, EventArgs e) => ChangeGame(Games.PLA);
 
-        private void BtnSCVI_Click(object sender, EventArgs e) //=> ChangeGame(Games.SCVI);
-        {
-            ChangeGame(Games.SCVI);
-            GrpBCAT.Enabled = false;
-            MessageBox.Show("Scarlet and Violet features still not available.");
-        }
+        private void BtnSCVI_Click(object sender, EventArgs e) => ChangeGame(Games.SCVI);
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
@@ -234,14 +229,14 @@ namespace SwitchGiftDataManager.WinForm
 
         void FileDragEnter(object sender, DragEventArgs e)
         {
-            if(e.Data is not null && CurrentGame is not (Games.None or Games.SCVI))
+            if(e.Data is not null && CurrentGame is not Games.None)
                 if (e.Data.GetDataPresent(DataFormats.FileDrop))
                     e.Effect = DragDropEffects.Copy;
         }
 
         void FileDragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data is not null && CurrentGame is not (Games.None or Games.SCVI))
+            if (e.Data is not null && CurrentGame is not Games.None)
             {
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 LoadLocalFiles(files);
@@ -330,6 +325,10 @@ namespace SwitchGiftDataManager.WinForm
                     LblInfo4.Text = content.ElementAt(4);
                 if (nItem >= 5)
                     LblInfo5.Text = content.ElementAt(5);
+                if (nItem >= 6)
+                    LblInfo6.Text = content.ElementAt(6);
+                if (nItem >= 7)
+                    LblInfo7.Text = content.ElementAt(7);
 
                 TxtWCID.Text = content.ElementAt(0);
                 EnableContent();
@@ -386,6 +385,8 @@ namespace SwitchGiftDataManager.WinForm
             LblInfo3.Visible = true;
             LblInfo4.Visible = true;
             LblInfo5.Visible = true;
+            LblInfo6.Visible = true;
+            LblInfo7.Visible = true;
             GrpContent.Enabled = true;
         }
 
@@ -404,6 +405,10 @@ namespace SwitchGiftDataManager.WinForm
             LblInfo4.Visible = false;
             LblInfo5.Text = "";
             LblInfo5.Visible = false;
+            LblInfo6.Text = "";
+            LblInfo6.Visible = false;
+            LblInfo7.Text = "";
+            LblInfo7.Visible = false;
             GrpContent.Enabled = false;
             BtnApply.Enabled = false;
         }

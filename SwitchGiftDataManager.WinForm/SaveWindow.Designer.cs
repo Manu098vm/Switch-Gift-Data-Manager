@@ -171,7 +171,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SaveWindow";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Save BCAT Package";
             this.GrpBuild.ResumeLayout(false);
@@ -181,6 +180,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion

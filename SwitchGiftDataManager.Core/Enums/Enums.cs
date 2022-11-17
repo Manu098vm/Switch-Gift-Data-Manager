@@ -21,7 +21,7 @@
         WC8 = 0x2D0,
         WB8 = 0x2DC,
         WA8 = 0x2C8,
-        WC9 = 0x2D1, //Placeholder
+        WC9 = 0x2C8,
     }
 
     internal enum GiftType7 : byte
@@ -61,6 +61,15 @@
         Clothing = 3,
     }
 
+    internal enum GiftType9 : byte
+    {
+        None = 0,
+        Pokemon = 1,
+        Item = 2,
+        BP = 3,
+        Clothing = 4,
+    }
+
     public enum PIDType
     {
         RandomPID,
@@ -73,6 +82,7 @@
         ShinyPossible,
         ShinyForced,
         ShinyTIDAbuse,
+        ShinyHighOdds,
     }
 
     internal enum ShinyType7 : byte
@@ -90,6 +100,15 @@
         ShinyStar = 2,
         ShinySquare = 3,
         Fixed = 4,
+    }
+
+    internal enum ShinyType9 : byte
+    {
+        Fixed = 0,
+        ShinyLocked = 1,
+        Shiny = 2,
+        ShinyRandom = 3,
+        ShinyHighOdds = 4,
     }
 
     internal enum ClothingType8: byte

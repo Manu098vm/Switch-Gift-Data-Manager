@@ -1,10 +1,12 @@
 ﻿using Enums;
+using System.Buffers.Binary;
 
 namespace SwitchGiftDataManager.Core
 {
     internal abstract class Wondercard
     {
-        protected const int MaxItemCount = 5;
+        public static int GenOffset = 0x0F;  
+        protected const int MaxItemCount = 7;
 
         public Games Game { get; }
         public ushort WCID { get; protected set; }
@@ -19,8 +21,7 @@ namespace SwitchGiftDataManager.Core
                 WondercardSize.WB7 => Games.LGPE,
                 WondercardSize.WC8 => Games.SWSH,
                 WondercardSize.WB8 => Games.BDSP,
-                WondercardSize.WA8 => Games.PLA,
-                WondercardSize.WC9 => Games.SCVI,
+                WondercardSize.WC9 => data[GenOffset] != 0 ? Games.PLA : Games.SCVI,
                 _ => Games.None,
             };
             Data = data.ToArray();

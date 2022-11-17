@@ -26,12 +26,6 @@ namespace SwitchGiftDataManager.CommandLine
                 Console.ReadKey();
                 return;
             }
-            else if (game is Games.SCVI)
-            {
-                Log("Scarlet and Violet are still not supported by this program. Please wait patiently.");
-                Console.ReadKey();
-                return;
-            }
 
             var bcat = new BCATManager(game);
 

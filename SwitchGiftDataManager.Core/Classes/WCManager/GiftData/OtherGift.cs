@@ -83,6 +83,21 @@ namespace SwitchGiftDataManager.Core
                 else
                     str = ((GiftType8A)type).ToString();
             }
+            else if (type.GetType() == typeof(GiftType9))
+            {
+                if ((GiftType9)type is GiftType9.Item)
+                    str = Properties.Resources.Items.Split(new String[] { Environment.NewLine }, StringSplitOptions.None)[id];
+                else if ((GiftType9)type is GiftType9.Clothing)
+                {
+                    var category = (ClothingType8A)id;
+                    var description = ""; //TODO
+                    if (string.IsNullOrWhiteSpace(description))
+                        description = $"{opt:X4}";
+                    str = $"[{category}] {description}";
+                }
+                else
+                    str = ((GiftType8A)type).ToString();
+            }
 
             return str;
         }
