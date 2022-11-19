@@ -37,17 +37,20 @@ namespace SwitchGiftDataManager.Core
             var test = (ShinyType9)Data![ShinyTypeOffset];
             var pidtype = (ShinyType9)Data![ShinyTypeOffset] switch
             {
+                ShinyType9.ShinyLocked => PIDType.RandomPID,
+                ShinyType9.ShinyRandom => PIDType.RandomPID,
+                ShinyType9.ShinyStar => PIDType.FixedPID,
+                ShinyType9.ShinySquare => PIDType.FixedPID,
                 ShinyType9.Fixed => PIDType.FixedPID,
-                _ => PIDType.RandomPID,
+                _ => throw new ArgumentOutOfRangeException(),
             };
             var shinytype = (ShinyType9)Data![ShinyTypeOffset] switch
             {
+                ShinyType9.ShinyLocked => ShinyType.ShinyLocked,
+                ShinyType9.ShinyRandom => ShinyType.ShinyPossible,
+                ShinyType9.ShinyStar or ShinyType9.ShinySquare => ShinyType.ShinyForced,
                 ShinyType9.Fixed => PokemonGift.IsShiny(pid, tid, sid) ? ShinyType.ShinyForced :
                     PokemonGift.IsTIDAbusePossible(tid, sid, pidtype) ? ShinyType.ShinyTIDAbuse : ShinyType.ShinyLocked,
-                ShinyType9.ShinyLocked => ShinyType.ShinyLocked,
-                ShinyType9.Shiny => ShinyType.ShinyForced,
-                ShinyType9.ShinyRandom => ShinyType.ShinyPossible,
-                ShinyType9.ShinyHighOdds => ShinyType.ShinyHighOdds,
                 _ => throw new ArgumentOutOfRangeException(),
             };
 

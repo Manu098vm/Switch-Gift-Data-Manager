@@ -89,8 +89,12 @@ namespace SwitchGiftDataManager.Core
                     str = Properties.Resources.Items.Split(new String[] { Environment.NewLine }, StringSplitOptions.None)[id];
                 else if ((GiftType9)type is GiftType9.Clothing)
                 {
-                    var category = (ClothingType8A)id;
-                    var description = ""; //TODO
+                    var category = (ClothingType9)id;
+                    var description = category switch
+                    {
+                        ClothingType9.Bags => Properties.Resources.SCVIClothingBags.Split(new String[] { Environment.NewLine }, StringSplitOptions.None)[opt],
+                        _ => "",
+                    };
                     if (string.IsNullOrWhiteSpace(description))
                         description = $"{opt:X4}";
                     str = $"[{category}] {description}";

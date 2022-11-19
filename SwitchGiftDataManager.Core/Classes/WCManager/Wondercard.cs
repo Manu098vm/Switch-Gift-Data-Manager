@@ -6,7 +6,7 @@ namespace SwitchGiftDataManager.Core
     internal abstract class Wondercard
     {
         public static int GenOffset = 0x0F;  
-        protected const int MaxItemCount = 7;
+        protected const int MaxItemCount = 6;
 
         public Games Game { get; }
         public ushort WCID { get; protected set; }

@@ -218,6 +218,7 @@ namespace SwitchGiftDataManager.Core.Properties {
         ///
         ///
         ///
+        ///
         ///Fancy Bottoms (Oshawott)
         ///Fancy Bottoms (Cyndaquil)
         ///Fancy Bottoms (Rowlet)
@@ -230,7 +231,7 @@ namespace SwitchGiftDataManager.Core.Properties {
         ///Fancy Bottoms (Mountainscape)
         ///Fancy Bottoms (Townscape)
         ///Fancy Bottoms (Spiritomb)
-        ///Fancy Bottoms (Honchkrow)        /// [rest of string was truncated]&quot;;.
+        ///Fancy Bottoms (Honchkrow [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PLAClothingBottoms {
             get {
@@ -389,8 +390,84 @@ namespace SwitchGiftDataManager.Core.Properties {
         ///
         ///
         ///
+        ///
         ///Baneful Fox Mask (White lily)
-        ///Baneful Fox Mask (Shiny).
+        ///Baneful Fox Mask (Shiny)
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PLAClothingHeads {
             get {
@@ -400,6 +477,7 @@ namespace SwitchGiftDataManager.Core.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to None
+        ///
         ///
         ///
         ///
@@ -493,11 +571,274 @@ namespace SwitchGiftDataManager.Core.Properties {
         ///Fancy Kimono (Townscape)
         ///Fancy Kimono (Spiritomb)
         ///Fancy Kimono (Honchkrow)
-        ///Fancy Kimono [rest of string was truncated]&quot;;.
+        ///Fancy Kimo [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PLAClothingTops {
             get {
                 return ResourceManager.GetString("PLAClothingTops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SCVIClothingBags {
+            get {
+                return ResourceManager.GetString("SCVIClothingBags", resourceCulture);
             }
         }
         

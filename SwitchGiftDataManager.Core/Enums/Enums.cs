@@ -104,11 +104,11 @@
 
     internal enum ShinyType9 : byte
     {
-        Fixed = 0,
-        ShinyLocked = 1,
-        Shiny = 2,
-        ShinyRandom = 3,
-        ShinyHighOdds = 4,
+        ShinyLocked = 0,
+        ShinyRandom = 1,
+        ShinyStar = 2,
+        ShinySquare = 3,
+        Fixed = 4,
     }
 
     internal enum ClothingType8: byte
@@ -131,6 +131,19 @@
         Tops = 0x01,
         Bottoms = 0x02,
         Outfit = 0x03,
+        Shoes = 0x5,
+        Glasses = 0x06,
+        Eyes = 0x08,
+        None = 0xFF,
+    }
+
+    internal enum ClothingType9 : byte
+    {
+        Heads = 0x00,
+        Tops = 0x01,
+        Bottoms = 0x02,
+        Outfit = 0x03,
+        Bags = 0x04,
         Shoes = 0x5,
         Glasses = 0x06,
         Eyes = 0x08,

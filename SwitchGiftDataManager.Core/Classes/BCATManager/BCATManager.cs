@@ -1,5 +1,8 @@
 ﻿using System.Buffers.Binary;
+using System.Diagnostics.Metrics;
+using System.Globalization;
 using System.Reflection.Metadata.Ecma335;
+using System.Text;
 using Enums;
 
 namespace SwitchGiftDataManager.Core
@@ -274,11 +277,15 @@ namespace SwitchGiftDataManager.Core
             var type = wc.Type!.ToString()!;
             var content = type.Equals("Pokemon") ? $"{((PokemonGift)wc.Content!).GetSpeciesName()}" : type;
             var str = $"{wc.WCID:0000}_{content}";
-            System.Text.StringBuilder sb = new();
+            var sb = new System.Text.StringBuilder();
             foreach (char c in str)
                 if (c != '\\' && c != '/' && c != ':' && c != '*' && c != '?' && c != '"' && c != '<' && c != '>' && c != '|')
                     sb.Append(c);
-            return sb.ToString().ToLower();
+            var _sb = new System.Text.StringBuilder();
+            foreach (char c in sb.ToString().Normalize(NormalizationForm.FormD))
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                    _sb.Append(c);
+            return _sb.ToString().ToLower();
         }
 
         public ReadOnlySpan<byte> ForgeMetaInfo(object? data = null)

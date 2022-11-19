@@ -133,6 +133,9 @@
   <data name="PLAClothingTops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PLAClothingTops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="SCVIClothingBags" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCVIClothingBags.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="Species" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Species.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
