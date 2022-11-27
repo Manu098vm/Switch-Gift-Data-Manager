@@ -135,7 +135,7 @@ namespace SwitchGiftDataManager.Core
             if (WCList is not null && WCList.Count > 0)
                 foreach (var wc in WCList)
                 {
-                    var str = wc.Type!.ToString()!.Equals("Pokemon") ? ((PokemonGift)wc.Content!).GetSpeciesName() : wc.Type!.ToString()!;
+                    var str = wc.Type!.ToString()!.Equals("Pokemon") ? ((PokemonGift)wc.Content!).GetSpeciesName().Replace("\r","") : wc.Type!.ToString()!;
                     list.Add($"{Game} #{wc.WCID}: {str}");
                 }
             return list;
@@ -168,7 +168,7 @@ namespace SwitchGiftDataManager.Core
                 {
                     foreach (var c in (List<OtherGift>)content)
                     {
-                        var item = c.GetItemName();
+                        var item = c.GetItemName().Replace("\r","");
                         var qty = c.Quantity;
                         var str = $"{item.Replace("BP", "Battle Points")}";
                         if (qty != 0x0 && qty != 0xFFFF)
@@ -275,7 +275,7 @@ namespace SwitchGiftDataManager.Core
         private string ForgeWcFileName(Wondercard wc)
         {
             var type = wc.Type!.ToString()!;
-            var content = type.Equals("Pokemon") ? $"{((PokemonGift)wc.Content!).GetSpeciesName()}" : type;
+            var content = type.Equals("Pokemon") ? $"{((PokemonGift)wc.Content!).GetSpeciesName().Replace("\r","")}" : type;
             var str = $"{wc.WCID:0000}_{content}";
             var sb = new System.Text.StringBuilder();
             foreach (char c in str)

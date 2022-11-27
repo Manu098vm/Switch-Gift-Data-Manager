@@ -11,7 +11,6 @@ namespace SwitchGiftDataManager.Core
         private const int QuantityOffset = 0x1A;
         private const int ClothingOffset = 0x1C;
         private const int TIDOffset = 0x18;
-        private const int SIDOffset = 0x1A;
         private const int PIDOffset = 0x24;
         private const int SpeciesOffset = 0x238;
         private const int ShinyTypeOffset = 0x240;
@@ -32,8 +31,8 @@ namespace SwitchGiftDataManager.Core
         {
             var species = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(SpeciesOffset));
             var pid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(PIDOffset));
-            var tid = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(TIDOffset));
-            var sid = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(SIDOffset));
+            var tid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (0xF4240 * WCID)) & 0xFFFF);
+            var sid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (0xF4240 * WCID)) >> 16 & 0xFFFF);
             var test = (ShinyType9)Data![ShinyTypeOffset];
             var pidtype = (ShinyType9)Data![ShinyTypeOffset] switch
             {
