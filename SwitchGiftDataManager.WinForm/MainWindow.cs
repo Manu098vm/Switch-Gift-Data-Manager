@@ -181,7 +181,7 @@ namespace SwitchGiftDataManager.WinForm
             if(CurrentGame is Games.SCVI)
             {
                 var warning = "WARNING\n\n" +
-                    "WCID editings in SV wondecards might impact the entity's TID and SID, resulting in an illegal Pokémon.\n" +
+                    "WCID editings in SV wondercards might impact the entity's TID and SID, resulting in an illegal Pokémon.\n" +
                     "Do not share Pokémon obtained with the use of edited wondercards.\n" +
                     "\nDo you want to coninue?";
                 var disclaimer = MessageBox.Show(warning, "Disclaimer", MessageBoxButtons.YesNo);
