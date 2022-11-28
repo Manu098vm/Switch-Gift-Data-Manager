@@ -4,13 +4,14 @@
 ## About
 This tool aims to make past Mystery Gift event contents back again in all the Pokémon games for Nintendo Switch.
 Since those games won't allow event injection in the SAV file, this tool creates a forged BCAT package, injectable with homebrews like [JKSV](https://github.com/J-D-K/JKSV/releases).
-This does not involve hacking the game ROM nor hacking the game SAV.
+This allows wondercards to be redeemed through the In-Game Mystery Gift Menu. The use of this tool does not involve hacking the game ROM nor hacking the game SAV. 
 
 ### Compatible files
 * Let's Go Pikachu and Let's Go Eevee wondercard full files (.wb7full)
 * Sword and Shield wondercard files (.wc8)
 * Brilliant Diamond and Shining Pearl wondercard files (.wb8)
 * Legends Arceus wondercard files (.wa8)
+* Scarlet & Violet wondercard files (.wc9) 
 * BCAT wondercard files, either with mutiple or single wondercards (no file format extension)
 
 ### Compatible games
@@ -18,7 +19,7 @@ This does not involve hacking the game ROM nor hacking the game SAV.
 * Pokémon Sword and Shield
 * Pokémon Brilliant Diamond and Shining Pearl
 * Pokémon Legends Arceus
-* Support for Pokémon Scarlet and Violet is planned for the future - no guarantee here - don't ask for eta.
+* Pokémon Scarlet and Violet 
 
 ## Disclosure
 Neither I nor the Project Pokémon staff takes any responsibility for possible adverse outcomes or bans due to the use of this tool. Use at your own discretion.
@@ -49,10 +50,10 @@ Alternatively, feel free to contact me on Discord by DMs (SkyLink98#5946 - **onl
 * All the Switch Gift Data Manager projects require .NET 6.0.
 * .WinForm is a Windows Form application and can only be built in Windows Operating Systems. 
 * .Core and .CommandLine can be built in any platform OS.
-* Use the Debug build configuration when editing or developing code related to the .WinForm project. Build as Release only once the code is complete.
+* Use the Debug build configuration when editing or developing code related to the .WinForm project. Build as Release only once the code is finished.
 * To build the projects, open the .sln file in the root directory with an IDE such as Visual Studio 2022, click `Build` -> `Build Solution`.
 
-The .CommandLine project is currently just a simple script that calls the .Core functions and can run on any popular OS. Feel free to improve it and/or submit a pull request if you'd like :-)
+The .CommandLine project is currently just a simple script that calls the .Core functionalities and can run on any popular OS. Feel free to improve it and/or submit a pull request if you'd like :-)
 
 ## Credits
 * [PNZeml](https://github.com/PNZeml) for the CRC-16/CCITT-FALSE with lookup table [implementation](https://gist.github.com/tijnkooijmans/10981093?permalink_comment_id=3996072#gistcomment-3996072)

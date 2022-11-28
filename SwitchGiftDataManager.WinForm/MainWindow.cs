@@ -177,29 +177,45 @@ namespace SwitchGiftDataManager.WinForm
 
         private void BtnApply_Click(object sender, EventArgs e)
         {
-            try
+            var proceed = true;
+            if(CurrentGame is Games.SCVI)
             {
-                var list = GetCurrentList();
-                var wcid = UInt16.Parse(TxtWCID.Text);
-                var index = list.GetIndex(wcid);
-                if (index == -1)
+                var warning = "WARNING\n\n" +
+                    "WCID editings in SV wondecards might impact the entity's TID and SID, resulting in an illegal Pokémon.\n" +
+                    "Do not share Pokémon obtained with the use of edited wondercards.\n" +
+                    "\nDo you want to coninue?";
+                var disclaimer = MessageBox.Show(warning, "Disclaimer", MessageBoxButtons.YesNo);
+
+                if (disclaimer == DialogResult.No)
+                    proceed = false;
+            }
+
+            if (proceed)
+            {
+                try
                 {
-                    list.SetWCID(ListBoxWC.SelectedIndex, wcid);
-                    list.Sort();
-                    UpdateWCList();
-                    ListBoxWC.SelectedIndex = list.GetIndex(wcid);
-                    BtnApply.Enabled = false;
+                    var list = GetCurrentList();
+                    var wcid = UInt16.Parse(TxtWCID.Text);
+                    var index = list.GetIndex(wcid);
+                    if (index == -1)
+                    {
+                        list.SetWCID(ListBoxWC.SelectedIndex, wcid);
+                        list.Sort();
+                        UpdateWCList();
+                        ListBoxWC.SelectedIndex = list.GetIndex(wcid);
+                        BtnApply.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show($"WCID {wcid} already exists.");
+                        return;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show($"WCID {wcid} already exists.");
+                    MessageBox.Show(ex.ToString());
                     return;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return;
             }
         }
 
