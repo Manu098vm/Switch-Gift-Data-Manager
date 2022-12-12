@@ -139,14 +139,14 @@
 
     internal enum ClothingType9 : byte
     {
-        Heads = 0x00,
-        Tops = 0x01,
-        Bottoms = 0x02,
-        Outfit = 0x03,
+        Uniform = 0x00,
+        Legs = 0x01,
+        Foots = 0x02,
+        Gloves = 0x03,
         Bags = 0x04,
-        Shoes = 0x5,
-        Glasses = 0x06,
-        Eyes = 0x08,
+        Heads = 0x5,
+        Eyes = 0x06,
+        Rotom = 0x08,
         None = 0xFF,
     }
 }
