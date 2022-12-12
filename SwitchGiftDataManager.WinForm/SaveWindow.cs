@@ -111,7 +111,7 @@ namespace SwitchGiftDataManager.WinForm
             }
         }
 
-        private bool CheckValidBcatPath(string path)
+        private static bool CheckValidBcatPath(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
                 return false;
@@ -137,7 +137,7 @@ namespace SwitchGiftDataManager.WinForm
             return true;
         }
 
-        private bool CheckValidPath(string path)
+        private static bool CheckValidPath(string path)
         {
             if(string.IsNullOrWhiteSpace(path))
                 return false;
