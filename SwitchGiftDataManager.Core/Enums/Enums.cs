@@ -66,7 +66,7 @@
         None = 0,
         Pokemon = 1,
         Item = 2,
-        BP = 3,
+        LP = 3,
         Clothing = 4,
     }
 

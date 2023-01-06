@@ -70,7 +70,7 @@ namespace SwitchGiftDataManager.Core
             for (int i = 0; i < MaxItemCount; i++)
             {
                 ushort item = 0;
-                ushort quantity = 0;
+                uint quantity = 0;
                 ushort opt = 0;
                 var type = (GiftType9)Type!;
 
@@ -82,7 +82,8 @@ namespace SwitchGiftDataManager.Core
                 else
                 {
                     item = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(ItemOffset + (0x04 * i)));
-                    quantity = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(QuantityOffset + (0x04 * i)));
+                    quantity = type is GiftType9.LP ? BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(ItemOffset + (0x04 * i))) : 
+                        BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(QuantityOffset + (0x04 * i)));
                 }
 
                 var gift = new OtherGift

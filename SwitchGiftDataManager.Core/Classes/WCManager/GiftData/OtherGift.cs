@@ -6,7 +6,7 @@ namespace SwitchGiftDataManager.Core
     {
         public object? Type { get; set; }
         public ushort Item { get; set; }
-        public ushort Quantity { get; set; }
+        public uint Quantity { get; set; }
         public ushort Opt { get; set; }
 
         public string GetItemName() => GetItemName(Item, Type!, Opt);
@@ -100,7 +100,7 @@ namespace SwitchGiftDataManager.Core
                     str = $"[{category}] {description}";
                 }
                 else
-                    str = ((GiftType8A)type).ToString();
+                    str = ((GiftType9)type).ToString();
             }
 
             return str;
