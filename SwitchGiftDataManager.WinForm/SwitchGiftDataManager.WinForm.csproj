@@ -18,6 +18,7 @@
 	<PackageProjectUrl>https://github.com/Manu098vm/Switch-Gift-Data-Manager</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/Manu098vm/Switch-Gift-Data-Manager</RepositoryUrl>
 	<Configurations>Debug;Release;WSL</Configurations>
+	<EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -86,7 +87,7 @@
     </None>
   </ItemGroup>
 	
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="$(ConfigurationName) == Release">
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="$(ConfigurationName) == Release and '$(OS)' == 'Windows_NT'">
 	<Move SourceFiles="$(OUTDIR)\SwitchGiftDataManager.WinForm.exe" DestinationFiles="$(OUTDIR)\Switch Gift Data Manager.exe" />
   </Target>
 
