@@ -371,7 +371,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "Switch Gift Data Manager v1.1.0";
+            this.Text = "Switch Gift Data Manager v";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.FileDragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.FileDragEnter);
             this.GrpBCAT.ResumeLayout(false);

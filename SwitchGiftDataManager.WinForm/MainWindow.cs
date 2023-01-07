@@ -14,7 +14,12 @@ namespace SwitchGiftDataManager.WinForm
         private BCATManager PackageSCVI = new (Games.SCVI);
         private List<ushort> Duplicated = new List<ushort>();
 
-        public MainWindow() => InitializeComponent();
+        public MainWindow()
+        {
+            Task.Run(async () => { await GitHubUtil.TryUpdate(); });
+            InitializeComponent();
+            Text += BCATManager.Version;
+        }
 
         private void ChangeGame(Games game)
         {
