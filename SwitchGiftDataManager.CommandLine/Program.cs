@@ -8,7 +8,7 @@ namespace SwitchGiftDataManager.CommandLine
     {
         public static void Main()
         {
-            var msg = "Switch Gift Data Manager v1.0.0";
+            var msg = $"Switch Gift Data Manager v{BCATManager.Version}";
             Log(msg);
 
             msg = $"{Environment.NewLine}Select your game:{Environment.NewLine}{Environment.NewLine}" +
