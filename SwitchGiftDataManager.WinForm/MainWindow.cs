@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using SwitchGiftDataManager.Core;
 using Enums;
+using System.Diagnostics;
 
 namespace SwitchGiftDataManager.WinForm
 {
@@ -16,9 +17,19 @@ namespace SwitchGiftDataManager.WinForm
 
         public MainWindow()
         {
-            Task.Run(async () => { await GitHubUtil.TryUpdate(); });
+            Task.Run(TryUpdate).Wait();
             InitializeComponent();
             Text += BCATManager.Version;
+        }
+
+        private static async Task TryUpdate()
+        {
+            if (await GitHubUtil.IsUpdateAvailable())
+            {
+                var result = MessageBox.Show("A program update is available. Do you want to download the latest release?", "Update available", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                    Process.Start(new ProcessStartInfo { FileName = @"https://github.com/Manu098vm/Switch-Gift-Data-Manager/releases", UseShellExecute = true });
+            }
         }
 
         private void ChangeGame(Games game)
@@ -259,7 +270,7 @@ namespace SwitchGiftDataManager.WinForm
         {
             if (e.Data is not null && CurrentGame is not Games.None)
             {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop)!;
                 LoadLocalFiles(files);
             }
         }

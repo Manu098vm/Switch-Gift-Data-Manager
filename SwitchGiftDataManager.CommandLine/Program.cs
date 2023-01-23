@@ -11,6 +11,8 @@ namespace SwitchGiftDataManager.CommandLine
             var msg = $"Switch Gift Data Manager v{BCATManager.Version}";
             Log(msg);
 
+            Task.Run(TryUpdate).Wait();
+
             msg = $"{Environment.NewLine}Select your game:{Environment.NewLine}{Environment.NewLine}" +
                 $"1 - LGPE{Environment.NewLine}" +
                 $"2 - SWSH{Environment.NewLine}" +
@@ -214,6 +216,17 @@ namespace SwitchGiftDataManager.CommandLine
                 DeleteFilesAndDirectory(dir);
 
             Directory.Delete(targetDir, false);
+        }
+
+        private static async Task TryUpdate()
+        {
+            if (await GitHubUtil.IsUpdateAvailable())
+            {
+                Log("A program update is available. Do you want to download the latest release?\n[Y\\n]:");
+                var str = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(str) && (str.ToLower().Equals("y") || str.ToLower().Equals("yes")))
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo { FileName = @"https://github.com/Manu098vm/Switch-Gift-Data-Manager/releases", UseShellExecute = true });
+            }
         }
 
         private static void Log(string msg) => Console.WriteLine(msg);

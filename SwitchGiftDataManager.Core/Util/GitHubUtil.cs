@@ -2,21 +2,11 @@
 using SwitchGiftDataManager.Core;
 using Octokit;
 
-namespace SwitchGiftDataManager.WinForm
+namespace SwitchGiftDataManager.Core
 {
     public static class GitHubUtil
     {
-        public static async Task TryUpdate()
-        {
-            if (await IsUpdateAvailable())
-            {
-                var result = MessageBox.Show("A program update is available. Do you want to download the latest release?", "Update available", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                    Process.Start(new ProcessStartInfo { FileName = @"https://github.com/Manu098vm/Switch-Gift-Data-Manager/releases", UseShellExecute = true } );
-            }
-        }
-
-        private static async Task<bool> IsUpdateAvailable()
+        public static async Task<bool> IsUpdateAvailable()
         {
             var currentVersion = ParseVersion(GetPluginVersion());
             var latestVersion = ParseVersion(await GetLatestVersion());

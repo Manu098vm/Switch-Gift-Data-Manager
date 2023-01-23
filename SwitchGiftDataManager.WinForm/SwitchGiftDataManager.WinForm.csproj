@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -26,14 +26,19 @@
     <Optimize>True</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WSL|AnyCPU'">
-    <DebugType>embedded</DebugType>
-    <Optimize>True</Optimize>
-  </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>embedded</DebugType>
   </PropertyGroup>
+
+	<PropertyGroup>
+		<DebugType>embedded</DebugType>
+		<EmbedAllSources>true</EmbedAllSources>
+		<IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+		<PublishReadyToRun>true</PublishReadyToRun>
+		<PublishSingleFile>true</PublishSingleFile>
+		<PublishTrimmed>false</PublishTrimmed>
+		<SelfContained>false</SelfContained>
+	</PropertyGroup>
 
   <ItemGroup>
     <None Include="..\README.md">
@@ -47,10 +52,6 @@
 	  <Pack>True</Pack>
 	  <PackagePath>\</PackagePath>
 	</None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Octokit" Version="4.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -94,6 +95,10 @@
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="$(ConfigurationName) == Release and '$(OS)' == 'Windows_NT'">
 	<Move SourceFiles="$(OUTDIR)\SwitchGiftDataManager.WinForm.exe" DestinationFiles="$(OUTDIR)\Switch Gift Data Manager.exe" />
   </Target>
+
+	<Target Name="PostPublish" AfterTargets="Publish" Condition="$(ConfigurationName) == Release and '$(OS)' == 'Windows_NT'">
+		<Move SourceFiles="$(OUTDIR)\publish\SwitchGiftDataManager.WinForm.exe" DestinationFiles="$(OUTDIR)\publish\Switch Gift Data Manager.exe" />
+	</Target>
 
   <Target Name="PostClean" AfterTargets="Clean" Condition="$(ConfigurationName) == Release">
 	<RemoveDir Directories="$(TargetDir)" />
