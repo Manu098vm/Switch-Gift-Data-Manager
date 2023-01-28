@@ -74,9 +74,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build SwitchGiftDataManager.CommandLine/SwitchGiftDataManager.CommandLine.csproj --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test SwitchGiftDataManager.CommandLine/SwitchGiftDataManager.CommandLine.csproj --no-restore --verbosity normal
 
     # Upload the artifact: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload Linux CommandLine build artifacts

@@ -47,7 +47,7 @@ If you find any bug or you need support, please write in the [relevant topic in 
 Alternatively, feel free to contact me on Discord by DMs (SkyLink98#5946 - **only for bug reports**) or in my [server](https://discord.gg/F9nMfvw9sS).
 
 ## Building
-* All the Switch Gift Data Manager projects require .NET 6.0.
+* All the Switch Gift Data Manager projects require .NET 7.0.
 * .WinForm is a Windows Form application and can only be built in Windows Operating Systems. 
 * .Core and .CommandLine can be built in any platform OS.
 * Use the Debug build configuration when editing or developing code related to the .WinForm project. Build as Release only once the code is finished.

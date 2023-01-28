@@ -5,6 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>SwitchGiftDataManager.CommandLine</ActiveDebugProfile>
-    <_LastSelectedProfileId>D:\Projects\SwitchGiftDataManager\SwitchGiftDataManager.CommandLine\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>D:\Projects\SwitchGiftDataManager\SwitchGiftDataManager.CommandLine\Properties\PublishProfiles\windows_x64.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
 </Project>
