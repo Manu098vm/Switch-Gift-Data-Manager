@@ -256,7 +256,7 @@ namespace SwitchGiftDataManager.Core
             try
             {
                 var wc = WCList!.ElementAt(index);
-                File.WriteAllBytes($"{path}\\{ForgeWcFileName(wc)}", wc.Data!);
+                File.WriteAllBytes(Path.Combine(path, ForgeWcFileName(wc)), wc.Data!);
                 return true;
             }
             catch (Exception)

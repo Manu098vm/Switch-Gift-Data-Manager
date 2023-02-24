@@ -91,7 +91,7 @@ namespace SwitchGiftDataManager.CommandLine
                 return;
             }
 
-            destpath = $"{destpath}\\Forged_BCAT_{game}";
+            destpath = Path.Combine(destpath, $"Forged_BCAT_{game}");
             CopyDirectory(sourcepath, destpath);
 
             if (opt == 1)
@@ -100,15 +100,16 @@ namespace SwitchGiftDataManager.CommandLine
                 {
                     var wcdata = bcat.ConcatenateFiles();
                     var metadata = bcat.ForgeMetaInfo(wcdata.ToArray());
-                    var metadatapath = $"{destpath}\\directories\\{bcat.GetDefaultBcatFolderName()}";
-                    var wcpath = $"{metadatapath}\\files";
+                    var metadatapath = Path.Combine(destpath, "directories");
+                    metadatapath = Path.Combine(metadatapath, bcat.GetDefaultBcatFolderName());
+                    var wcpath = Path.Combine(metadatapath, "files");
 
                     if (Directory.Exists(metadatapath))
                         DeleteFilesAndDirectory(metadatapath);
 
                     Directory.CreateDirectory(wcpath);
-                    File.WriteAllBytes($"{metadatapath}\\files.meta", metadata.ToArray());
-                    File.WriteAllBytes($"{wcpath}\\{bcat.GetDefaultBcatFileName()}", wcdata.ToArray());
+                    File.WriteAllBytes(Path.Combine(metadatapath, "files.meta"), metadata.ToArray());
+                    File.WriteAllBytes(Path.Combine(wcpath, bcat.GetDefaultBcatFileName()), wcdata.ToArray());
                     Log("Done. Press any key to exit...");
                     Console.ReadKey();
                 }
@@ -121,14 +122,15 @@ namespace SwitchGiftDataManager.CommandLine
             else
             {
                 var metadata = bcat.ForgeMetaInfo();
-                var metadatapath = $"{destpath}\\directories\\{bcat.GetDefaultBcatFolderName()}";
-                var wcspath = $"{metadatapath}\\files";
+                var metadatapath = Path.Combine(destpath, "directories");
+                metadatapath = Path.Combine(metadatapath, bcat.GetDefaultBcatFolderName());
+                var wcspath = Path.Combine(metadatapath, "files");
 
                 if (Directory.Exists(metadatapath))
                     DeleteFilesAndDirectory(metadatapath);
 
                 Directory.CreateDirectory(wcspath);
-                File.WriteAllBytes($"{metadatapath}\\files.meta", metadata.ToArray());
+                File.WriteAllBytes(Path.Combine(metadatapath, "files.meta"), metadata.ToArray());
                 if (bcat.TrySaveAllWondercards(wcspath))
                 {
                     Log("Done. Press any key to exit...");
@@ -160,22 +162,22 @@ namespace SwitchGiftDataManager.CommandLine
             if (string.IsNullOrWhiteSpace(path))
                 return false;
 
-            if (!Directory.Exists($"{path}\\directories"))
+            if (!Directory.Exists(Path.Combine(path, "directories")))
                 return false;
 
-            if (!File.Exists($"{path}\\directories.meta"))
+            if (!File.Exists(Path.Combine(path, "directories.meta")))
                 return false;
 
-            if (!File.Exists($"{path}\\etag.bin"))
+            if (!File.Exists(Path.Combine(path, "etag.bin")))
                 return false;
 
-            if (!File.Exists($"{path}\\list.msgpack"))
+            if (!File.Exists(Path.Combine(path, "list.msgpack")))
                 return false;
 
-            if (!File.Exists($"{path}\\na_required"))
+            if (!File.Exists(Path.Combine(path, "na_required")))
                 return false;
 
-            if (!File.Exists($"{path}\\passphrase.bin"))
+            if (!File.Exists(Path.Combine(path, "passphrase.bin")))
                 return false;
 
             return true;
