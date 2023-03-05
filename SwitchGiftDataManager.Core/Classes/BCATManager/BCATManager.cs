@@ -162,9 +162,9 @@ namespace SwitchGiftDataManager.Core
                 if (content!.GetType() == typeof(PokemonGift))
                 {
                     var c = (PokemonGift)content;
-                    el1 = c.ShinyType.ToString();
+                    el1 = GetShinyString(c.ShinyType);
                     el2 = c.GetSpeciesName();
-                    el3 = c.PIDType.ToString();
+                    el3 = GetPIDString(c.PIDType);
                 }
                 else if (content!.GetType() == typeof(List<OtherGift>))
                 {
@@ -172,7 +172,7 @@ namespace SwitchGiftDataManager.Core
                     {
                         var item = c.GetItemName().Replace("\r","");
                         var qty = c.Quantity;
-                        var str = $"{item.Replace("BP", "Battle Points")}";
+                        var str = $"{item.Replace("BP", "Battle Points").Replace("LP", "League Points")}";
                         if (qty != 0x0 && qty != 0xFFFF)
                             str = $"{str} x{qty}";
                         if (el1.Equals(""))
@@ -192,7 +192,6 @@ namespace SwitchGiftDataManager.Core
                     }
                 }
             }
-
             return new List<string> { wcid, el1, el2, el3, el4, el5, el6, el7 };
         }
 
@@ -335,6 +334,29 @@ namespace SwitchGiftDataManager.Core
             BinaryPrimitives.WriteUInt32LittleEndian(filesDotMeta.AsSpan(), header);
             data.ToArray().CopyTo(filesDotMeta, MetaHeaderLength);
             return filesDotMeta.AsSpan();
+        }
+
+        private string GetShinyString(ShinyType type)
+        {
+            return type switch
+            {
+                ShinyType.ShinyLocked => "Shiny Locked",
+                ShinyType.ShinyPossible => "Shiny Standard Odds",
+                ShinyType.ShinyHighOdds => "Shiny High Odds",
+                ShinyType.ShinyForced => "Shiny Forced",
+                ShinyType.ShinyTIDAbuse => "Shiny Possible (TID Abuse)",
+                _ => throw new IndexOutOfRangeException()
+            };
+        }
+
+        private string GetPIDString(PIDType type)
+        {
+            return type switch
+            {
+                PIDType.FixedPID => "Fixed PID",
+                PIDType.RandomPID => "Random PID",
+                _ => throw new IndexOutOfRangeException()
+            };
         }
     }
 }
