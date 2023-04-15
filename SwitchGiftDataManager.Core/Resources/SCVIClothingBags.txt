@@ -3045,7 +3045,9 @@ None
 
 
 
-Canvas Backpack
+[Bags] Canvas Backpack (Poké Ball)
+[Bags] Canvas Backpack (Mega Ball)
+[Bags] Canvas Backpack (Ultra Ball)
 
 
 
@@ -3073,4 +3075,4 @@ Canvas Backpack
 
 
 
-Floral-print Sports Backpack
+[Bags] Floral-print Sports Backpack

@@ -35,11 +35,13 @@ namespace SwitchGiftDataManager.Core
             if (Content is null)
                 return false;
 
+#if DEBUG
+            if (!IsChecksumValid())
+                UpdateChecksum();
+#endif
+
             if (!IsChecksumValid())
                 return false;
-
-            //if (!IsChecksumValid())
-                //UpdateChecksum();
 
             return true;
         }
