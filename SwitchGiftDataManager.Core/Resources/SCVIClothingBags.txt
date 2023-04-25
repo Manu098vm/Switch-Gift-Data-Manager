@@ -3046,7 +3046,7 @@ None
 
 
 [Bags] Canvas Backpack (Poké Ball)
-[Bags] Canvas Backpack (Mega Ball)
+[Bags] Canvas Backpack (Great Ball)
 [Bags] Canvas Backpack (Ultra Ball)
 
 
