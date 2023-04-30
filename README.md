@@ -55,6 +55,12 @@ Alternatively, feel free to contact me on Discord by DMs (SkyLink98#5946 - **onl
 
 The .CommandLine project is currently just a simple script that calls the .Core functionalities and can run on any popular OS. Feel free to improve it and/or submit a pull request if you'd like :-)
 
+## Support/Troubleshooting
+If you find any bug or you need support, please write in the [relevant topic on the Project Pokémon forums](https://projectpokemon.org/home/forums/topic/62491-switch-gift-data-manager-import-wondercards-into-switch-games-by-faking-bcat-packages/).
+Alternatively, feel free to contact me in my [Discord server](https://discord.gg/yWveAjKbKt).
+
+[<img src="https://canary.discordapp.com/api/guilds/693083823197519873/widget.png?style=banner2">](https://discord.gg/yWveAjKbKt)
+
 ## Credits
 * [PNZeml](https://github.com/PNZeml) for the CRC-16/CCITT-FALSE with lookup table [implementation](https://gist.github.com/tijnkooijmans/10981093?permalink_comment_id=3996072#gistcomment-3996072)
 * [kwsch](https://github.com/kwsch), [sora10pls](https://github.com/sora10pls) and all the [PKHeX](https://github.com/kwsch/PKHeX) and [pkNX](https://github.com/kwsch/pkNX) devs and contributors
