@@ -91,14 +91,6 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-	
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="$(ConfigurationName) == Release and '$(OS)' == 'Windows_NT'">
-	<Move SourceFiles="$(OUTDIR)\SwitchGiftDataManager.WinForm.exe" DestinationFiles="$(OUTDIR)\Switch Gift Data Manager.exe" />
-  </Target>
-
-	<Target Name="PostPublish" AfterTargets="Publish" Condition="$(ConfigurationName) == Release and '$(OS)' == 'Windows_NT'">
-		<Move SourceFiles="$(OUTDIR)\publish\SwitchGiftDataManager.WinForm.exe" DestinationFiles="$(OUTDIR)\publish\Switch Gift Data Manager.exe" />
-	</Target>
 
   <Target Name="PostClean" AfterTargets="Clean" Condition="$(ConfigurationName) == Release">
 	<RemoveDir Directories="$(TargetDir)" />
