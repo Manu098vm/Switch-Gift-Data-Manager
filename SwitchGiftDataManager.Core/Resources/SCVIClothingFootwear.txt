@@ -3045,9 +3045,6 @@ None
 
 
 
-Canvas Backpack (Poké Ball)
-Canvas Backpack (Great Ball)
-Canvas Backpack (Ultra Ball)
 
 
 
@@ -3073,7 +3070,6 @@ Canvas Backpack (Ultra Ball)
 
 
 
-Floral-print Sports Backpack
 
 
 
@@ -3091,7 +3087,6 @@ Floral-print Sports Backpack
 
 
 
-New School Backpack
 
 
 
@@ -4147,55 +4142,7 @@ New School Backpack
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+School Loafers
 
 
 

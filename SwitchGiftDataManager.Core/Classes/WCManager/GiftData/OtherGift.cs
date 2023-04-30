@@ -39,7 +39,7 @@ namespace SwitchGiftDataManager.Core
                             ClothingType8.Gloves => Properties.Resources.SWSHClothingGloves.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
                             ClothingType8.Bottoms => Properties.Resources.SWSHClothingBottoms.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
                             ClothingType8.Legwear => Properties.Resources.SWSHClothingLegwear.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
-                            ClothingType8.Shoes => Properties.Resources.SWSHClothingShoes.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                            ClothingType8.Footwear => Properties.Resources.SWSHClothingShoes.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
                             _ => throw new ArgumentOutOfRangeException(),
                         };
                         str = $"[{category}] {description}";
@@ -67,13 +67,13 @@ namespace SwitchGiftDataManager.Core
                     var category = (ClothingType8A)id;
                     var description = category switch
                     {
-                        ClothingType8A.Heads => Properties.Resources.PLAClothingHeads.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        ClothingType8A.Headwear => Properties.Resources.PLAClothingHeads.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
                         ClothingType8A.Tops => Properties.Resources.PLAClothingTops.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
                         ClothingType8A.Bottoms => Properties.Resources.PLAClothingBottoms.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
                         ClothingType8A.Outfit => "",
-                        ClothingType8A.Shoes => "",
+                        ClothingType8A.Footwear => "",
                         ClothingType8A.Glasses => "",
-                        ClothingType8A.Eyes => "",
+                        ClothingType8A.Eyewear => "",
                         _ => throw new ArgumentOutOfRangeException(),
                     };
                     if(string.IsNullOrWhiteSpace(description))
@@ -92,12 +92,19 @@ namespace SwitchGiftDataManager.Core
                     var category = (ClothingType9)id;
                     var description = category switch
                     {
-                        _ => Properties.Resources.SCVIClothingBags.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        ClothingType9.Uniform => Properties.Resources.SCVIClothingUniform.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        ClothingType9.Legwear => Properties.Resources.SCVIClothingLegwear.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        ClothingType9.Footwear => Properties.Resources.SCVIClothingFootwear.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        ClothingType9.Gloves => Properties.Resources.SCVIClothingGloves.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        ClothingType9.Bags => Properties.Resources.SCVIClothingBags.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        ClothingType9.Headwear => Properties.Resources.SCVIClothingHeadwear.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        ClothingType9.Eyewear => Properties.Resources.SCVIClothingEyewear.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        ClothingType9.PhoneCase => Properties.Resources.SCVIClothingPhoneCase.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
+                        _ => "",
                     };
                     if (string.IsNullOrWhiteSpace(description))
                         description = $"{opt:X4}";
-                    //str = $"[{category}] {description}";
-                    str = $"{description}";
+                    str = $"[{category.ToString().Replace("Uniform", "Clothing")}] {description}";
                 }
                 else
                     str = ((GiftType9)type).ToString();

@@ -3073,7 +3073,6 @@ Canvas Backpack (Ultra Ball)
 
 
 
-Floral-print Sports Backpack
 
 
 
@@ -3091,7 +3090,6 @@ Floral-print Sports Backpack
 
 
 
-New School Backpack
 
 
 
@@ -7008,61 +7006,10 @@ New School Backpack
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+New Spring Uniform
+New Summer Uniform
+New Autumn Uniform
+New Winter Uniform
 
 
 

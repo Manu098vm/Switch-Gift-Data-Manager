@@ -136,6 +136,27 @@
   <data name="SCVIClothingBags" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SCVIClothingBags.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="SCVIClothingEyewear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCVIClothingEyewear.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SCVIClothingFootwear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCVIClothingFootwear.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SCVIClothingGloves" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCVIClothingGloves.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SCVIClothingHeadwear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCVIClothingHeadwear.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SCVIClothingLegwear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCVIClothingLegwear.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SCVIClothingPhoneCase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCVIClothingPhoneCase.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SCVIClothingUniform" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCVIClothingUniform.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="Species" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Species.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

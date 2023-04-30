@@ -121,32 +121,32 @@
         Gloves = 0x0B,
         Bottoms = 0x0C,
         Legwear = 0x0D,
-        Shoes = 0x0E,
+        Footwear = 0x0E,
         None = 0xFF,
     }
 
     internal enum ClothingType8A: byte
     {
-        Heads = 0x00,
+        Headwear = 0x00,
         Tops = 0x01,
         Bottoms = 0x02,
         Outfit = 0x03,
-        Shoes = 0x5,
+        Footwear = 0x5,
         Glasses = 0x06,
-        Eyes = 0x08,
+        Eyewear = 0x08,
         None = 0xFF,
     }
 
     internal enum ClothingType9 : byte
     {
         Uniform = 0x00,
-        Legs = 0x01,
-        Foots = 0x02,
+        Legwear = 0x01,
+        Footwear = 0x02,
         Gloves = 0x03,
         Bags = 0x04,
-        Heads = 0x5,
-        Eyes = 0x06,
-        Rotom = 0x08,
+        Headwear = 0x5,
+        Eyewear = 0x06,
+        PhoneCase = 0x08,
         None = 0xFF,
     }
 }
