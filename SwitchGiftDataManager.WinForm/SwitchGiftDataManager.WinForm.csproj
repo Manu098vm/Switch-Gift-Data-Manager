@@ -1,34 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <PackageIcon>Resources\icon.png</PackageIcon>
-	<ApplicationIcon>Resources\icon.ico</ApplicationIcon>
-	<Authors>Manu098vm</Authors>
-	<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-	<Copyright>Copyright (C) 2022 Manu098vm</Copyright>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<PackageTags>pokemon; mystery gift; wondercard; reader; nintendo; bcat; event injection;</PackageTags>
-	<PackageLicenseFile>LICENSE</PackageLicenseFile>
-	<Company>Project Pokémon</Company>
-	<PackageProjectUrl>https://github.com/Manu098vm/Switch-Gift-Data-Manager</PackageProjectUrl>
-	<RepositoryUrl>https://github.com/Manu098vm/Switch-Gift-Data-Manager</RepositoryUrl>
-	<Configurations>Debug;Release;WSL</Configurations>
-	<EnableWindowsTargeting>true</EnableWindowsTargeting>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageIcon>Resources\icon.png</PackageIcon>
+		<ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+		<Authors>Manu098vm</Authors>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<Copyright>Copyright (C) 2022 Manu098vm</Copyright>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>pokemon; mystery gift; wondercard; reader; nintendo; bcat; event injection;</PackageTags>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<Company>Project Pokémon</Company>
+		<PackageProjectUrl>https://github.com/Manu098vm/Switch-Gift-Data-Manager</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Manu098vm/Switch-Gift-Data-Manager</RepositoryUrl>
+		<Configurations>Debug;Release;WSL</Configurations>
+		<EnableWindowsTargeting>true</EnableWindowsTargeting>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>embedded</DebugType>
-    <Optimize>True</Optimize>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>embedded</DebugType>
+		<Optimize>True</Optimize>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>embedded</DebugType>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
 
 	<PropertyGroup>
 		<DebugType>embedded</DebugType>
@@ -40,61 +40,61 @@
 		<SelfContained>false</SelfContained>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup>
-	<None Include="..\LICENSE">
-	  <Pack>True</Pack>
-	  <PackagePath>\</PackagePath>
-	</None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SwitchGiftDataManager.Core\SwitchGiftDataManager.Core.csproj">
-      <Private>True</Private>
-      <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
-    </ProjectReference>
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SwitchGiftDataManager.Core\SwitchGiftDataManager.Core.csproj">
+			<Private>True</Private>
+			<CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
+		</ProjectReference>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="Resources\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+		<None Update="Resources\icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
-  <Target Name="PostClean" AfterTargets="Clean" Condition="$(ConfigurationName) == Release">
-	<RemoveDir Directories="$(TargetDir)" />
-	<RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)" />
-  </Target>
+	<Target Name="PostClean" AfterTargets="Clean" Condition="$(ConfigurationName) == Release">
+		<RemoveDir Directories="$(TargetDir)" />
+		<RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)" />
+	</Target>
 
 </Project>
