@@ -65,7 +65,7 @@ Alternatively, feel free to contact me in my [Discord server](https://discord.gg
 * [PNZeml](https://github.com/PNZeml) for the CRC-16/CCITT-FALSE with lookup table [implementation](https://gist.github.com/tijnkooijmans/10981093?permalink_comment_id=3996072#gistcomment-3996072)
 * [kwsch](https://github.com/kwsch), [sora10pls](https://github.com/sora10pls) and all the [PKHeX](https://github.com/kwsch/PKHeX) and [pkNX](https://github.com/kwsch/pkNX) devs and contributors
 for a lot of offsets and resources
-* [PP-theSLAYER](https://github.com/PP-theSLAYER) for his researches in the Sword and Shield fashion block and for the clothing names resources
+* [PP-theSLAYER](https://github.com/PP-theSLAYER) and [pasqualenardiello](https://github.com/pasqualenardiello) for their researches on the Sword & Shield fashion block and on the Scarlet and Violet fashion block respectively
 * All the Project Pokémon Staff and the [Event Gallery](https://github.com/projectpokemon/EventsGallery) contributors for their archival efforts that made this possible
 
 ## License
