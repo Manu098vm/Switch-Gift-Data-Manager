@@ -134,7 +134,7 @@
     <value>..\Resources\PLAClothingTops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="SCVIClothings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\scviclothings.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\resources\SCVIClothings.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Species" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Species.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
