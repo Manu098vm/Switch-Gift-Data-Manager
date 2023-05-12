@@ -90,18 +90,7 @@ namespace SwitchGiftDataManager.Core
                 else if ((GiftType9)type is GiftType9.Clothing)
                 {
                     var category = (ClothingType9)id;
-                    var description = category switch
-                    {
-                        ClothingType9.Uniform => Properties.Resources.SCVIClothingUniform.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
-                        ClothingType9.Legwear => Properties.Resources.SCVIClothingLegwear.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
-                        ClothingType9.Footwear => Properties.Resources.SCVIClothingFootwear.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
-                        ClothingType9.Gloves => Properties.Resources.SCVIClothingGloves.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
-                        ClothingType9.Bags => Properties.Resources.SCVIClothingBags.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
-                        ClothingType9.Headwear => Properties.Resources.SCVIClothingHeadwear.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
-                        ClothingType9.Eyewear => Properties.Resources.SCVIClothingEyewear.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
-                        ClothingType9.PhoneCase => Properties.Resources.SCVIClothingPhoneCase.Split(new String[] { "\n" }, StringSplitOptions.None)[opt],
-                        _ => "",
-                    };
+                    var description = Properties.Resources.SCVIClothings.Split(new String[] { "\n" }, StringSplitOptions.None)[opt];
                     if (string.IsNullOrWhiteSpace(description))
                         description = $"{opt:X4}";
                     str = $"[{category.ToString().Replace("Uniform", "Clothing")}] {description}";

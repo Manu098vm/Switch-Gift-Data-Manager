@@ -2095,6 +2095,7 @@ None
 
 
 
+New School Gloves
 
 
 
@@ -2998,8 +2999,7 @@ None
 
 
 
-
-
+No Bag
 
 
 
@@ -3073,6 +3073,7 @@ Canvas Backpack (Ultra Ball)
 
 
 
+Floral-print Sports Backpack
 
 
 
@@ -3090,6 +3091,7 @@ Canvas Backpack (Ultra Ball)
 
 
 
+New School Backpack
 
 
 
@@ -4140,6 +4142,7 @@ Canvas Backpack (Ultra Ball)
 
 
 
+School Loafers
 
 
 
@@ -5032,6 +5035,9 @@ Canvas Backpack (Ultra Ball)
 
 
 
+Star Sporty Cap
+Pokémon League Sporty Cap
+Terastal Sporty Cap
 
 
 
@@ -5405,6 +5411,7 @@ Canvas Backpack (Ultra Ball)
 
 
 
+New School Hat
 
 
 
@@ -6098,6 +6105,8 @@ Canvas Backpack (Ultra Ball)
 
 
 
+School Socks
+School Tights
 
 
 
@@ -6997,15 +7006,10 @@ Canvas Backpack (Ultra Ball)
 
 
 
-
-
-
-
-
-
-
-
-
+New Spring Uniform
+New Summer Uniform
+New Autumn Uniform
+New Winter Uniform
 New Spring Uniform
 New Summer Uniform
 New Autumn Uniform
@@ -8045,14 +8049,10 @@ New Winter Uniform
 
 
 
-
-
-
-
-
-
-
-
+Arc Phone Case
+Ball Guy Case
+Pokétch Case
+Pika-Vee Case
 
 
 
