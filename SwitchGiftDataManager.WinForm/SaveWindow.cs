@@ -102,7 +102,7 @@ namespace SwitchGiftDataManager.WinForm
                 File.WriteAllBytes(Path.Combine(metadatapath, "files.meta"), metadata.ToArray());
                 if (Package.TrySaveAllWondercards(wcspath))
                 {
-                    MessageBox.Show("Done.");
+                    MessageBox.Show($"Saved in {path}{Environment.NewLine}BCAT forge was successful.");
                     this.Close();
                 }
                 else
