@@ -110,7 +110,7 @@ namespace SwitchGiftDataManager.CommandLine
                     Directory.CreateDirectory(wcpath);
                     File.WriteAllBytes(Path.Combine(metadatapath, "files.meta"), metadata.ToArray());
                     File.WriteAllBytes(Path.Combine(wcpath, bcat.GetDefaultBcatFileName()), wcdata.ToArray());
-                    Log("Done. Press any key to exit...");
+                    Log($"Saved in {path}{Environment.NewLine}BCAT forge was successful.{Environment.NewLine}Press any key to exit...");
                     Console.ReadKey();
                 }
                 catch (Exception)
@@ -133,7 +133,7 @@ namespace SwitchGiftDataManager.CommandLine
                 File.WriteAllBytes(Path.Combine(metadatapath, "files.meta"), metadata.ToArray());
                 if (bcat.TrySaveAllWondercards(wcspath))
                 {
-                    Log("Done. Press any key to exit...");
+                    Log($"Saved in {path}{Environment.NewLine}BCAT forge was successful.{Environment.NewLine}Press any key to exit...");
                     Console.ReadKey();
                 }
                 else

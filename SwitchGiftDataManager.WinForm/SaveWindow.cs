@@ -79,7 +79,7 @@ namespace SwitchGiftDataManager.WinForm
                     Directory.CreateDirectory(wcpath);
                     File.WriteAllBytes(Path.Combine(metadatapath, "files.meta"), metadata.ToArray());
                     File.WriteAllBytes(Path.Combine(wcpath, Package.GetDefaultBcatFileName()), wcdata.ToArray());
-                    MessageBox.Show("Done");
+                    MessageBox.Show($"Saved in {path}{Environment.NewLine}BCAT forge was successful.");
                     this.Close();
                 }
                 catch (Exception)
