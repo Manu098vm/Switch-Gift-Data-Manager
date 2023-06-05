@@ -34,8 +34,8 @@ namespace SwitchGiftDataManager.Core
         {
             var species = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(SpeciesOffset));
             var pid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(PIDOffset));
-            var tid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (0xF4240 * WCID)) & 0xFFFF);
-            var sid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (0xF4240 * WCID)) >> 16 & 0xFFFF);
+            var tid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (1000000u * WCID)) & 0xFFFF);
+            var sid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (1000000u * WCID)) >> 16 & 0xFFFF);
             var test = (ShinyType9)Data![ShinyTypeOffset];
             var pidtype = (ShinyType9)Data![ShinyTypeOffset] switch
             {
@@ -131,7 +131,7 @@ namespace SwitchGiftDataManager.Core
             if (Type is GiftType9 t9 && t9 is GiftType9.Pokemon)
             {
                 //Old FullTID
-                var ftid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (0xF4240 * (uint)WCID);
+                var ftid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (1000000u * (uint)WCID);
 
                 //Recalculate the TID and SID (FullTID) to account for the new Wondercard ID
                 BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), ftid + (1000000u * (uint)wcid));
