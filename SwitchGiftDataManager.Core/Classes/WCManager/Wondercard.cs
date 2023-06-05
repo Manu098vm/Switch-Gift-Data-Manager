@@ -3,7 +3,7 @@ using System.Buffers.Binary;
 
 namespace SwitchGiftDataManager.Core
 {
-    internal abstract class Wondercard
+    public abstract class Wondercard
     {
         public static int GenOffset = 0x0F;  
         protected const int MaxItemCount = 6;

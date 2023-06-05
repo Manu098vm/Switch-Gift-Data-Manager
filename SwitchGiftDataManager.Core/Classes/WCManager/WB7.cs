@@ -3,7 +3,7 @@ using Enums;
 
 namespace SwitchGiftDataManager.Core
 {
-    internal class WB7 : Wondercard
+    public class WB7 : Wondercard
     {
         private const int WondercardIDOffset = 0x208;
         private const int GiftTypeOffset = 0x259;

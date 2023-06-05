@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using SwitchGiftDataManager.Core;
+﻿using SwitchGiftDataManager.Core;
 using Octokit;
 
 namespace SwitchGiftDataManager.Core

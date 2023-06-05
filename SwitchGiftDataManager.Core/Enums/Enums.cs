@@ -15,7 +15,7 @@
         Item,
     }
 
-    internal enum WondercardSize : ushort
+    public enum WondercardSize : ushort
     {
         WB7 = 0x310,
         WC8 = 0x2D0,
@@ -24,7 +24,7 @@
         WC9 = 0x2C8,
     }
 
-    internal enum GiftType7 : byte
+    public enum GiftType7 : byte
     {
         Pokemon = 0,
         Item = 1,
@@ -32,7 +32,7 @@
         BP = 3,
     }
 
-    internal enum GiftType8 : byte
+    public enum GiftType8 : byte
     {
         None = 0,
         Pokemon = 1,
@@ -42,7 +42,7 @@
         Money = 5,
     }
 
-    internal enum GiftType8B : byte
+    public enum GiftType8B : byte
     {
         None = 0,
         Pokemon = 1,
@@ -53,7 +53,7 @@
         Underground = 6,
     }
 
-    internal enum GiftType8A : byte
+    public enum GiftType8A : byte
     {
         None = 0,
         Pokemon = 1,
@@ -61,7 +61,7 @@
         Clothing = 3,
     }
 
-    internal enum GiftType9 : byte
+    public enum GiftType9 : byte
     {
         None = 0,
         Pokemon = 1,
@@ -85,7 +85,7 @@
         ShinyHighOdds,
     }
 
-    internal enum ShinyType7 : byte
+    public enum ShinyType7 : byte
     {
         Fixed = 0,
         ShinyRandom = 1,
@@ -93,7 +93,7 @@
         ShinyLocked = 3,
     }
 
-    internal enum ShinyType8 : byte
+    public enum ShinyType8 : byte
     {
         ShinyLocked = 0,
         ShinyRandom = 1,
@@ -102,7 +102,7 @@
         Fixed = 4,
     }
 
-    internal enum ShinyType9 : byte
+    public enum ShinyType9 : byte
     {
         ShinyLocked = 0,
         ShinyRandom = 1,
@@ -111,7 +111,7 @@
         Fixed = 4,
     }
 
-    internal enum ClothingType8: byte
+    public enum ClothingType8: byte
     {
         Glasses = 0x06,
         Hats = 0x07,
@@ -125,7 +125,7 @@
         None = 0xFF,
     }
 
-    internal enum ClothingType8A: byte
+    public enum ClothingType8A: byte
     {
         Headwear = 0x00,
         Tops = 0x01,
@@ -137,7 +137,7 @@
         None = 0xFF,
     }
 
-    internal enum ClothingType9 : byte
+    public enum ClothingType9 : byte
     {
         Uniform = 0x00,
         Legwear = 0x01,
