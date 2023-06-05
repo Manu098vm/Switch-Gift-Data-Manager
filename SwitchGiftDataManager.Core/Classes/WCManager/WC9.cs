@@ -126,8 +126,28 @@ namespace SwitchGiftDataManager.Core
 
         public override void SetID(ushort wcid)
         {
+            var pkEdited = false;
+            //Wondercard ID in Gen 9 also influence the TID and SID of Pokémon Entities
+            if (Type is GiftType9 t9 && t9 is GiftType9.Pokemon)
+            {
+                //Old FullTID
+                var ftid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (0xF4240 * (uint)WCID);
+
+                //Recalculate the TID and SID (FullTID) to account for the new Wondercard ID
+                BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), ftid + (1000000u * (uint)wcid));
+
+                pkEdited = true;
+            }
+
+            //Write the new Wondercard ID
             BinaryPrimitives.WriteUInt16LittleEndian(Data.AsSpan(WondercardIDOffset), wcid);
             WCID = wcid;
+
+            //Reload Pokémon content
+            if (pkEdited) 
+                Content = GetPokemon();
+
+            //Refresh card checksum
             UpdateChecksum();
         }
 
