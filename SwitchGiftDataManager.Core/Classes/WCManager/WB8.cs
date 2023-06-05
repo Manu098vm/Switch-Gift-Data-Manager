@@ -6,6 +6,7 @@ namespace SwitchGiftDataManager.Core
     public class WB8 : Wondercard
     {
         private const int WondercardIDOffset = 0x08;
+        private const int FlagOffset = 0x10;
         private const int GiftTypeOffset = 0x11;
         private const int ItemOffset = 0x20;
         private const int QuantityOffset = 0x22;
@@ -19,6 +20,7 @@ namespace SwitchGiftDataManager.Core
         public WB8(ReadOnlySpan<byte> data) : base(data)
         {
             WCID = BinaryPrimitives.ReadUInt16LittleEndian(data[WondercardIDOffset..]);
+            IsRepeatable = (Data![FlagOffset] & 1) == 0;
             Type = (GiftType8B)Data![GiftTypeOffset];
             Content = Type switch
             {
@@ -111,6 +113,13 @@ namespace SwitchGiftDataManager.Core
         {
             BinaryPrimitives.WriteUInt16LittleEndian(Data.AsSpan(WondercardIDOffset), wcid);
             WCID = wcid;
+            UpdateChecksum();
+        }
+
+        public override void SetRepeatable(bool repeatable)
+        {
+            Data![FlagOffset] = (byte)((Data![FlagOffset] & ~1) | (repeatable ? 0 : 1));
+            IsRepeatable = repeatable;
             UpdateChecksum();
         }
     }

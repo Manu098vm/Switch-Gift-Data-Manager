@@ -8,11 +8,11 @@ namespace SwitchGiftDataManager.WinForm
     public partial class MainWindow : Form
     {
         private Games CurrentGame = Games.None;
-        private BCATManager PackageLGPE = new (Games.LGPE);
-        private BCATManager PackageSWSH = new (Games.SWSH);
-        private BCATManager PackageBDSP = new (Games.BDSP);
-        private BCATManager PackagePLA = new (Games.PLA);
-        private BCATManager PackageSCVI = new (Games.SCVI);
+        private BCATManager PackageLGPE = new(Games.LGPE);
+        private BCATManager PackageSWSH = new(Games.SWSH);
+        private BCATManager PackageBDSP = new(Games.BDSP);
+        private BCATManager PackagePLA = new(Games.PLA);
+        private BCATManager PackageSCVI = new(Games.SCVI);
         private List<ushort> Duplicated = new List<ushort>();
 
         public MainWindow()
@@ -193,25 +193,27 @@ namespace SwitchGiftDataManager.WinForm
 
         private void BtnApply_Click(object sender, EventArgs e)
         {
-            var proceed = true;
-            if(CurrentGame is Games.SCVI)
-            {
-                var warning = "WARNING\n\n" +
-                    "WCID editings in SV wondercards might impact the entity's TID and SID, resulting in an illegal Pokémon.\n" +
-                    "Do not share Pokémon obtained with the use of edited wondercards.\n" +
-                    "\nDo you want to coninue?";
-                var disclaimer = MessageBox.Show(warning, "Disclaimer", MessageBoxButtons.YesNo);
+            var list = GetCurrentList();
+            var wcid = UInt16.Parse(TxtWCID.Text);
+            var repeatable = ChkRepeatable.Checked;
 
-                if (disclaimer == DialogResult.No)
-                    proceed = false;
-            }
-
-            if (proceed)
+            if (wcid != list.GetWCID(ListBoxWC.SelectedIndex))
             {
-                try
+                var proceed = true;
+                if (CurrentGame is Games.SCVI)
                 {
-                    var list = GetCurrentList();
-                    var wcid = UInt16.Parse(TxtWCID.Text);
+                    var warning = "WARNING\n\n" +
+                        "WCID editings in SV wondercards might impact the entity's TID and SID, resulting in an illegal Pokémon.\n" +
+                        "Do not share Pokémon obtained with the use of edited wondercards.\n" +
+                        "\nDo you want to coninue?";
+                    var disclaimer = MessageBox.Show(warning, "Disclaimer", MessageBoxButtons.YesNo);
+
+                    if (disclaimer == DialogResult.No)
+                        proceed = false;
+                }
+
+                if (proceed)
+                {
                     var index = list.GetIndex(wcid);
                     if (index == -1)
                     {
@@ -227,11 +229,12 @@ namespace SwitchGiftDataManager.WinForm
                         return;
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                    return;
-                }
+            }
+
+            if (repeatable != list.GetIsRepeatable(ListBoxWC.SelectedIndex))
+            {
+                list.SetIsRepeatable(ListBoxWC.SelectedIndex, repeatable);
+                BtnApply.Enabled = false;
             }
         }
 
@@ -261,7 +264,7 @@ namespace SwitchGiftDataManager.WinForm
 
         void FileDragEnter(object sender, DragEventArgs e)
         {
-            if(e.Data is not null && CurrentGame is not Games.None)
+            if (e.Data is not null && CurrentGame is not Games.None)
                 if (e.Data.GetDataPresent(DataFormats.FileDrop))
                     e.Effect = DragDropEffects.Copy;
         }
@@ -294,6 +297,18 @@ namespace SwitchGiftDataManager.WinForm
                 else
                     BtnApply.Enabled = false;
             }
+        }
+
+        private void ChkRepeatable_CheckedChanged(object sender, EventArgs e)
+        {
+            var list = GetCurrentList();
+            var newBool = ChkRepeatable.Checked;
+            var oldBool = list.GetIsRepeatable(ListBoxWC.SelectedIndex);
+
+            if (newBool != oldBool)
+                BtnApply.Enabled = true;
+            else
+                BtnApply.Enabled = false;
         }
 
         private void ToolTipWcid_Draw(object sender, DrawToolTipEventArgs e)
@@ -345,7 +360,8 @@ namespace SwitchGiftDataManager.WinForm
             if (ListBoxWC.SelectedIndex > -1)
             {
                 var list = GetCurrentList();
-                var content = list.GetContentToString(ListBoxWC.SelectedIndex);
+                var index = ListBoxWC.SelectedIndex;
+                var content = list.GetContentToString(index);
                 var nItem = content.Count();
                 if (nItem >= 1)
                     LblInfo1.Text = content.ElementAt(1);
@@ -363,6 +379,7 @@ namespace SwitchGiftDataManager.WinForm
                     LblInfo7.Text = content.ElementAt(7);
 
                 TxtWCID.Text = content.ElementAt(0);
+                ChkRepeatable.Checked = list.GetIsRepeatable(index);
                 EnableContent();
             }
             else
@@ -380,7 +397,7 @@ namespace SwitchGiftDataManager.WinForm
                 var handled = false;
                 if ((CurrentGame is Games.BDSP && wcid >= 2048) || (CurrentGame is Games.SWSH && e.Index >= 129))
                 {
-                    if(!curr.Contains('\u2757'))
+                    if (!curr.Contains('\u2757'))
                         ((ListBox)sender).Items[e.Index] = $"{curr} \u2757";
                     g.FillRectangle(new SolidBrush(Color.IndianRed), e.Bounds);
                     g.DrawString(((ListBox)sender).Items[e.Index].ToString(), e.Font!, new SolidBrush(e.ForeColor), new PointF(e.Bounds.X, e.Bounds.Y));
@@ -397,7 +414,7 @@ namespace SwitchGiftDataManager.WinForm
                         handled = true;
                     }
                 }
-                if(!handled)
+                if (!handled)
                     g.DrawString(curr, e.Font!, new SolidBrush(e.ForeColor), new PointF(e.Bounds.X, e.Bounds.Y));
             }
         }
@@ -420,6 +437,7 @@ namespace SwitchGiftDataManager.WinForm
             LblInfo6.Visible = true;
             LblInfo7.Visible = true;
             GrpContent.Enabled = true;
+            ChkRepeatable.Enabled = true;
         }
 
         private void DisableContent()
@@ -441,8 +459,10 @@ namespace SwitchGiftDataManager.WinForm
             LblInfo6.Visible = false;
             LblInfo7.Text = "";
             LblInfo7.Visible = false;
-            GrpContent.Enabled = false;
             BtnApply.Enabled = false;
+            GrpContent.Enabled = false;
+            ChkRepeatable.Checked = false;
+            ChkRepeatable.Enabled = false;
         }
     }
 }

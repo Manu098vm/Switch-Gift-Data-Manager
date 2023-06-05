@@ -10,6 +10,7 @@ namespace SwitchGiftDataManager.Core
 
         public Games Game { get; }
         public ushort WCID { get; protected set; }
+        public bool IsRepeatable { get; protected set; }
         public object? Type { get; protected set; }
         public object? Content { get; protected set; }
         public byte[]? Data { get; protected set; }
@@ -53,6 +54,8 @@ namespace SwitchGiftDataManager.Core
         public abstract void UpdateChecksum();
 
         public abstract void SetID(ushort wcid);
+
+        public abstract void SetRepeatable(bool repeatable);
 
         public static WondercardSize GetSize(Games game)
         {

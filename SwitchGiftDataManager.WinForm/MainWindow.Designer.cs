@@ -28,359 +28,368 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.BtnLGPE = new System.Windows.Forms.Button();
-            this.BtnSWSH = new System.Windows.Forms.Button();
-            this.BtnBDSP = new System.Windows.Forms.Button();
-            this.BtnSCVI = new System.Windows.Forms.Button();
-            this.BtnPLA = new System.Windows.Forms.Button();
-            this.ListBoxWC = new System.Windows.Forms.ListBox();
-            this.BtnOpen = new System.Windows.Forms.Button();
-            this.BtnSave = new System.Windows.Forms.Button();
-            this.GrpBCAT = new System.Windows.Forms.GroupBox();
-            this.BtnApply = new System.Windows.Forms.Button();
-            this.GrpContent = new System.Windows.Forms.GroupBox();
-            this.LblInfo7 = new System.Windows.Forms.Label();
-            this.LblInfo6 = new System.Windows.Forms.Label();
-            this.LblInfo5 = new System.Windows.Forms.Label();
-            this.LblInfo4 = new System.Windows.Forms.Label();
-            this.LblInfo3 = new System.Windows.Forms.Label();
-            this.LblInfo2 = new System.Windows.Forms.Label();
-            this.LblInfo1 = new System.Windows.Forms.Label();
-            this.TxtWCID = new System.Windows.Forms.TextBox();
-            this.LblWCID = new System.Windows.Forms.Label();
-            this.ContextMenuStripWC = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.BtnRemove = new System.Windows.Forms.ToolStripMenuItem();
-            this.BtnRemoveAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.OpenFileDialogWC = new System.Windows.Forms.OpenFileDialog();
-            this.ToolTipWcid = new System.Windows.Forms.ToolTip(this.components);
-            this.GrpBCAT.SuspendLayout();
-            this.GrpContent.SuspendLayout();
-            this.ContextMenuStripWC.SuspendLayout();
-            this.SuspendLayout();
+            BtnLGPE = new Button();
+            BtnSWSH = new Button();
+            BtnBDSP = new Button();
+            BtnSCVI = new Button();
+            BtnPLA = new Button();
+            ListBoxWC = new ListBox();
+            BtnOpen = new Button();
+            BtnSave = new Button();
+            GrpBCAT = new GroupBox();
+            ChkRepeatable = new CheckBox();
+            BtnApply = new Button();
+            GrpContent = new GroupBox();
+            LblInfo7 = new Label();
+            LblInfo6 = new Label();
+            LblInfo5 = new Label();
+            LblInfo4 = new Label();
+            LblInfo3 = new Label();
+            LblInfo2 = new Label();
+            LblInfo1 = new Label();
+            TxtWCID = new TextBox();
+            LblWCID = new Label();
+            ContextMenuStripWC = new ContextMenuStrip(components);
+            BtnRemove = new ToolStripMenuItem();
+            BtnRemoveAll = new ToolStripMenuItem();
+            OpenFileDialogWC = new OpenFileDialog();
+            ToolTipWcid = new ToolTip(components);
+            GrpBCAT.SuspendLayout();
+            GrpContent.SuspendLayout();
+            ContextMenuStripWC.SuspendLayout();
+            SuspendLayout();
             // 
             // BtnLGPE
             // 
-            this.BtnLGPE.AccessibleDescription = "";
-            this.BtnLGPE.AccessibleName = "";
-            this.BtnLGPE.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLGPE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLGPE.Location = new System.Drawing.Point(5, 12);
-            this.BtnLGPE.Name = "BtnLGPE";
-            this.BtnLGPE.Size = new System.Drawing.Size(136, 60);
-            this.BtnLGPE.TabIndex = 0;
-            this.BtnLGPE.TabStop = false;
-            this.BtnLGPE.Text = "LGPE";
-            this.BtnLGPE.UseVisualStyleBackColor = true;
-            this.BtnLGPE.Click += new System.EventHandler(this.BtnLGPE_Click);
+            BtnLGPE.AccessibleDescription = "";
+            BtnLGPE.AccessibleName = "";
+            BtnLGPE.Cursor = Cursors.Hand;
+            BtnLGPE.FlatStyle = FlatStyle.Flat;
+            BtnLGPE.Location = new Point(5, 12);
+            BtnLGPE.Name = "BtnLGPE";
+            BtnLGPE.Size = new Size(136, 60);
+            BtnLGPE.TabIndex = 0;
+            BtnLGPE.TabStop = false;
+            BtnLGPE.Text = "LGPE";
+            BtnLGPE.UseVisualStyleBackColor = true;
+            BtnLGPE.Click += BtnLGPE_Click;
             // 
             // BtnSWSH
             // 
-            this.BtnSWSH.AccessibleDescription = "";
-            this.BtnSWSH.AccessibleName = "";
-            this.BtnSWSH.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSWSH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSWSH.Location = new System.Drawing.Point(147, 12);
-            this.BtnSWSH.Name = "BtnSWSH";
-            this.BtnSWSH.Size = new System.Drawing.Size(136, 60);
-            this.BtnSWSH.TabIndex = 1;
-            this.BtnSWSH.TabStop = false;
-            this.BtnSWSH.Text = "SWSH";
-            this.BtnSWSH.UseVisualStyleBackColor = true;
-            this.BtnSWSH.Click += new System.EventHandler(this.BtnSWSH_Click);
+            BtnSWSH.AccessibleDescription = "";
+            BtnSWSH.AccessibleName = "";
+            BtnSWSH.Cursor = Cursors.Hand;
+            BtnSWSH.FlatStyle = FlatStyle.Flat;
+            BtnSWSH.Location = new Point(147, 12);
+            BtnSWSH.Name = "BtnSWSH";
+            BtnSWSH.Size = new Size(136, 60);
+            BtnSWSH.TabIndex = 1;
+            BtnSWSH.TabStop = false;
+            BtnSWSH.Text = "SWSH";
+            BtnSWSH.UseVisualStyleBackColor = true;
+            BtnSWSH.Click += BtnSWSH_Click;
             // 
             // BtnBDSP
             // 
-            this.BtnBDSP.AccessibleDescription = "";
-            this.BtnBDSP.AccessibleName = "";
-            this.BtnBDSP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBDSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBDSP.Location = new System.Drawing.Point(289, 12);
-            this.BtnBDSP.Name = "BtnBDSP";
-            this.BtnBDSP.Size = new System.Drawing.Size(136, 60);
-            this.BtnBDSP.TabIndex = 2;
-            this.BtnBDSP.TabStop = false;
-            this.BtnBDSP.Text = "BDSP";
-            this.BtnBDSP.UseVisualStyleBackColor = true;
-            this.BtnBDSP.Click += new System.EventHandler(this.BtnBDSP_Click);
+            BtnBDSP.AccessibleDescription = "";
+            BtnBDSP.AccessibleName = "";
+            BtnBDSP.Cursor = Cursors.Hand;
+            BtnBDSP.FlatStyle = FlatStyle.Flat;
+            BtnBDSP.Location = new Point(289, 12);
+            BtnBDSP.Name = "BtnBDSP";
+            BtnBDSP.Size = new Size(136, 60);
+            BtnBDSP.TabIndex = 2;
+            BtnBDSP.TabStop = false;
+            BtnBDSP.Text = "BDSP";
+            BtnBDSP.UseVisualStyleBackColor = true;
+            BtnBDSP.Click += BtnBDSP_Click;
             // 
             // BtnSCVI
             // 
-            this.BtnSCVI.AccessibleDescription = "";
-            this.BtnSCVI.AccessibleName = "";
-            this.BtnSCVI.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSCVI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSCVI.Location = new System.Drawing.Point(573, 12);
-            this.BtnSCVI.Name = "BtnSCVI";
-            this.BtnSCVI.Size = new System.Drawing.Size(136, 60);
-            this.BtnSCVI.TabIndex = 3;
-            this.BtnSCVI.TabStop = false;
-            this.BtnSCVI.Text = "SCVI";
-            this.BtnSCVI.UseVisualStyleBackColor = true;
-            this.BtnSCVI.Click += new System.EventHandler(this.BtnSCVI_Click);
+            BtnSCVI.AccessibleDescription = "";
+            BtnSCVI.AccessibleName = "";
+            BtnSCVI.Cursor = Cursors.Hand;
+            BtnSCVI.FlatStyle = FlatStyle.Flat;
+            BtnSCVI.Location = new Point(573, 12);
+            BtnSCVI.Name = "BtnSCVI";
+            BtnSCVI.Size = new Size(136, 60);
+            BtnSCVI.TabIndex = 3;
+            BtnSCVI.TabStop = false;
+            BtnSCVI.Text = "SCVI";
+            BtnSCVI.UseVisualStyleBackColor = true;
+            BtnSCVI.Click += BtnSCVI_Click;
             // 
             // BtnPLA
             // 
-            this.BtnPLA.AccessibleDescription = "";
-            this.BtnPLA.AccessibleName = "";
-            this.BtnPLA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPLA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPLA.Location = new System.Drawing.Point(431, 12);
-            this.BtnPLA.Name = "BtnPLA";
-            this.BtnPLA.Size = new System.Drawing.Size(136, 60);
-            this.BtnPLA.TabIndex = 4;
-            this.BtnPLA.TabStop = false;
-            this.BtnPLA.Text = "PLA";
-            this.BtnPLA.UseVisualStyleBackColor = true;
-            this.BtnPLA.Click += new System.EventHandler(this.BtnPLA_Click);
+            BtnPLA.AccessibleDescription = "";
+            BtnPLA.AccessibleName = "";
+            BtnPLA.Cursor = Cursors.Hand;
+            BtnPLA.FlatStyle = FlatStyle.Flat;
+            BtnPLA.Location = new Point(431, 12);
+            BtnPLA.Name = "BtnPLA";
+            BtnPLA.Size = new Size(136, 60);
+            BtnPLA.TabIndex = 4;
+            BtnPLA.TabStop = false;
+            BtnPLA.Text = "PLA";
+            BtnPLA.UseVisualStyleBackColor = true;
+            BtnPLA.Click += BtnPLA_Click;
             // 
             // ListBoxWC
             // 
-            this.ListBoxWC.AllowDrop = true;
-            this.ListBoxWC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ListBoxWC.FormattingEnabled = true;
-            this.ListBoxWC.ItemHeight = 20;
-            this.ListBoxWC.Location = new System.Drawing.Point(7, 96);
-            this.ListBoxWC.Name = "ListBoxWC";
-            this.ListBoxWC.Size = new System.Drawing.Size(214, 304);
-            this.ListBoxWC.TabIndex = 5;
-            this.ToolTipWcid.SetToolTip(this.ListBoxWC, "                        Wondercards with duplicated WC ID will not be seen by the" +
-        " game.                        ");
-            this.ListBoxWC.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ListBoxWC_DrawItem);
-            this.ListBoxWC.SelectedIndexChanged += new System.EventHandler(this.ListBoxWC_SelectedIndexChanged);
-            this.ListBoxWC.DragDrop += new System.Windows.Forms.DragEventHandler(this.FileDragDrop);
-            this.ListBoxWC.DragEnter += new System.Windows.Forms.DragEventHandler(this.FileDragEnter);
-            this.ListBoxWC.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBoxWC_MouseUp);
+            ListBoxWC.AllowDrop = true;
+            ListBoxWC.DrawMode = DrawMode.OwnerDrawFixed;
+            ListBoxWC.FormattingEnabled = true;
+            ListBoxWC.ItemHeight = 20;
+            ListBoxWC.Location = new Point(7, 96);
+            ListBoxWC.Name = "ListBoxWC";
+            ListBoxWC.Size = new Size(214, 304);
+            ListBoxWC.TabIndex = 5;
+            ToolTipWcid.SetToolTip(ListBoxWC, "                        Wondercards with duplicated WC ID will not be seen by the game.                        ");
+            ListBoxWC.DrawItem += ListBoxWC_DrawItem;
+            ListBoxWC.SelectedIndexChanged += ListBoxWC_SelectedIndexChanged;
+            ListBoxWC.DragDrop += FileDragDrop;
+            ListBoxWC.DragEnter += FileDragEnter;
+            ListBoxWC.MouseUp += ListBoxWC_MouseUp;
             // 
             // BtnOpen
             // 
-            this.BtnOpen.Location = new System.Drawing.Point(7, 26);
-            this.BtnOpen.Name = "BtnOpen";
-            this.BtnOpen.Size = new System.Drawing.Size(214, 29);
-            this.BtnOpen.TabIndex = 6;
-            this.BtnOpen.Text = "Open Wondercard Files...";
-            this.BtnOpen.UseVisualStyleBackColor = true;
-            this.BtnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
+            BtnOpen.Location = new Point(7, 26);
+            BtnOpen.Name = "BtnOpen";
+            BtnOpen.Size = new Size(214, 29);
+            BtnOpen.TabIndex = 6;
+            BtnOpen.Text = "Open Wondercard Files...";
+            BtnOpen.UseVisualStyleBackColor = true;
+            BtnOpen.Click += BtnOpen_Click;
             // 
             // BtnSave
             // 
-            this.BtnSave.Enabled = false;
-            this.BtnSave.Location = new System.Drawing.Point(6, 61);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(214, 29);
-            this.BtnSave.TabIndex = 7;
-            this.BtnSave.Text = "Save as BCAT Package...";
-            this.BtnSave.UseVisualStyleBackColor = true;
-            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            BtnSave.Enabled = false;
+            BtnSave.Location = new Point(6, 61);
+            BtnSave.Name = "BtnSave";
+            BtnSave.Size = new Size(214, 29);
+            BtnSave.TabIndex = 7;
+            BtnSave.Text = "Save as BCAT Package...";
+            BtnSave.UseVisualStyleBackColor = true;
+            BtnSave.Click += BtnSave_Click;
             // 
             // GrpBCAT
             // 
-            this.GrpBCAT.Controls.Add(this.BtnApply);
-            this.GrpBCAT.Controls.Add(this.GrpContent);
-            this.GrpBCAT.Controls.Add(this.TxtWCID);
-            this.GrpBCAT.Controls.Add(this.LblWCID);
-            this.GrpBCAT.Controls.Add(this.ListBoxWC);
-            this.GrpBCAT.Controls.Add(this.BtnSave);
-            this.GrpBCAT.Controls.Add(this.BtnOpen);
-            this.GrpBCAT.Enabled = false;
-            this.GrpBCAT.Location = new System.Drawing.Point(5, 78);
-            this.GrpBCAT.Name = "GrpBCAT";
-            this.GrpBCAT.Size = new System.Drawing.Size(704, 409);
-            this.GrpBCAT.TabIndex = 8;
-            this.GrpBCAT.TabStop = false;
-            this.GrpBCAT.Text = "BCAT Manager";
+            GrpBCAT.Controls.Add(ChkRepeatable);
+            GrpBCAT.Controls.Add(BtnApply);
+            GrpBCAT.Controls.Add(GrpContent);
+            GrpBCAT.Controls.Add(TxtWCID);
+            GrpBCAT.Controls.Add(LblWCID);
+            GrpBCAT.Controls.Add(ListBoxWC);
+            GrpBCAT.Controls.Add(BtnSave);
+            GrpBCAT.Controls.Add(BtnOpen);
+            GrpBCAT.Enabled = false;
+            GrpBCAT.Location = new Point(5, 78);
+            GrpBCAT.Name = "GrpBCAT";
+            GrpBCAT.Size = new Size(704, 409);
+            GrpBCAT.TabIndex = 8;
+            GrpBCAT.TabStop = false;
+            GrpBCAT.Text = "BCAT Manager";
+            // 
+            // ChkRepeatable
+            // 
+            ChkRepeatable.AutoSize = true;
+            ChkRepeatable.Location = new Point(510, 69);
+            ChkRepeatable.Name = "ChkRepeatable";
+            ChkRepeatable.Size = new Size(121, 24);
+            ChkRepeatable.TabIndex = 12;
+            ChkRepeatable.Text = "Is Repeatable";
+            ChkRepeatable.UseVisualStyleBackColor = true;
+            ChkRepeatable.CheckedChanged += ChkRepeatable_CheckedChanged;
             // 
             // BtnApply
             // 
-            this.BtnApply.Enabled = false;
-            this.BtnApply.Location = new System.Drawing.Point(426, 368);
-            this.BtnApply.Name = "BtnApply";
-            this.BtnApply.Size = new System.Drawing.Size(97, 32);
-            this.BtnApply.TabIndex = 11;
-            this.BtnApply.Text = "Apply";
-            this.BtnApply.UseVisualStyleBackColor = true;
-            this.BtnApply.Click += new System.EventHandler(this.BtnApply_Click);
+            BtnApply.Enabled = false;
+            BtnApply.Location = new Point(426, 368);
+            BtnApply.Name = "BtnApply";
+            BtnApply.Size = new Size(97, 32);
+            BtnApply.TabIndex = 11;
+            BtnApply.Text = "Apply";
+            BtnApply.UseVisualStyleBackColor = true;
+            BtnApply.Click += BtnApply_Click;
             // 
             // GrpContent
             // 
-            this.GrpContent.Controls.Add(this.LblInfo7);
-            this.GrpContent.Controls.Add(this.LblInfo6);
-            this.GrpContent.Controls.Add(this.LblInfo5);
-            this.GrpContent.Controls.Add(this.LblInfo4);
-            this.GrpContent.Controls.Add(this.LblInfo3);
-            this.GrpContent.Controls.Add(this.LblInfo2);
-            this.GrpContent.Controls.Add(this.LblInfo1);
-            this.GrpContent.Enabled = false;
-            this.GrpContent.Location = new System.Drawing.Point(294, 99);
-            this.GrpContent.Name = "GrpContent";
-            this.GrpContent.Size = new System.Drawing.Size(358, 263);
-            this.GrpContent.TabIndex = 10;
-            this.GrpContent.TabStop = false;
-            this.GrpContent.Text = "Gift Content";
+            GrpContent.Controls.Add(LblInfo7);
+            GrpContent.Controls.Add(LblInfo6);
+            GrpContent.Controls.Add(LblInfo5);
+            GrpContent.Controls.Add(LblInfo4);
+            GrpContent.Controls.Add(LblInfo3);
+            GrpContent.Controls.Add(LblInfo2);
+            GrpContent.Controls.Add(LblInfo1);
+            GrpContent.Enabled = false;
+            GrpContent.Location = new Point(294, 99);
+            GrpContent.Name = "GrpContent";
+            GrpContent.Size = new Size(358, 263);
+            GrpContent.TabIndex = 10;
+            GrpContent.TabStop = false;
+            GrpContent.Text = "Gift Content";
             // 
             // LblInfo7
             // 
-            this.LblInfo7.AutoSize = true;
-            this.LblInfo7.Location = new System.Drawing.Point(158, 230);
-            this.LblInfo7.Name = "LblInfo7";
-            this.LblInfo7.Size = new System.Drawing.Size(49, 20);
-            this.LblInfo7.TabIndex = 6;
-            this.LblInfo7.Text = "Info_7";
-            this.LblInfo7.Visible = false;
-            this.LblInfo7.SizeChanged += new System.EventHandler(this.LblInfo_SizeChanged);
+            LblInfo7.AutoSize = true;
+            LblInfo7.Location = new Point(158, 230);
+            LblInfo7.Name = "LblInfo7";
+            LblInfo7.Size = new Size(49, 20);
+            LblInfo7.TabIndex = 6;
+            LblInfo7.Text = "Info_7";
+            LblInfo7.Visible = false;
+            LblInfo7.SizeChanged += LblInfo_SizeChanged;
             // 
             // LblInfo6
             // 
-            this.LblInfo6.AutoSize = true;
-            this.LblInfo6.Location = new System.Drawing.Point(158, 198);
-            this.LblInfo6.Name = "LblInfo6";
-            this.LblInfo6.Size = new System.Drawing.Size(49, 20);
-            this.LblInfo6.TabIndex = 5;
-            this.LblInfo6.Text = "Info_6";
-            this.LblInfo6.Visible = false;
-            this.LblInfo6.SizeChanged += new System.EventHandler(this.LblInfo_SizeChanged);
+            LblInfo6.AutoSize = true;
+            LblInfo6.Location = new Point(158, 198);
+            LblInfo6.Name = "LblInfo6";
+            LblInfo6.Size = new Size(49, 20);
+            LblInfo6.TabIndex = 5;
+            LblInfo6.Text = "Info_6";
+            LblInfo6.Visible = false;
+            LblInfo6.SizeChanged += LblInfo_SizeChanged;
             // 
             // LblInfo5
             // 
-            this.LblInfo5.AutoSize = true;
-            this.LblInfo5.Location = new System.Drawing.Point(158, 165);
-            this.LblInfo5.Name = "LblInfo5";
-            this.LblInfo5.Size = new System.Drawing.Size(49, 20);
-            this.LblInfo5.TabIndex = 4;
-            this.LblInfo5.Text = "Info_5";
-            this.LblInfo5.Visible = false;
-            this.LblInfo5.SizeChanged += new System.EventHandler(this.LblInfo_SizeChanged);
+            LblInfo5.AutoSize = true;
+            LblInfo5.Location = new Point(158, 165);
+            LblInfo5.Name = "LblInfo5";
+            LblInfo5.Size = new Size(49, 20);
+            LblInfo5.TabIndex = 4;
+            LblInfo5.Text = "Info_5";
+            LblInfo5.Visible = false;
+            LblInfo5.SizeChanged += LblInfo_SizeChanged;
             // 
             // LblInfo4
             // 
-            this.LblInfo4.AutoSize = true;
-            this.LblInfo4.Location = new System.Drawing.Point(158, 132);
-            this.LblInfo4.Name = "LblInfo4";
-            this.LblInfo4.Size = new System.Drawing.Size(49, 20);
-            this.LblInfo4.TabIndex = 3;
-            this.LblInfo4.Text = "Info_4";
-            this.LblInfo4.Visible = false;
-            this.LblInfo4.SizeChanged += new System.EventHandler(this.LblInfo_SizeChanged);
+            LblInfo4.AutoSize = true;
+            LblInfo4.Location = new Point(158, 132);
+            LblInfo4.Name = "LblInfo4";
+            LblInfo4.Size = new Size(49, 20);
+            LblInfo4.TabIndex = 3;
+            LblInfo4.Text = "Info_4";
+            LblInfo4.Visible = false;
+            LblInfo4.SizeChanged += LblInfo_SizeChanged;
             // 
             // LblInfo3
             // 
-            this.LblInfo3.AutoSize = true;
-            this.LblInfo3.Location = new System.Drawing.Point(158, 99);
-            this.LblInfo3.Name = "LblInfo3";
-            this.LblInfo3.Size = new System.Drawing.Size(49, 20);
-            this.LblInfo3.TabIndex = 2;
-            this.LblInfo3.Text = "Info_3";
-            this.LblInfo3.Visible = false;
-            this.LblInfo3.SizeChanged += new System.EventHandler(this.LblInfo_SizeChanged);
+            LblInfo3.AutoSize = true;
+            LblInfo3.Location = new Point(158, 99);
+            LblInfo3.Name = "LblInfo3";
+            LblInfo3.Size = new Size(49, 20);
+            LblInfo3.TabIndex = 2;
+            LblInfo3.Text = "Info_3";
+            LblInfo3.Visible = false;
+            LblInfo3.SizeChanged += LblInfo_SizeChanged;
             // 
             // LblInfo2
             // 
-            this.LblInfo2.AutoSize = true;
-            this.LblInfo2.Location = new System.Drawing.Point(158, 66);
-            this.LblInfo2.Name = "LblInfo2";
-            this.LblInfo2.Size = new System.Drawing.Size(49, 20);
-            this.LblInfo2.TabIndex = 1;
-            this.LblInfo2.Text = "Info_2";
-            this.LblInfo2.Visible = false;
-            this.LblInfo2.SizeChanged += new System.EventHandler(this.LblInfo_SizeChanged);
+            LblInfo2.AutoSize = true;
+            LblInfo2.Location = new Point(158, 66);
+            LblInfo2.Name = "LblInfo2";
+            LblInfo2.Size = new Size(49, 20);
+            LblInfo2.TabIndex = 1;
+            LblInfo2.Text = "Info_2";
+            LblInfo2.Visible = false;
+            LblInfo2.SizeChanged += LblInfo_SizeChanged;
             // 
             // LblInfo1
             // 
-            this.LblInfo1.AutoSize = true;
-            this.LblInfo1.Location = new System.Drawing.Point(158, 33);
-            this.LblInfo1.Name = "LblInfo1";
-            this.LblInfo1.Size = new System.Drawing.Size(49, 20);
-            this.LblInfo1.TabIndex = 0;
-            this.LblInfo1.Text = "Info_1";
-            this.LblInfo1.Visible = false;
-            this.LblInfo1.SizeChanged += new System.EventHandler(this.LblInfo_SizeChanged);
+            LblInfo1.AutoSize = true;
+            LblInfo1.Location = new Point(158, 33);
+            LblInfo1.Name = "LblInfo1";
+            LblInfo1.Size = new Size(49, 20);
+            LblInfo1.TabIndex = 0;
+            LblInfo1.Text = "Info_1";
+            LblInfo1.Visible = false;
+            LblInfo1.SizeChanged += LblInfo_SizeChanged;
             // 
             // TxtWCID
             // 
-            this.TxtWCID.Enabled = false;
-            this.TxtWCID.Location = new System.Drawing.Point(435, 63);
-            this.TxtWCID.MaxLength = 4;
-            this.TxtWCID.Name = "TxtWCID";
-            this.TxtWCID.Size = new System.Drawing.Size(115, 27);
-            this.TxtWCID.TabIndex = 9;
-            this.TxtWCID.TextChanged += new System.EventHandler(this.TxtWCID_TextChanged);
-            this.TxtWCID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtWCID_KeyPress);
+            TxtWCID.Enabled = false;
+            TxtWCID.Location = new Point(379, 66);
+            TxtWCID.MaxLength = 4;
+            TxtWCID.Name = "TxtWCID";
+            TxtWCID.Size = new Size(115, 27);
+            TxtWCID.TabIndex = 9;
+            TxtWCID.TextChanged += TxtWCID_TextChanged;
+            TxtWCID.KeyPress += TxtWCID_KeyPress;
             // 
             // LblWCID
             // 
-            this.LblWCID.AutoSize = true;
-            this.LblWCID.Enabled = false;
-            this.LblWCID.Location = new System.Drawing.Point(375, 66);
-            this.LblWCID.Name = "LblWCID";
-            this.LblWCID.Size = new System.Drawing.Size(54, 20);
-            this.LblWCID.TabIndex = 8;
-            this.LblWCID.Text = "WC ID:";
+            LblWCID.AutoSize = true;
+            LblWCID.Enabled = false;
+            LblWCID.Location = new Point(319, 69);
+            LblWCID.Name = "LblWCID";
+            LblWCID.Size = new Size(54, 20);
+            LblWCID.TabIndex = 8;
+            LblWCID.Text = "WC ID:";
             // 
             // ContextMenuStripWC
             // 
-            this.ContextMenuStripWC.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.ContextMenuStripWC.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BtnRemove,
-            this.BtnRemoveAll});
-            this.ContextMenuStripWC.Name = "ConextMenuStripWC";
-            this.ContextMenuStripWC.Size = new System.Drawing.Size(155, 52);
-            this.ContextMenuStripWC.Text = "Remove";
+            ContextMenuStripWC.ImageScalingSize = new Size(20, 20);
+            ContextMenuStripWC.Items.AddRange(new ToolStripItem[] { BtnRemove, BtnRemoveAll });
+            ContextMenuStripWC.Name = "ConextMenuStripWC";
+            ContextMenuStripWC.Size = new Size(155, 52);
+            ContextMenuStripWC.Text = "Remove";
             // 
             // BtnRemove
             // 
-            this.BtnRemove.Name = "BtnRemove";
-            this.BtnRemove.Size = new System.Drawing.Size(154, 24);
-            this.BtnRemove.Text = "Remove";
-            this.BtnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
+            BtnRemove.Name = "BtnRemove";
+            BtnRemove.Size = new Size(154, 24);
+            BtnRemove.Text = "Remove";
+            BtnRemove.Click += BtnRemove_Click;
             // 
             // BtnRemoveAll
             // 
-            this.BtnRemoveAll.Name = "BtnRemoveAll";
-            this.BtnRemoveAll.Size = new System.Drawing.Size(154, 24);
-            this.BtnRemoveAll.Text = "Remove All";
-            this.BtnRemoveAll.Click += new System.EventHandler(this.BtnRemoveAll_Click);
+            BtnRemoveAll.Name = "BtnRemoveAll";
+            BtnRemoveAll.Size = new Size(154, 24);
+            BtnRemoveAll.Text = "Remove All";
+            BtnRemoveAll.Click += BtnRemoveAll_Click;
             // 
             // OpenFileDialogWC
             // 
-            this.OpenFileDialogWC.Multiselect = true;
+            OpenFileDialogWC.Multiselect = true;
             // 
             // ToolTipWcid
             // 
-            this.ToolTipWcid.AutoPopDelay = 100000;
-            this.ToolTipWcid.InitialDelay = 500;
-            this.ToolTipWcid.OwnerDraw = true;
-            this.ToolTipWcid.ReshowDelay = 100;
-            this.ToolTipWcid.UseAnimation = false;
-            this.ToolTipWcid.UseFading = false;
-            this.ToolTipWcid.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.ToolTipWcid_Draw);
+            ToolTipWcid.AutoPopDelay = 100000;
+            ToolTipWcid.InitialDelay = 500;
+            ToolTipWcid.OwnerDraw = true;
+            ToolTipWcid.ReshowDelay = 100;
+            ToolTipWcid.UseAnimation = false;
+            ToolTipWcid.UseFading = false;
+            ToolTipWcid.Draw += ToolTipWcid_Draw;
             // 
             // MainWindow
             // 
-            this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 495);
-            this.Controls.Add(this.GrpBCAT);
-            this.Controls.Add(this.BtnPLA);
-            this.Controls.Add(this.BtnSCVI);
-            this.Controls.Add(this.BtnBDSP);
-            this.Controls.Add(this.BtnSWSH);
-            this.Controls.Add(this.BtnLGPE);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "MainWindow";
-            this.Text = "Switch Gift Data Manager v";
-            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.FileDragDrop);
-            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.FileDragEnter);
-            this.GrpBCAT.ResumeLayout(false);
-            this.GrpBCAT.PerformLayout();
-            this.GrpContent.ResumeLayout(false);
-            this.GrpContent.PerformLayout();
-            this.ContextMenuStripWC.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AllowDrop = true;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(715, 495);
+            Controls.Add(GrpBCAT);
+            Controls.Add(BtnPLA);
+            Controls.Add(BtnSCVI);
+            Controls.Add(BtnBDSP);
+            Controls.Add(BtnSWSH);
+            Controls.Add(BtnLGPE);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "MainWindow";
+            Text = "Switch Gift Data Manager v";
+            DragDrop += FileDragDrop;
+            DragEnter += FileDragEnter;
+            GrpBCAT.ResumeLayout(false);
+            GrpBCAT.PerformLayout();
+            GrpContent.ResumeLayout(false);
+            GrpContent.PerformLayout();
+            ContextMenuStripWC.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
@@ -410,5 +419,6 @@
         private ToolTip ToolTipWcid;
         private Label LblInfo7;
         private Label LblInfo6;
+        private CheckBox ChkRepeatable;
     }
 }

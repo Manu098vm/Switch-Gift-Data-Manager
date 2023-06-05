@@ -92,19 +92,34 @@ namespace SwitchGiftDataManager.Core
 
         public void SetWCID(int index, ushort wcid)
         {
-            if (WCList is not null && WCList.Count >= index && WCList.Count >= index)
+            if (WCList is not null && WCList.Count > 0 && WCList.Count >= index - 1 && index >= 0)
             {
                 var wc = WCList.ElementAt(index);
                 wc.SetID(wcid);
-                wc.UpdateChecksum();
             }
         }
 
         public ushort GetWCID(int index)
         {
-            if (WCList is not null && WCList.Count >= index && WCList.Count >= index)
+            if (WCList is not null && WCList.Count > 0 && WCList.Count >= index - 1 && index >= 0)
                 return WCList.ElementAt(index).WCID;
             return 0;
+        }
+
+        public void SetIsRepeatable(int index, bool repeatable)
+        {
+            if (WCList is not null && WCList.Count > 0 && WCList.Count >= index - 1 && index >= 0)
+            {
+                var wc = WCList.ElementAt(index);
+                wc.SetRepeatable(repeatable);
+            }
+        }
+
+        public bool GetIsRepeatable(int index)
+        {
+            if (WCList is not null && WCList.Count > 0 && WCList.Count >= index - 1 && index >= 0)
+                return WCList.ElementAt(index).IsRepeatable;
+            return false;
         }
 
         public int GetIndex(ushort wcid)
