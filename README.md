@@ -43,8 +43,11 @@ If you experience a desync, follow one of these methods to resync:
 * Open JKSV, select BCAT, hover over your game and press X to open the menu, then click `Reset Save Data`. 
 * Download the latest BCAT for your game from my [bcat_updates](https://github.com/Manu098vm/bcat_updates) repo or from [citrusbolt](https://github.com/citrusbolt)'s [website](http://citrusbolt.net/bcat/) and add the missing files to your dumped BCAT, then restore it with JKSV.
 
-If you find any bug or you need support, please write in the [relevant topic in the Project Pokémon forums](https://projectpokemon.org/home/forums/topic/62491-switch-gift-data-manager-import-wondercards-into-switch-games-by-faking-bcat-packages/).
-Alternatively, feel free to contact me on Discord by DMs (SkyLink98#5946 - **only for bug reports**) or in my [server](https://discord.gg/F9nMfvw9sS).
+## Support/Troubleshooting
+If you find any bug or you need support, please write in the [relevant topic on the Project Pokémon forums](https://projectpokemon.org/home/forums/topic/62491-switch-gift-data-manager-import-wondercards-into-switch-games-by-faking-bcat-packages/).
+Alternatively, feel free to contact me in my [Discord server](https://discord.gg/yWveAjKbKt).
+
+[<img src="https://canary.discordapp.com/api/guilds/693083823197519873/widget.png?style=banner2">](https://discord.gg/yWveAjKbKt)
 
 ## Building
 * All the Switch Gift Data Manager projects require .NET 7.0.
@@ -54,12 +57,6 @@ Alternatively, feel free to contact me on Discord by DMs (SkyLink98#5946 - **onl
 * To build the projects, open the .sln file in the root directory with an IDE such as Visual Studio 2022, click `Build` -> `Build Solution`.
 
 The .CommandLine project is currently just a simple script that calls the .Core functionalities and can run on any popular OS. Feel free to improve it and/or submit a pull request if you'd like :-)
-
-## Support/Troubleshooting
-If you find any bug or you need support, please write in the [relevant topic on the Project Pokémon forums](https://projectpokemon.org/home/forums/topic/62491-switch-gift-data-manager-import-wondercards-into-switch-games-by-faking-bcat-packages/).
-Alternatively, feel free to contact me in my [Discord server](https://discord.gg/yWveAjKbKt).
-
-[<img src="https://canary.discordapp.com/api/guilds/693083823197519873/widget.png?style=banner2">](https://discord.gg/yWveAjKbKt)
 
 ## Credits
 * [PNZeml](https://github.com/PNZeml) for the CRC-16/CCITT-FALSE with lookup table [implementation](https://gist.github.com/tijnkooijmans/10981093?permalink_comment_id=3996072#gistcomment-3996072)
