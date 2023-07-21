@@ -305,7 +305,7 @@ public partial class MainWindow : Form
             var str = ListBoxWC.Items[hoveredIndex].ToString()!;
             if (str.Contains('\u26A0'))
             {
-                var msg = "Wondercards with duplicated identifiers may cause issues and will not be seen by the game.";
+                var msg = "Wondercards with duplicated identifiers may not be detected correctly by the games.";
                 e.DrawBackground();
                 Graphics g = e.Graphics;
                 g.DrawString(msg, e.Font!, new SolidBrush(Color.Black), new PointF(e.Bounds.X, e.Bounds.Y));
