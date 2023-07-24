@@ -2,6 +2,10 @@ using System.Text.RegularExpressions;
 using SwitchGiftDataManager.Core;
 using Enums;
 using System.Diagnostics;
+using System.IO.Compression;
+using System.Net;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace SwitchGiftDataManager.WinForm;
 
@@ -447,5 +451,64 @@ public partial class MainWindow : Form
         GrpContent.Enabled = false;
         ChkRepeatable.Checked = false;
         ChkRepeatable.Enabled = false;
+    }
+
+    private void MenuItemMGDB_Click(object sender, EventArgs e)
+    {
+        Task.Run(async () => await DownloadRepoMGDB()).Wait();
+    }
+
+    private static async Task DownloadRepoMGDB()
+    {
+        var url = "https://github.com/projectpokemon/EventsGallery/archive/refs/heads/master.zip";
+        using (var client = new HttpClient())
+        {
+            var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
+            var mgdbPath = Path.Combine(path, "mgdb");
+
+            if (Directory.Exists(mgdbPath))
+                Directory.Delete(mgdbPath, true);
+
+            var zipPath = Path.Combine(path, "repo.zip");
+            using (var response = await client.GetAsync(url))
+            {
+                using (var content = await response.Content.ReadAsStreamAsync())
+                {
+                    using (var stream = new FileStream(zipPath, FileMode.Create, FileAccess.Write, FileShare.None))
+                    {
+                        await content.CopyToAsync(stream);
+                    }
+                }
+            }
+
+            ZipFile.ExtractToDirectory(zipPath, path);
+            File.Delete(zipPath);
+            Directory.Move(Path.Combine(path, "EventsGallery-master"), mgdbPath);
+
+            File.Delete(Path.Combine(mgdbPath, ".gitignore"));
+            Directory.Delete(Path.Combine(mgdbPath, "Extras"), true);
+            Directory.Delete(Path.Combine(mgdbPath, "Unreleased"), true);
+
+            var genPath = Path.Combine(mgdbPath, "Released");
+            Directory.Delete(Path.Combine(genPath, "Gen 1"), true);
+            Directory.Delete(Path.Combine(genPath, "Gen 2"), true);
+            Directory.Delete(Path.Combine(genPath, "Gen 3"), true);
+            Directory.Delete(Path.Combine(genPath, "Gen 4"), true);
+            Directory.Delete(Path.Combine(genPath, "Gen 5"), true);
+            Directory.Delete(Path.Combine(genPath, "Gen 6"), true);
+
+            var gen7Path = Path.Combine(genPath, "Gen 7");
+            Directory.Delete(Path.Combine(gen7Path, "3DS"), true);
+            Directory.Delete(Path.Combine(Path.Combine(gen7Path, "Switch"), "Wondercard Records"), true);
+
+            var swshPath = Path.Combine(Path.Combine(genPath, "Gen 8"), "SwSh");
+            Directory.Delete(Path.Combine(swshPath, "Wild Area Events"), true);
+
+            var gen9Path = Path.Combine(genPath, "Gen 9");
+            Directory.Delete(Path.Combine(gen9Path, "Raid Events"), true);
+
+            MessageBox.Show($"The Mystery Gift Database has been downloaded in {mgdbPath}", "MGDB", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+        }
     }
 }

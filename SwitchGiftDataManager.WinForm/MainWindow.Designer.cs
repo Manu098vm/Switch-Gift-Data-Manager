@@ -56,9 +56,13 @@ partial class MainWindow
         BtnRemoveAll = new ToolStripMenuItem();
         OpenFileDialogWC = new OpenFileDialog();
         ToolTipWcid = new ToolTip(components);
+        MenuStrip = new MenuStrip();
+        ToolsToolStripMenu = new ToolStripMenuItem();
+        MenuItemMGDB = new ToolStripMenuItem();
         GrpBCAT.SuspendLayout();
         GrpContent.SuspendLayout();
         ContextMenuStripWC.SuspendLayout();
+        MenuStrip.SuspendLayout();
         SuspendLayout();
         // 
         // BtnLGPE
@@ -67,7 +71,7 @@ partial class MainWindow
         BtnLGPE.AccessibleName = "";
         BtnLGPE.Cursor = Cursors.Hand;
         BtnLGPE.FlatStyle = FlatStyle.Flat;
-        BtnLGPE.Location = new Point(5, 12);
+        BtnLGPE.Location = new Point(5, 37);
         BtnLGPE.Name = "BtnLGPE";
         BtnLGPE.Size = new Size(136, 60);
         BtnLGPE.TabIndex = 0;
@@ -82,7 +86,7 @@ partial class MainWindow
         BtnSWSH.AccessibleName = "";
         BtnSWSH.Cursor = Cursors.Hand;
         BtnSWSH.FlatStyle = FlatStyle.Flat;
-        BtnSWSH.Location = new Point(147, 12);
+        BtnSWSH.Location = new Point(147, 37);
         BtnSWSH.Name = "BtnSWSH";
         BtnSWSH.Size = new Size(136, 60);
         BtnSWSH.TabIndex = 1;
@@ -97,7 +101,7 @@ partial class MainWindow
         BtnBDSP.AccessibleName = "";
         BtnBDSP.Cursor = Cursors.Hand;
         BtnBDSP.FlatStyle = FlatStyle.Flat;
-        BtnBDSP.Location = new Point(289, 12);
+        BtnBDSP.Location = new Point(289, 37);
         BtnBDSP.Name = "BtnBDSP";
         BtnBDSP.Size = new Size(136, 60);
         BtnBDSP.TabIndex = 2;
@@ -112,7 +116,7 @@ partial class MainWindow
         BtnSCVI.AccessibleName = "";
         BtnSCVI.Cursor = Cursors.Hand;
         BtnSCVI.FlatStyle = FlatStyle.Flat;
-        BtnSCVI.Location = new Point(573, 12);
+        BtnSCVI.Location = new Point(573, 37);
         BtnSCVI.Name = "BtnSCVI";
         BtnSCVI.Size = new Size(136, 60);
         BtnSCVI.TabIndex = 3;
@@ -127,7 +131,7 @@ partial class MainWindow
         BtnPLA.AccessibleName = "";
         BtnPLA.Cursor = Cursors.Hand;
         BtnPLA.FlatStyle = FlatStyle.Flat;
-        BtnPLA.Location = new Point(431, 12);
+        BtnPLA.Location = new Point(431, 37);
         BtnPLA.Name = "BtnPLA";
         BtnPLA.Size = new Size(136, 60);
         BtnPLA.TabIndex = 4;
@@ -185,7 +189,7 @@ partial class MainWindow
         GrpBCAT.Controls.Add(BtnSave);
         GrpBCAT.Controls.Add(BtnOpen);
         GrpBCAT.Enabled = false;
-        GrpBCAT.Location = new Point(5, 78);
+        GrpBCAT.Location = new Point(5, 103);
         GrpBCAT.Name = "GrpBCAT";
         GrpBCAT.Size = new Size(704, 409);
         GrpBCAT.TabIndex = 8;
@@ -365,12 +369,38 @@ partial class MainWindow
         ToolTipWcid.UseFading = false;
         ToolTipWcid.Draw += ToolTipWcid_Draw;
         // 
+        // MenuStrip
+        // 
+        MenuStrip.BackColor = SystemColors.ButtonFace;
+        MenuStrip.ImageScalingSize = new Size(20, 20);
+        MenuStrip.Items.AddRange(new ToolStripItem[] { ToolsToolStripMenu });
+        MenuStrip.Location = new Point(0, 0);
+        MenuStrip.Name = "MenuStrip";
+        MenuStrip.Size = new Size(715, 28);
+        MenuStrip.TabIndex = 9;
+        MenuStrip.Text = "menuStrip1";
+        // 
+        // ToolsToolStripMenu
+        // 
+        ToolsToolStripMenu.DropDownItems.AddRange(new ToolStripItem[] { MenuItemMGDB });
+        ToolsToolStripMenu.Name = "ToolsToolStripMenu";
+        ToolsToolStripMenu.Size = new Size(58, 24);
+        ToolsToolStripMenu.Text = "Tools";
+        // 
+        // MenuItemMGDB
+        // 
+        MenuItemMGDB.Name = "MenuItemMGDB";
+        MenuItemMGDB.Size = new Size(351, 26);
+        MenuItemMGDB.Text = "Download latest Mystery Gift Database";
+        MenuItemMGDB.Click += MenuItemMGDB_Click;
+        // 
         // MainWindow
         // 
         AllowDrop = true;
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(715, 495);
+        ClientSize = new Size(715, 518);
+        Controls.Add(MenuStrip);
         Controls.Add(GrpBCAT);
         Controls.Add(BtnPLA);
         Controls.Add(BtnSCVI);
@@ -378,6 +408,7 @@ partial class MainWindow
         Controls.Add(BtnSWSH);
         Controls.Add(BtnLGPE);
         Icon = (Icon)resources.GetObject("$this.Icon");
+        MainMenuStrip = MenuStrip;
         MaximizeBox = false;
         MinimizeBox = false;
         Name = "MainWindow";
@@ -389,7 +420,10 @@ partial class MainWindow
         GrpContent.ResumeLayout(false);
         GrpContent.PerformLayout();
         ContextMenuStripWC.ResumeLayout(false);
+        MenuStrip.ResumeLayout(false);
+        MenuStrip.PerformLayout();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
@@ -420,4 +454,7 @@ partial class MainWindow
     private Label LblInfo7;
     private Label LblInfo6;
     private CheckBox ChkRepeatable;
+    private MenuStrip MenuStrip;
+    private ToolStripMenuItem ToolsToolStripMenu;
+    private ToolStripMenuItem MenuItemMGDB;
 }
