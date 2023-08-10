@@ -130,12 +130,15 @@ public class WC9 : Wondercard
         if (Type is GiftType9 t9 && t9 is GiftType9.Pokemon)
         {
             //Old FullTID
-            var ftid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (1000000u * (uint)WCID);
+            var ftid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset));
 
-            //Recalculate the TID and SID (FullTID) to account for the new Wondercard ID
-            BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), ftid + (1000000u * (uint)wcid));
-
-            pkEdited = true;
+            if (ftid != 0)
+            {
+                //Recalculate the TID and SID (FullTID) to account for the new Wondercard ID
+                ftid -= (1000000u * (uint)WCID);               
+                BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), ftid + (1000000u * (uint)wcid));
+                pkEdited = true;
+            }
         }
 
         //Write the new Wondercard ID
