@@ -23,6 +23,7 @@ This allows wondercards to be redeemed through the In-Game Mystery Gift Menu. Th
 
 ## Disclosure
 Neither I nor the Project Pokémon staff takes any responsibility for possible adverse outcomes or bans due to the use of this tool. Use at your own discretion.
+
 **N.B:** Some BCAT files contain sensible console-specific informations, which you should keep safe. Don't share your BCAT to others!
 
 ## Usage
