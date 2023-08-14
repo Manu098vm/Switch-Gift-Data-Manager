@@ -453,17 +453,15 @@ public partial class MainWindow : Form
         ChkRepeatable.Enabled = false;
     }
 
-    private void MenuItemMGDB_Click(object sender, EventArgs e)
-    {
+    private void MenuItemMGDB_Click(object sender, EventArgs e) =>
         Task.Run(async () => await DownloadRepoMGDB()).Wait();
-    }
 
     private static async Task DownloadRepoMGDB()
     {
         var url = "https://github.com/projectpokemon/EventsGallery/archive/refs/heads/master.zip";
         using (var client = new HttpClient())
         {
-            var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
+            var path = Environment.CurrentDirectory;
             var mgdbPath = Path.Combine(path, "mgdb");
 
             if (Directory.Exists(mgdbPath))
