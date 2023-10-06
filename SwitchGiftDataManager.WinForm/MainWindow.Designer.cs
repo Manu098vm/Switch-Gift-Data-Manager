@@ -205,7 +205,7 @@ partial class MainWindow
         // 
         cmbRedemptionMethod.Enabled = false;
         cmbRedemptionMethod.FormattingEnabled = true;
-        cmbRedemptionMethod.Items.AddRange(new object[] { "Before 2.0.1", "After 2.0.1" });
+        cmbRedemptionMethod.Items.AddRange(new object[] { "Before v2.0.1", "After v2.0.1" });
         cmbRedemptionMethod.Location = new Point(501, 32);
         cmbRedemptionMethod.Name = "cmbRedemptionMethod";
         cmbRedemptionMethod.Size = new Size(121, 28);
