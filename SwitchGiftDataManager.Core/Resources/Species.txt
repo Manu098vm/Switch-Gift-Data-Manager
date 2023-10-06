@@ -27,10 +27,10 @@ Pikachu
 Raichu
 Sandshrew
 Sandslash
-NidoranF
+Nidoran♀
 Nidorina
 Nidoqueen
-NidoranM
+Nidoran♂
 Nidorino
 Nidoking
 Clefairy
@@ -81,7 +81,7 @@ Slowpoke
 Slowbro
 Magnemite
 Magneton
-Farfetchd
+Farfetch’d
 Doduo
 Dodrio
 Seel
@@ -120,7 +120,7 @@ Goldeen
 Seaking
 Staryu
 Starmie
-MrMime
+Mr. Mime
 Scyther
 Jynx
 Electabuzz
@@ -248,7 +248,7 @@ Larvitar
 Pupitar
 Tyranitar
 Lugia
-HoOh
+Ho-Oh
 Celebi
 Treecko
 Grovyle
@@ -437,7 +437,7 @@ Skuntank
 Bronzor
 Bronzong
 Bonsly
-MimeJr
+Mime Jr.
 Happiny
 Chatot
 Spiritomb
@@ -472,7 +472,7 @@ Leafeon
 Glaceon
 Gliscor
 Mamoswine
-PorygonZ
+Porygon-Z
 Gallade
 Probopass
 Dusknoir
@@ -770,7 +770,7 @@ Golisopod
 Sandygast
 Palossand
 Pyukumuku
-TypeNull
+Type: Null
 Silvally
 Minior
 Komala
@@ -780,13 +780,13 @@ Mimikyu
 Bruxish
 Drampa
 Dhelmise
-Jangmoo
-Hakamoo
-Kommoo
-TapuKoko
-TapuLele
-TapuBulu
-TapuFini
+Jangmo-o
+Hakamo-o
+Kommo-o
+Tapu Koko
+Tapu Lele
+Tapu Bulu
+Tapu Fini
 Cosmog
 Cosmoem
 Solgaleo
@@ -863,8 +863,8 @@ Grimmsnarl
 Obstagoon
 Perrserker
 Cursola
-Sirfetchd
-MrRime
+Sirfetch’d
+Mr. Rime
 Runerigus
 Milcery
 Alcremie
@@ -976,26 +976,26 @@ Bramblin
 Brambleghast
 Gimmighoul
 Gholdengo
-GreatTusk
-BruteBonnet
-WalkingWake
-SandyShocks
-ScreamTail
-FlutterMane
-SlitherWing
-RoaringMoon
-IronTreads
-IronLeaves
-IronMoth
-IronHands
-IronJugulis
-IronThorns
-IronBundle
-IronValiant
-TingLu
-ChienPao
-WoChien
-ChiYu
+Great Tusk
+Brute Bonnet
+Walking Wake
+Sandy Shocks
+Scream Tail
+Flutter Mane
+Slither Wing
+Roaring Moon
+Iron Treads
+Iron Leaves
+Iron Moth
+Iron Hands
+Iron Jugulis
+Iron Thorns
+Iron Bundle
+Iron Valiant
+Ting-Lu
+Chien-Pao
+Wo-Chien
+Chi-Yu
 Koraidon
 Miraidon
 Tinkatink
