@@ -17,6 +17,11 @@ public class WC9 : Wondercard
     private const int ShinyTypeOffset = 0x240;
     private const int ChecksumOffset = 0x2C4;
 
+    // Entities with set TID / SID prior to the v2.0.1 game update would've had their TID / SID modified based on the Wondercard ID.
+    private readonly HashSet<ushort> OldGifts = new() { 0024, 0025, 0028, 0501, 0503, 0504, 0505, 0506, 1002, 1003, 1005 };
+    // These Gifts (Birthday Flabébé, Glaseado Cetitan) could be obtained both before and after the v2.0.1 game update.
+    private readonly HashSet<ushort> MixedGifts = new() { 0001, 1524 };
+
     public WC9(ReadOnlySpan<byte> data) : base(data)
     {
         WCID = BinaryPrimitives.ReadUInt16LittleEndian(data[WondercardIDOffset..]);
@@ -31,10 +36,13 @@ public class WC9 : Wondercard
 
     private PokemonGift GetPokemon()
     {
+        if (OldGifts.Contains(WCID) || MixedGifts.Contains(WCID))
+            UpdateOldToNewTIDSID();
+
         var species = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(SpeciesOffset));
         var pid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(PIDOffset));
-        var tid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (1000000u * WCID)) & 0xFFFF);
-        var sid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (1000000u * WCID)) >> 16 & 0xFFFF);
+        var tid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset))) & 0xFFFF);
+        var sid = (ushort)((BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset))) >> 16 & 0xFFFF);
         var test = (ShinyType9)Data![ShinyTypeOffset];
         var pidtype = (ShinyType9)Data![ShinyTypeOffset] switch
         {
@@ -116,6 +124,18 @@ public class WC9 : Wondercard
         return false;
     }
 
+    public void UpdateOldToNewTIDSID()
+    {
+        var FTID = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (1000000u * WCID);
+        BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), FTID);
+    }
+
+    public void UpdateNewToOldTIDSID()
+    {
+        var FTID = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset));
+        BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), FTID + (1000000u * WCID));
+    }
+
     public override void UpdateChecksum()
     {
         BinaryPrimitives.WriteUInt16LittleEndian(Data.AsSpan(ChecksumOffset), 0x0);
@@ -125,31 +145,8 @@ public class WC9 : Wondercard
 
     public override void SetID(ushort wcid)
     {
-        var pkEdited = false;
-        //Wondercard ID in Gen 9 also influence the TID and SID of Pokémon Entities
-        if (Type is GiftType9 t9 && t9 is GiftType9.Pokemon)
-        {
-            //Old FullTID
-            var ftid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset));
-
-            if (ftid != 0)
-            {
-                //Recalculate the TID and SID (FullTID) to account for the new Wondercard ID
-                ftid -= (1000000u * (uint)WCID);               
-                BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), ftid + (1000000u * (uint)wcid));
-                pkEdited = true;
-            }
-        }
-
-        //Write the new Wondercard ID
         BinaryPrimitives.WriteUInt16LittleEndian(Data.AsSpan(WondercardIDOffset), wcid);
         WCID = wcid;
-
-        //Reload Pokémon content
-        if (pkEdited) 
-            Content = GetPokemon();
-
-        //Refresh card checksum
         UpdateChecksum();
     }
 
