@@ -122,6 +122,24 @@ public class BCATManager
         return false;
     }
 
+    public bool GetRequiresMethodSelection(int index)
+    {
+        if (WCList is not null && WCList.Count > 0 && WCList.Count >= index - 1 && index >= 0)
+            if (WCList.ElementAt(index) is WC9 wc9)
+                return wc9.RequiresMethodSelection;
+        return false;
+    }
+
+    public void SetTIDSID(int index, bool after200)
+    {
+        if (WCList is not null && WCList.Count > 0 && WCList.Count >= index - 1 && index >= 0)
+            if (WCList.ElementAt(index) is WC9 wc9 && wc9.RequiresMethodSelection)
+                if (after200)
+                    wc9.UpdateNewToOldTIDSID();
+                else
+                    wc9.UpdateOldToNewTIDSID();
+    }
+
     public int GetIndex(ushort wcid)
     {
         if (WCList is not null && WCList.Count > 0)

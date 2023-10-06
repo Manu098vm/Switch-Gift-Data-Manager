@@ -24,6 +24,10 @@ public partial class MainWindow : Form
         Task.Run(TryUpdate).Wait();
         InitializeComponent();
         Text += BCATManager.Version;
+        cmbRedemptionMethod.SelectedIndex = 0;
+        toolTipRedemptionMethod.SetToolTip(lblRedemptionMethod, $"The Pokémon Scarlet & Violet v2.0.1 Update, released on September 13 - 2023, introduced a new TID / SID handling method for Wondercards.{Environment.NewLine}" +
+            $"This Pokémon Gift could be redeemed both before and after the v2.0.1 release, meaning it can be redeemed with either the old or new TID/SID handling method, depending on the redemption date.{Environment.NewLine}" +
+            $"The redemption date can be changed with the homebrew 'switch-time'. If you're not going to use 'switch-time', please select any date greater or equal than 'September 13, 2023'.");
     }
 
     private static async Task TryUpdate()
@@ -299,6 +303,21 @@ public partial class MainWindow : Form
             BtnApply.Enabled = false;
     }
 
+    private void CmbRedemptionMethod_IndexChanged(object sender, EventArgs e)
+    {
+        int newIndex = cmbRedemptionMethod.SelectedIndex;
+        if (newIndex != cmbRedemptionMethod.Tag as int?)
+        {
+            if (CurrentGame is Games.SCVI)
+            {
+                var list = GetCurrentList();
+                list.SetTIDSID(ListBoxWC.SelectedIndex, newIndex == 1);
+            }
+            cmbRedemptionMethod.Tag = newIndex;
+        }
+    }
+
+
     private void ToolTipWcid_Draw(object sender, DrawToolTipEventArgs e)
     {
         Point screenPosition = ListBox.MousePosition;
@@ -368,6 +387,8 @@ public partial class MainWindow : Form
 
             TxtWCID.Text = content.ElementAt(0);
             ChkRepeatable.Checked = list.GetIsRepeatable(index);
+            cmbRedemptionMethod.Visible = cmbRedemptionMethod.Enabled = lblRedemptionMethod.Visible
+                = lblRedemptionMethod.Enabled = list.GetRequiresMethodSelection(index);
             EnableContent();
         }
         else
@@ -451,6 +472,10 @@ public partial class MainWindow : Form
         GrpContent.Enabled = false;
         ChkRepeatable.Checked = false;
         ChkRepeatable.Enabled = false;
+        lblRedemptionMethod.Visible = false;
+        lblRedemptionMethod.Enabled = false;
+        cmbRedemptionMethod.Visible = false;
+        cmbRedemptionMethod.Enabled = false;
     }
 
     private void MenuItemMGDB_Click(object sender, EventArgs e) =>
@@ -505,7 +530,7 @@ public partial class MainWindow : Form
             var gen9Path = Path.Combine(genPath, "Gen 9");
             Directory.Delete(Path.Combine(gen9Path, "Raid Events"), true);
 
-            MessageBox.Show($"The Mystery Gift Database has been downloaded in {mgdbPath}", "MGDB", 
+            MessageBox.Show($"The Mystery Gift Database has been downloaded in {mgdbPath}", "MGDB",
                 MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
         }
     }

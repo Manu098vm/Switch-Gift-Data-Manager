@@ -39,7 +39,9 @@ partial class MainWindow
         BtnOpen = new Button();
         BtnSave = new Button();
         GrpBCAT = new GroupBox();
+        cmbRedemptionMethod = new ComboBox();
         ChkRepeatable = new CheckBox();
+        lblRedemptionMethod = new Label();
         BtnApply = new Button();
         GrpContent = new GroupBox();
         LblInfo7 = new Label();
@@ -59,6 +61,7 @@ partial class MainWindow
         MenuStrip = new MenuStrip();
         ToolsToolStripMenu = new ToolStripMenuItem();
         MenuItemMGDB = new ToolStripMenuItem();
+        toolTipRedemptionMethod = new ToolTip(components);
         GrpBCAT.SuspendLayout();
         GrpContent.SuspendLayout();
         ContextMenuStripWC.SuspendLayout();
@@ -180,7 +183,9 @@ partial class MainWindow
         // 
         // GrpBCAT
         // 
+        GrpBCAT.Controls.Add(cmbRedemptionMethod);
         GrpBCAT.Controls.Add(ChkRepeatable);
+        GrpBCAT.Controls.Add(lblRedemptionMethod);
         GrpBCAT.Controls.Add(BtnApply);
         GrpBCAT.Controls.Add(GrpContent);
         GrpBCAT.Controls.Add(TxtWCID);
@@ -196,6 +201,18 @@ partial class MainWindow
         GrpBCAT.TabStop = false;
         GrpBCAT.Text = "BCAT Manager";
         // 
+        // cmbRedemptionMethod
+        // 
+        cmbRedemptionMethod.Enabled = false;
+        cmbRedemptionMethod.FormattingEnabled = true;
+        cmbRedemptionMethod.Items.AddRange(new object[] { "Before 2.0.1", "After 2.0.1" });
+        cmbRedemptionMethod.Location = new Point(501, 32);
+        cmbRedemptionMethod.Name = "cmbRedemptionMethod";
+        cmbRedemptionMethod.Size = new Size(121, 28);
+        cmbRedemptionMethod.TabIndex = 14;
+        cmbRedemptionMethod.Visible = false;
+        cmbRedemptionMethod.SelectedIndexChanged += CmbRedemptionMethod_IndexChanged;
+        // 
         // ChkRepeatable
         // 
         ChkRepeatable.AutoSize = true;
@@ -206,6 +223,17 @@ partial class MainWindow
         ChkRepeatable.Text = "Is Repeatable";
         ChkRepeatable.UseVisualStyleBackColor = true;
         ChkRepeatable.CheckedChanged += ChkRepeatable_CheckedChanged;
+        // 
+        // lblRedemptionMethod
+        // 
+        lblRedemptionMethod.AutoSize = true;
+        lblRedemptionMethod.Enabled = false;
+        lblRedemptionMethod.Location = new Point(324, 35);
+        lblRedemptionMethod.Name = "lblRedemptionMethod";
+        lblRedemptionMethod.Size = new Size(171, 20);
+        lblRedemptionMethod.TabIndex = 13;
+        lblRedemptionMethod.Text = "Redemption Method (?):";
+        lblRedemptionMethod.Visible = false;
         // 
         // BtnApply
         // 
@@ -394,6 +422,16 @@ partial class MainWindow
         MenuItemMGDB.Text = "Download latest Mystery Gift Database";
         MenuItemMGDB.Click += MenuItemMGDB_Click;
         // 
+        // toolTipRedemptionMethod
+        // 
+        toolTipRedemptionMethod.AutoPopDelay = 50000;
+        toolTipRedemptionMethod.InitialDelay = 500;
+        toolTipRedemptionMethod.IsBalloon = true;
+        toolTipRedemptionMethod.ReshowDelay = 100;
+        toolTipRedemptionMethod.ShowAlways = true;
+        toolTipRedemptionMethod.ToolTipIcon = ToolTipIcon.Info;
+        toolTipRedemptionMethod.ToolTipTitle = "Redemption Date";
+        // 
         // MainWindow
         // 
         AllowDrop = true;
@@ -457,4 +495,7 @@ partial class MainWindow
     private MenuStrip MenuStrip;
     private ToolStripMenuItem ToolsToolStripMenu;
     private ToolStripMenuItem MenuItemMGDB;
+    private Label lblRedemptionMethod;
+    private ToolTip toolTipRedemptionMethod;
+    private ComboBox cmbRedemptionMethod;
 }
