@@ -23,7 +23,7 @@ public class PokemonGift
         return false;
     }
 
-    public static string GetSpeciesName(uint species) => Properties.Resources.Species.Split(new string[] { "\n" }, StringSplitOptions.None)[species].Replace(",", "");
+    public static string GetSpeciesName(uint species) => Properties.Resources.Species.Split(new string[] { "\n" }, StringSplitOptions.None)[species];
 
     public static bool IsShiny(uint pid, uint tid, uint sid) => sid != 0 || tid != 0 ? (sid ^ tid ^ (pid >> 16) ^ (pid & 0xFFFF)) < 16 : false;
 
