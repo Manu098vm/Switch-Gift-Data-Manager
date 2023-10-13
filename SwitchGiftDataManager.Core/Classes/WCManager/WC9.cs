@@ -136,6 +136,7 @@ public class WC9 : Wondercard
 
         var FTID = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (1000000u * WCID);
         BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), FTID);
+        UpdateChecksum();
         IsBefore201 = true;
     }
 
@@ -146,6 +147,7 @@ public class WC9 : Wondercard
 
         var FTID = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset));
         BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), FTID + (1000000u * WCID));
+        UpdateChecksum();
         IsBefore201 = false;
     }
 
