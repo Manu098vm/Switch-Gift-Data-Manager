@@ -51,6 +51,30 @@ public static class Program
         }
 
         bcat.Sort();
+
+        var methodSelectionInfo = $"{Environment.NewLine}The Pokémon Scarlet & Violet v2.0.1 Update, released on September 13 - 2023, introduced a new TID / SID handling method for Wondercards.{Environment.NewLine}" +
+            $"This Pokémon Gift could be redeemed both before and after the v2.0.1 release, meaning it can be redeemed with either the old or new TID/SID handling method, depending on the redemption date.{Environment.NewLine}" +
+            $"The redemption date can be changed with the homebrew 'switch-time'. If you're not going to use 'switch-time', please select 'After v2.0.1'.";
+
+        foreach (var (i, title) in bcat.GetListNames().Select((title, i) => (i, title)).Where(x => bcat.GetRequiresMethodSelection(x.i)))
+        {
+            var method = 0;
+            while (method is not (1 or 2))
+            {
+                Log($"{Environment.NewLine}[{title}] This Pokémon Gift could be redeemed both before and after the v2.0.1 release. Please select the redemption method you want to use, depending on the Date/Time you'll redeem the gift." +
+                    $"{Environment.NewLine}1 - Before v2.0.1" +
+                    $"{Environment.NewLine}2 - After v2.0.1" +
+                    $"{Environment.NewLine}3 - Info");
+                
+                method = int.Parse(Console.ReadLine()!);
+
+                if (method is (1 or 2))
+                    bcat.SetIsBefore201(i, method == 1);
+                else
+                    Log(methodSelectionInfo);
+            }
+        }
+
         Log($"{Environment.NewLine}Enter the source (full) path to your dumped BCAT:");
         var sourcepath = Console.ReadLine()!;
         if (!CheckValidBcatPath(sourcepath))

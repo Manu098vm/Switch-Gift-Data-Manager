@@ -21,9 +21,11 @@ public class WC9 : Wondercard
     // Entities with set TID / SID prior to the v2.0.1 game update would've had their TID / SID modified based on the Wondercard ID.
     private readonly HashSet<ushort> OldGifts = new() { 0024, 0025, 0028, 0501, 0503, 0504, 0505, 0506, 1002, 1003, 1005 };
 
-    // These Gifts (Birthday Flabébé, Glaseado Cetitan) could be obtained both before and after the v2.0.1 game update.
-    private readonly HashSet<ushort> MixedGifts = new() { 0001, 1524 };
+    // These Gifts (Birthday Flabébé, Glaseado Cetitan, Home Gifts) could be obtained both before and after the v2.0.1 game update.
+    private readonly HashSet<ushort> MixedGifts = new() { 0001, 1524, 9021, 9022, 9023 };
     public bool RequiresMethodSelection { get => MixedGifts.Contains(WCID); }
+
+    public bool IsBefore201 { get; set; } = false;
 
     public WC9(ReadOnlySpan<byte> data) : base(data)
     {
@@ -129,14 +131,22 @@ public class WC9 : Wondercard
 
     public void UpdateOldToNewTIDSID()
     {
+        if (IsBefore201)
+            return;
+
         var FTID = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset)) - (1000000u * WCID);
         BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), FTID);
+        IsBefore201 = true;
     }
 
     public void UpdateNewToOldTIDSID()
     {
+        if (!IsBefore201)
+            return;
+
         var FTID = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(TIDOffset));
         BinaryPrimitives.WriteUInt32LittleEndian(Data.AsSpan(TIDOffset), FTID + (1000000u * WCID));
+        IsBefore201 = false;
     }
 
     public override void UpdateChecksum()

@@ -204,6 +204,7 @@ public partial class MainWindow : Form
         var list = GetCurrentList();
         var wcid = UInt16.Parse(TxtWCID.Text);
         var repeatable = ChkRepeatable.Checked;
+        var isBefore201 = cmbRedemptionMethod.SelectedIndex == 0;
 
         if (wcid != list.GetWCID(ListBoxWC.SelectedIndex))
         {
@@ -226,6 +227,12 @@ public partial class MainWindow : Form
         if (repeatable != list.GetIsRepeatable(ListBoxWC.SelectedIndex))
         {
             list.SetIsRepeatable(ListBoxWC.SelectedIndex, repeatable);
+            BtnApply.Enabled = false;
+        }
+
+        if (list.GetRequiresMethodSelection(ListBoxWC.SelectedIndex))
+        {
+            list.SetIsBefore201(ListBoxWC.SelectedIndex, isBefore201);
             BtnApply.Enabled = false;
         }
     }
@@ -305,18 +312,21 @@ public partial class MainWindow : Form
 
     private void CmbRedemptionMethod_IndexChanged(object sender, EventArgs e)
     {
-        int newIndex = cmbRedemptionMethod.SelectedIndex;
-        if (newIndex != cmbRedemptionMethod.Tag as int?)
+        if (CurrentGame is Games.SCVI)
         {
-            if (CurrentGame is Games.SCVI)
+            var list = GetCurrentList();
+            if (list.GetRequiresMethodSelection(ListBoxWC.SelectedIndex))
             {
-                var list = GetCurrentList();
-                list.SetTIDSID(ListBoxWC.SelectedIndex, newIndex == 1);
+                var newValue = cmbRedemptionMethod.SelectedIndex == 0;
+                var oldValue = list.GetIsBefore201(ListBoxWC.SelectedIndex);
+
+                if (newValue != oldValue)
+                    BtnApply.Enabled = true;
+                else
+                    BtnApply.Enabled = false;
             }
-            cmbRedemptionMethod.Tag = newIndex;
         }
     }
-
 
     private void ToolTipWcid_Draw(object sender, DrawToolTipEventArgs e)
     {
@@ -387,8 +397,13 @@ public partial class MainWindow : Form
 
             TxtWCID.Text = content.ElementAt(0);
             ChkRepeatable.Checked = list.GetIsRepeatable(index);
+
             cmbRedemptionMethod.Visible = cmbRedemptionMethod.Enabled = lblRedemptionMethod.Visible
                 = lblRedemptionMethod.Enabled = list.GetRequiresMethodSelection(index);
+
+            if (cmbRedemptionMethod.Enabled)
+                cmbRedemptionMethod.SelectedIndex = list.GetIsBefore201(index) ? 0 : 1;
+
             EnableContent();
         }
         else
