@@ -48,7 +48,6 @@ public class WC9 : Wondercard
         var pid = BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(PIDOffset));
         var tid = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(TIDOffset));
         var sid = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(SIDOffset));
-        var test = (ShinyType9)Data![ShinyTypeOffset];
         var pidtype = (ShinyType9)Data![ShinyTypeOffset] switch
         {
             ShinyType9.ShinyLocked => PIDType.RandomPID,
