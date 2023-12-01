@@ -3,6 +3,7 @@
 .vscode
 **/bin
 **/obj
+**/PublishProfiles
 **.user
 **.config
 **.pubxml
