@@ -501,13 +501,19 @@ public partial class MainWindow : Form
         var url = "https://github.com/projectpokemon/EventsGallery/archive/refs/heads/master.zip";
         using (var client = new HttpClient())
         {
-            var path = Environment.CurrentDirectory;
-            var mgdbPath = Path.Combine(path, "mgdb");
+            var path = Path.Combine(Environment.CurrentDirectory, "tmp");
+            var mgdbPath = Path.Combine(Environment.CurrentDirectory, "mgdb");
+
+            //Delete old residual files if exist
+            if (Directory.Exists(path))
+                Directory.Delete(path, true);
 
             if (Directory.Exists(mgdbPath))
                 Directory.Delete(mgdbPath, true);
 
-            var zipPath = Path.Combine(path, "repo.zip");
+            Directory.CreateDirectory(path);
+
+            var zipPath = Path.Combine(path, "tmp.zip");
             using (var response = await client.GetAsync(url))
             {
                 using (var content = await response.Content.ReadAsStreamAsync())
@@ -521,13 +527,15 @@ public partial class MainWindow : Form
 
             ZipFile.ExtractToDirectory(zipPath, path);
             File.Delete(zipPath);
-            Directory.Move(Path.Combine(path, "EventsGallery-master"), mgdbPath);
 
-            File.Delete(Path.Combine(mgdbPath, ".gitignore"));
-            Directory.Delete(Path.Combine(mgdbPath, "Extras"), true);
-            Directory.Delete(Path.Combine(mgdbPath, "Unreleased"), true);
+            var tmpMgbdPath = Path.Combine(path, "EventsGallery-master");
 
-            var genPath = Path.Combine(mgdbPath, "Released");
+            File.Delete(Path.Combine(tmpMgbdPath, ".gitignore"));
+            Directory.Delete(Path.Combine(tmpMgbdPath, "Extras"), true);
+            Directory.Delete(Path.Combine(tmpMgbdPath, "Unreleased"), true);
+            Directory.Delete(Path.Combine(tmpMgbdPath, "PKHeX Legality"), true);
+
+            var genPath = Path.Combine(tmpMgbdPath, "Released");
             Directory.Delete(Path.Combine(genPath, "Gen 1"), true);
             Directory.Delete(Path.Combine(genPath, "Gen 2"), true);
             Directory.Delete(Path.Combine(genPath, "Gen 3"), true);
@@ -545,6 +553,9 @@ public partial class MainWindow : Form
             var gen9Path = Path.Combine(genPath, "Gen 9");
             Directory.Delete(Path.Combine(gen9Path, "Raid Events"), true);
             Directory.Delete(Path.Combine(gen9Path, "Outbreak Events"), true);
+
+            Directory.Move(tmpMgbdPath, mgdbPath);
+            Directory.Delete(path, true);
 
             MessageBox.Show($"The Mystery Gift Database has been downloaded in {mgdbPath}", "MGDB",
                 MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
