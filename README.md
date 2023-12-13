@@ -28,7 +28,7 @@ Neither I nor the Project Pokémon staff takes any responsibility for possible a
 
 ## Usage
 This paragraph refers to the Windows Form app. The Command Line app usage is similar and should be fairly intuitive.
-* Ensure you have the required [.NET 7.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) correctly installed
+* Ensure you have the required [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) correctly installed
 * Dump your game's BCAT with [JKSV](https://github.com/J-D-K/JKSV/releases) and keep some copies somewhere safe
 * Open the tool and select your game of choice
 * Import wondercard files of your choice (by drag & drop or by clicking the `Open Files` button)
