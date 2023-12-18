@@ -1,4 +1,4 @@
-None
+---
 Bulbasaur
 Ivysaur
 Venusaur
@@ -1011,8 +1011,16 @@ Clodsire
 Annihilape
 Ogerpon
 Dipplin
+Hydrapple
 Okidogi
 Munkidori
 Fezandipiti
+Gouging Fire
+Raging Bolt
+Iron Crown
+Iron Boulder
+Terapagos
+Pecharunt
+Archaludon
 Poltchageist
 Sinistcha
