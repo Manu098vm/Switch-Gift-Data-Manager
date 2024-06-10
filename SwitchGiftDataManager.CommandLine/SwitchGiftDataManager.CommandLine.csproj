@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Authors>Manu098vm</Authors>
-		<Copyright>Copyright (C) 2022 Manu098vm</Copyright>
+		<Copyright>Copyright (C) 2024 Manu098vm</Copyright>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags>pokemon; mystery gift; wondercard; reader; nintendo; bcat; event injection;</PackageTags>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>

@@ -69,7 +69,7 @@ for a lot of offsets and resources
 ## License
 ![gplv3-with-text-136x68](https://user-images.githubusercontent.com/52102823/199572700-4e02ed70-74ef-4d67-991e-3168d93aac0d.png)
 
-Copyright © 2023 Manu098vm
+Copyright © 2024 Manu098vm
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
