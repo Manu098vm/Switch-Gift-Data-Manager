@@ -13,26 +13,20 @@ public class PokemonGift
 
     public string GetSpeciesName() => GetSpeciesName(Species);
 
-    public bool IsShiny()
+    public bool IsShiny() => ShinyType switch
     {
-        if (ShinyType is ShinyType.ShinyForced)
-            return true;
-        else if (ShinyType is ShinyType.ShinyPossible && PID != 0 && TID != 0 && SID != 0)
-            return IsShiny(PID, TID, SID);
+        ShinyType.ShinyForced => true,
+        ShinyType.ShinyPossible => (PID != 0 && TID != 0 && SID != 0) && IsShiny(PID, TID, SID),
+        _ => false,
+    };
 
-        return false;
-    }
+    public static string GetSpeciesName(uint species) => Properties.Resources.Species.Split(["\n"], StringSplitOptions.None)[species];
 
-    public static string GetSpeciesName(uint species) => Properties.Resources.Species.Split(new string[] { "\n" }, StringSplitOptions.None)[species];
+    public static bool IsShiny(uint pid, uint tid, uint sid) => (sid != 0 || tid != 0) && (sid ^ tid ^ (pid >> 16) ^ (pid & 0xFFFF)) < 16;
 
-    public static bool IsShiny(uint pid, uint tid, uint sid) => sid != 0 || tid != 0 ? (sid ^ tid ^ (pid >> 16) ^ (pid & 0xFFFF)) < 16 : false;
-
-    public static bool IsTIDAbusePossible(uint tid, uint sid, PIDType type)
+    public static bool IsTIDAbusePossible(uint tid, uint sid, PIDType type) => type switch
     {
-        if (type is PIDType.FixedPID)
-            if (tid == 0)
-                if (sid == 0)
-                    return true;
-        return false;
-    }
+        PIDType.FixedPID => tid == 0 && sid == 0,
+        _ => false,
+    };
 }
