@@ -51,23 +51,22 @@ public partial class MgdbForm : Form
                     {
                         await stream.WriteAsync(buffer, 0, bytesRead);
                         totalRead += bytesRead;
-                        // Calculate and display progress
                         if (totalBytes > 0)
                         {
                             double progressPercentage = (double)totalRead / totalBytes * 100;
-                            // Update UI or log progress here
                             lblMessage.Text = $"Download progress: {progressPercentage:F2}%";
                         }
                     }
                 }
             }
 
-
+            lblMessage.Text = $"Extracting files...";
             ZipFile.ExtractToDirectory(zipPath, path);
             File.Delete(zipPath);
 
             var tmpMgbdPath = Path.Combine(path, "EventsGallery-master");
 
+            lblMessage.Text = $"Cleaning up residual files...";
             File.Delete(Path.Combine(tmpMgbdPath, ".gitignore"));
             Directory.Delete(Path.Combine(tmpMgbdPath, "Extras"), true);
             Directory.Delete(Path.Combine(tmpMgbdPath, "Unreleased"), true);
