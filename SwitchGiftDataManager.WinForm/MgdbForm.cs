@@ -38,16 +38,30 @@ public partial class MgdbForm : Form
             Directory.CreateDirectory(path);
 
             var zipPath = Path.Combine(path, "tmp.zip");
-            using (var response = await client.GetAsync(url))
+            using (var response = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
             {
+                var totalBytes = response.Content.Headers.ContentLength ?? 0;
                 using (var content = await response.Content.ReadAsStreamAsync())
+                using (var stream = new FileStream(zipPath, FileMode.Create, FileAccess.Write, FileShare.None))
                 {
-                    using (var stream = new FileStream(zipPath, FileMode.Create, FileAccess.Write, FileShare.None))
+                    var buffer = new byte[8192];
+                    int bytesRead;
+                    long totalRead = 0;
+                    while ((bytesRead = await content.ReadAsync(buffer, 0, buffer.Length)) > 0)
                     {
-                        await content.CopyToAsync(stream);
+                        await stream.WriteAsync(buffer, 0, bytesRead);
+                        totalRead += bytesRead;
+                        // Calculate and display progress
+                        if (totalBytes > 0)
+                        {
+                            double progressPercentage = (double)totalRead / totalBytes * 100;
+                            // Update UI or log progress here
+                            lblMessage.Text = $"Download progress: {progressPercentage:F2}%";
+                        }
                     }
                 }
             }
+
 
             ZipFile.ExtractToDirectory(zipPath, path);
             File.Delete(zipPath);
