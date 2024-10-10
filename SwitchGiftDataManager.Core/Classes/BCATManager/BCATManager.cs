@@ -7,7 +7,7 @@ namespace SwitchGiftDataManager.Core;
 
 public class BCATManager
 {
-    public const string Version = "1.7.0";
+    public const string Version = "1.7.1";
 
     private const int FileNameOffset = 0x00;
     private const int UnkOffset = 0x20;
