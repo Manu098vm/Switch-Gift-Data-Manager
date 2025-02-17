@@ -14,7 +14,7 @@ public class WB7 : Wondercard
     private const int SIDOffset = 0x272;
     private const int SpeciesOffset = 0x28A;
     private const int ShinyTypeOffset = 0x2AB;
-    private const int PIDOffset = 0xD4;
+    private const int PIDOffset = 0x2DC;
     private const int ChecksumOffset = 0x202;
 
     public WB7(ReadOnlySpan<byte> data) : base(data)
