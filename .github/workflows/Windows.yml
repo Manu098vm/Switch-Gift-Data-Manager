@@ -18,6 +18,7 @@ jobs:
 
     env:
       Solution_Name: SwitchGiftDataManager.sln
+      Configuration: ${{ matrix.configuration }}
 
     steps:
     - name: Checkout
@@ -25,10 +26,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install .NET Core
+    - name: Install .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 9.0.x
 
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
@@ -36,13 +37,10 @@ jobs:
     - name: Execute unit tests
       run: dotnet test
 
-    - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
-      env:
-        Configuration: ${{ matrix.configuration }}
-        
-    - name: Create the app package
-      run: msbuild $env:Solution_Name /property:Configuration=Release
+    - name: Restore and build the application
+      run: |
+        msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+        msbuild $env:Solution_Name /property:Configuration=$env:Configuration
 
     - name: Upload WinForms build artifacts
       uses: actions/upload-artifact@v4

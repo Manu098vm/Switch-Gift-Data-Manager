@@ -18,6 +18,7 @@ jobs:
 
     env:
       Solution_Name: SwitchGiftDataManager.sln
+      Project_Path: SwitchGiftDataManager.CommandLine/SwitchGiftDataManager.CommandLine.csproj
 
     steps:
     - name: Checkout
@@ -25,17 +26,27 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install .NET Core
+    - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
-    
+        dotnet-version: 9.0.x
+
+    - name: Cache NuGet packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore ${{ env.Project_Path }}
+
     - name: Build
-      run: dotnet build SwitchGiftDataManager.CommandLine/SwitchGiftDataManager.CommandLine.csproj --configuration Release --no-restore
+      run: dotnet build ${{ env.Project_Path }} --configuration ${{ matrix.configuration }} --no-restore
+
     - name: Test
-      run: dotnet test SwitchGiftDataManager.CommandLine/SwitchGiftDataManager.CommandLine.csproj --no-restore --verbosity normal
+      run: dotnet test ${{ env.Project_Path }} --no-restore --verbosity normal
 
     - name: Upload MacOS CommandLine build artifacts
       uses: actions/upload-artifact@v4

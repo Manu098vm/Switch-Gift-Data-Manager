@@ -18,6 +18,7 @@ jobs:
 
     env:
       Solution_Name: SwitchGiftDataManager.sln
+      Project_Path: SwitchGiftDataManager.CommandLine/SwitchGiftDataManager.CommandLine.csproj
 
     steps:
     - name: Checkout
@@ -25,17 +26,18 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install .NET Core
+    - name: Install .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
-    
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build SwitchGiftDataManager.CommandLine/SwitchGiftDataManager.CommandLine.csproj --configuration Release --no-restore
-    - name: Test
-      run: dotnet test SwitchGiftDataManager.CommandLine/SwitchGiftDataManager.CommandLine.csproj --no-restore --verbosity normal
+        dotnet-version: 9.0.x
+
+    - name: Clean previous build artifacts
+      run: dotnet clean ${{ env.Project_Path }} --configuration ${{ matrix.configuration }}
+
+    - name: Install dependencies and build
+      run: |
+        dotnet restore ${{ env.Project_Path }}
+        dotnet build ${{ env.Project_Path }} --configuration ${{ matrix.configuration }} --no-restore
 
     - name: Upload Linux CommandLine build artifacts
       uses: actions/upload-artifact@v4
