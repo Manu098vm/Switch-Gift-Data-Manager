@@ -419,7 +419,7 @@ public partial class MainWindow : Form
             var curr = ((ListBox)sender).Items[e.Index].ToString()!;
             var wcid = UInt16.Parse(Regex.Match(curr, @"(?<=\#)(.*?)(?=\:)").Groups[1].Value);
             var handled = false;
-            if ((CurrentGame is Games.BDSP && wcid >= 2048) || (CurrentGame is Games.SWSH && e.Index >= 129))
+            if ((CurrentGame is Games.BDSP or Games.LGPE && wcid >= 2048) || (CurrentGame is Games.SWSH && e.Index >= 129))
             {
                 if (!curr.Contains('\u2757'))
                     ((ListBox)sender).Items[e.Index] = $"{curr} \u2757";
