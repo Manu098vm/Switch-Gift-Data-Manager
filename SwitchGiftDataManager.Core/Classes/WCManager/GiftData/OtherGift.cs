@@ -1,4 +1,5 @@
 ﻿using Enums;
+using System.Runtime.CompilerServices;
 
 namespace SwitchGiftDataManager.Core;
 
@@ -7,11 +8,11 @@ public class OtherGift
     public object? Type { get; set; }
     public ushort Item { get; set; }
     public uint Quantity { get; set; }
-    public ushort Opt { get; set; }
+    public uint Opt { get; set; }
 
     public string GetItemName() => GetItemName(Item, Type!, Opt);
 
-    public static string GetItemName(ushort id, object type, ushort opt = 0)
+    public static string GetItemName(ushort id, object type, uint opt = 0)
     {
         var str = "";
 
@@ -98,7 +99,20 @@ public class OtherGift
             else
                 str = ((GiftType9)type).ToString();
         }
-
+        else if (type.GetType() == typeof(GiftType9A))
+        {
+            if ((GiftType9A)type is GiftType9A.Item)
+                str = Properties.Resources.Items.Split(new String[] { "\n" }, StringSplitOptions.None)[id];
+            else if ((GiftType9A)type is GiftType9A.Clothing)
+                str = Clothing9A[opt];
+            else
+                str = ((GiftType9A)type).ToString();
+        }
         return str;
     }
+
+    private static Dictionary<uint, string> Clothing9A = new()
+    {
+        { 0x2E1937, "Trench Coat and Pants Set (Beige)" },
+    };
 }

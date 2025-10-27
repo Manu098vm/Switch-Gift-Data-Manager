@@ -62,6 +62,7 @@ partial class MainWindow
         ToolsToolStripMenu = new ToolStripMenuItem();
         MenuItemMGDB = new ToolStripMenuItem();
         toolTipRedemptionMethod = new ToolTip(components);
+        BtnZA = new Button();
         GrpBCAT.SuspendLayout();
         GrpContent.SuspendLayout();
         ContextMenuStripWC.SuspendLayout();
@@ -76,7 +77,7 @@ partial class MainWindow
         BtnLGPE.FlatStyle = FlatStyle.Flat;
         BtnLGPE.Location = new Point(5, 37);
         BtnLGPE.Name = "BtnLGPE";
-        BtnLGPE.Size = new Size(136, 60);
+        BtnLGPE.Size = new Size(111, 60);
         BtnLGPE.TabIndex = 0;
         BtnLGPE.TabStop = false;
         BtnLGPE.Text = "LGPE";
@@ -89,9 +90,9 @@ partial class MainWindow
         BtnSWSH.AccessibleName = "";
         BtnSWSH.Cursor = Cursors.Hand;
         BtnSWSH.FlatStyle = FlatStyle.Flat;
-        BtnSWSH.Location = new Point(147, 37);
+        BtnSWSH.Location = new Point(122, 37);
         BtnSWSH.Name = "BtnSWSH";
-        BtnSWSH.Size = new Size(136, 60);
+        BtnSWSH.Size = new Size(111, 60);
         BtnSWSH.TabIndex = 1;
         BtnSWSH.TabStop = false;
         BtnSWSH.Text = "SWSH";
@@ -104,9 +105,9 @@ partial class MainWindow
         BtnBDSP.AccessibleName = "";
         BtnBDSP.Cursor = Cursors.Hand;
         BtnBDSP.FlatStyle = FlatStyle.Flat;
-        BtnBDSP.Location = new Point(289, 37);
+        BtnBDSP.Location = new Point(239, 37);
         BtnBDSP.Name = "BtnBDSP";
-        BtnBDSP.Size = new Size(136, 60);
+        BtnBDSP.Size = new Size(111, 60);
         BtnBDSP.TabIndex = 2;
         BtnBDSP.TabStop = false;
         BtnBDSP.Text = "BDSP";
@@ -119,9 +120,9 @@ partial class MainWindow
         BtnSCVI.AccessibleName = "";
         BtnSCVI.Cursor = Cursors.Hand;
         BtnSCVI.FlatStyle = FlatStyle.Flat;
-        BtnSCVI.Location = new Point(573, 37);
+        BtnSCVI.Location = new Point(473, 37);
         BtnSCVI.Name = "BtnSCVI";
-        BtnSCVI.Size = new Size(136, 60);
+        BtnSCVI.Size = new Size(111, 60);
         BtnSCVI.TabIndex = 3;
         BtnSCVI.TabStop = false;
         BtnSCVI.Text = "SCVI";
@@ -134,9 +135,9 @@ partial class MainWindow
         BtnPLA.AccessibleName = "";
         BtnPLA.Cursor = Cursors.Hand;
         BtnPLA.FlatStyle = FlatStyle.Flat;
-        BtnPLA.Location = new Point(431, 37);
+        BtnPLA.Location = new Point(356, 37);
         BtnPLA.Name = "BtnPLA";
-        BtnPLA.Size = new Size(136, 60);
+        BtnPLA.Size = new Size(111, 60);
         BtnPLA.TabIndex = 4;
         BtnPLA.TabStop = false;
         BtnPLA.Text = "PLA";
@@ -148,7 +149,6 @@ partial class MainWindow
         ListBoxWC.AllowDrop = true;
         ListBoxWC.DrawMode = DrawMode.OwnerDrawFixed;
         ListBoxWC.FormattingEnabled = true;
-        ListBoxWC.ItemHeight = 20;
         ListBoxWC.Location = new Point(7, 96);
         ListBoxWC.Name = "ListBoxWC";
         ListBoxWC.Size = new Size(214, 304);
@@ -196,7 +196,7 @@ partial class MainWindow
         GrpBCAT.Enabled = false;
         GrpBCAT.Location = new Point(5, 103);
         GrpBCAT.Name = "GrpBCAT";
-        GrpBCAT.Size = new Size(704, 409);
+        GrpBCAT.Size = new Size(696, 409);
         GrpBCAT.TabIndex = 8;
         GrpBCAT.TabStop = false;
         GrpBCAT.Text = "BCAT Manager";
@@ -404,7 +404,7 @@ partial class MainWindow
         MenuStrip.Items.AddRange(new ToolStripItem[] { ToolsToolStripMenu });
         MenuStrip.Location = new Point(0, 0);
         MenuStrip.Name = "MenuStrip";
-        MenuStrip.Size = new Size(715, 28);
+        MenuStrip.Size = new Size(709, 28);
         MenuStrip.TabIndex = 9;
         MenuStrip.Text = "menuStrip1";
         // 
@@ -432,12 +432,28 @@ partial class MainWindow
         toolTipRedemptionMethod.ToolTipIcon = ToolTipIcon.Info;
         toolTipRedemptionMethod.ToolTipTitle = "Redemption Date";
         // 
+        // BtnZA
+        // 
+        BtnZA.AccessibleDescription = "";
+        BtnZA.AccessibleName = "";
+        BtnZA.Cursor = Cursors.Hand;
+        BtnZA.FlatStyle = FlatStyle.Flat;
+        BtnZA.Location = new Point(590, 37);
+        BtnZA.Name = "BtnZA";
+        BtnZA.Size = new Size(111, 60);
+        BtnZA.TabIndex = 10;
+        BtnZA.TabStop = false;
+        BtnZA.Text = "ZA";
+        BtnZA.UseVisualStyleBackColor = true;
+        BtnZA.Click += BtnZA_Click;
+        // 
         // MainWindow
         // 
         AllowDrop = true;
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(715, 518);
+        ClientSize = new Size(709, 518);
+        Controls.Add(BtnZA);
         Controls.Add(MenuStrip);
         Controls.Add(GrpBCAT);
         Controls.Add(BtnPLA);
@@ -498,4 +514,5 @@ partial class MainWindow
     private Label lblRedemptionMethod;
     private ToolTip toolTipRedemptionMethod;
     private ComboBox cmbRedemptionMethod;
+    private Button BtnZA;
 }

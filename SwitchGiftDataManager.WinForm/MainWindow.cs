@@ -17,6 +17,7 @@ public partial class MainWindow : Form
     private BCATManager PackageBDSP = new(Games.BDSP);
     private BCATManager PackagePLA = new(Games.PLA);
     private BCATManager PackageSCVI = new(Games.SCVI);
+    private BCATManager PackageZA = new(Games.ZA);
     private List<ushort> Duplicated = new List<ushort>();
 
     public MainWindow()
@@ -59,12 +60,14 @@ public partial class MainWindow : Form
         BtnBDSP.Enabled = true;
         BtnPLA.Enabled = true;
         BtnSCVI.Enabled = true;
+        BtnZA.Enabled = true;
 
         BtnLGPE.Font = new Font(BtnLGPE.Font.Name, BtnLGPE.Font.Size, FontStyle.Regular);
         BtnSWSH.Font = new Font(BtnSWSH.Font.Name, BtnSWSH.Font.Size, FontStyle.Regular);
         BtnBDSP.Font = new Font(BtnBDSP.Font.Name, BtnBDSP.Font.Size, FontStyle.Regular);
         BtnPLA.Font = new Font(BtnPLA.Font.Name, BtnPLA.Font.Size, FontStyle.Regular);
         BtnSCVI.Font = new Font(BtnSCVI.Font.Name, BtnSCVI.Font.Size, FontStyle.Regular);
+        BtnZA.Font = new Font(BtnZA.Font.Name, BtnZA.Font.Size, FontStyle.Regular);
     }
 
     private void EditFileFilter()
@@ -76,6 +79,7 @@ public partial class MainWindow : Form
             Games.BDSP => "wb8 files (*.wb8)|*.wb8|All files (*.*)|*.*",
             Games.PLA => "wa8 files (*.wa8)|*.wa8|All files (*.*)|*.*",
             Games.SCVI => "wc9 files (*.wc9)|*.wc9|All files (*.*)|*.*",
+            Games.ZA => "wa9 files (*.wa9)|*.wa9|All files (*.*)|*.*",
             _ => "All files (*.*)|*.*",
         };
     }
@@ -89,6 +93,7 @@ public partial class MainWindow : Form
             Games.BDSP => BtnBDSP,
             Games.PLA => BtnPLA,
             Games.SCVI => BtnSCVI,
+            Games.ZA => BtnZA,
             _ => throw new ArgumentOutOfRangeException(),
         };
         EditSelectedButton(btn);
@@ -112,6 +117,7 @@ public partial class MainWindow : Form
             Games.BDSP => PackageBDSP.GetListNames(),
             Games.PLA => PackagePLA.GetListNames(),
             Games.SCVI => PackageSCVI.GetListNames(),
+            Games.ZA => PackageZA.GetListNames(),
             _ => throw new ArgumentOutOfRangeException(),
         };
 
@@ -144,6 +150,7 @@ public partial class MainWindow : Form
             Games.BDSP => PackageBDSP,
             Games.PLA => PackagePLA,
             Games.SCVI => PackageSCVI,
+            Games.ZA => PackageZA,
             _ => throw new ArgumentOutOfRangeException(),
         };
     }
@@ -189,6 +196,8 @@ public partial class MainWindow : Form
     private void BtnPLA_Click(object sender, EventArgs e) => ChangeGame(Games.PLA);
 
     private void BtnSCVI_Click(object sender, EventArgs e) => ChangeGame(Games.SCVI);
+
+    private void BtnZA_Click(object sender, EventArgs e) => ChangeGame(Games.ZA);
 
     private void BtnSave_Click(object sender, EventArgs e)
     {

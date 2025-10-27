@@ -5,7 +5,6 @@ namespace SwitchGiftDataManager.Core;
 
 public abstract class Wondercard
 {
-    public static int GenOffset = 0x0F;  
     protected const int MaxItemCount = 6;
 
     public Games Game { get; }
@@ -22,8 +21,9 @@ public abstract class Wondercard
             WondercardSize.WB7 => Games.LGPE,
             WondercardSize.WC8 => Games.SWSH,
             WondercardSize.WB8 => Games.BDSP,
-            WondercardSize.WA8 when data[GenOffset] != 0 => Games.PLA,
-            WondercardSize.WC9 when data[GenOffset] == 0 => Games.SCVI,
+            WondercardSize.WA8 when data[0x0F] != 0 => Games.PLA,
+            WondercardSize.WC9 when data[0x0F] == 0 && data[0x2C0] == 0 => Games.SCVI,
+            WondercardSize.WA9 when data[0x2C0] != 0 => Games.ZA,
             _ => Games.None,
         };
         Data = data.ToArray();
@@ -67,6 +67,7 @@ public abstract class Wondercard
             Games.BDSP => WondercardSize.WB8,
             Games.PLA => WondercardSize.WA8,
             Games.SCVI => WondercardSize.WC9,
+            Games.ZA => WondercardSize.WA9,
             _ => throw new ArgumentOutOfRangeException(nameof(game)),
         };
     }

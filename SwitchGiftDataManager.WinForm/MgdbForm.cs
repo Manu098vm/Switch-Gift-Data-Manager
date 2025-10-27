@@ -87,9 +87,9 @@ public partial class MgdbForm : Form
             var swshPath = Path.Combine(Path.Combine(genPath, "Gen 8"), "SwSh");
             Directory.Delete(Path.Combine(swshPath, "Wild Area Events"), true);
 
-            var gen9Path = Path.Combine(genPath, "Gen 9");
-            Directory.Delete(Path.Combine(gen9Path, "Raid Events"), true);
-            Directory.Delete(Path.Combine(gen9Path, "Outbreak Events"), true);
+            var svPath = Path.Combine(genPath, "Gen 9", "SV");
+            Directory.Delete(Path.Combine(svPath, "Raid Events"), true);
+            Directory.Delete(Path.Combine(svPath, "Outbreak Events"), true);
 
             Directory.Move(tmpMgbdPath, mgdbPath);
             Directory.Delete(path, true);

@@ -17,11 +17,12 @@ public static class Program
             $"2 - SWSH{Environment.NewLine}" +
             $"3 - BDSP{Environment.NewLine}" +
             $"4 - PLA{Environment.NewLine}" +
-            $"5 - SCVI";
+            $"5 - SCVI{Environment.NewLine}" +
+            $"6 - ZA";
         Log(msg);
 
         Games game = (Games)int.Parse(Console.ReadLine()!);
-        if (game is Games.None || game > Games.SCVI)
+        if (game is Games.None || game > Games.ZA)
         {
             Log("Invalid input. Aborted.");
             Console.ReadKey();

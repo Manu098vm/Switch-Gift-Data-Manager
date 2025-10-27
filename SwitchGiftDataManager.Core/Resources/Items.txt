@@ -119,7 +119,7 @@ Shock Drive
 Burn Drive
 Chill Drive
 ???
-Pokémon Box Link (1)
+Pokémon Box Link
 Medicine Pocket
 TM Case
 Candy Jar
@@ -424,8 +424,8 @@ HM03
 HM04
 HM05
 HM06
-HM07 (G4)
-HM08 (G4)
+???
+???
 Explorer Kit
 Loot Sack
 Rule Book
@@ -454,18 +454,18 @@ Oak’s Letter
 Lunar Feather
 Member Card
 Azure Flute
-S.S. Ticket (HG/SS)
+S.S. Ticket
 Contest Pass
 Magma Stone
-Parcel (HG/SS)
+Parcel
 Coupon 1
 Coupon 2
 Coupon 3
-Storage Key (DPPt)
-Secret Medicine (G4)
+Storage Key
+Secret Medicine
 Vs. Recorder
 Gracidea
-Secret Key (Pt)
+Secret Key
 Apricorn Box
 Unown Report
 Berry Pots
@@ -473,11 +473,11 @@ Dowsing Machine
 Blue Card
 Slowpoke Tail
 Clear Bell
-Card Key (HG/SS)
-Basement Key (HG/SS)
+Card Key
+Basement Key
 Squirt Bottle
 Red Scale
-Lost Item (HG/SS)
+Lost Item
 Pass
 Machine Part
 Silver Feather
@@ -619,15 +619,15 @@ Dark Stone
 TM93
 TM94
 TM95
-Xtransceiver (M)
+Xtransceiver
 ???
 Gram 1
 Gram 2
 Gram 3
-Xtransceiver (F)
+Xtransceiver
 Medal Box
 DNA Splicers
-DNA Splicers (2)
+DNA Splicers
 Permit
 Oval Charm
 Shiny Charm
@@ -635,7 +635,7 @@ Plasma Card
 Grubby Hanky
 Colress Machine
 Dropped Item
-Dropped Item (2)
+Dropped Item
 Reveal Glass
 Weakness Policy
 Assault Vest
@@ -692,7 +692,7 @@ TM96
 TM97
 TM98
 TM99
-TM100 (G6-8)
+TM100
 Power Plant Pass
 Mega Ring
 Intriguing Stone
@@ -705,14 +705,14 @@ Adventure Guide
 Strange Souvenir
 Lens Case
 Makeup Bag
-Travel Trunk (2)
+Travel Trunk
 Lumiose Galette
 Shalour Sable
 Jaw Fossil
 Sail Fossil
 Looker Ticket
-Bike (2)
-Holo Caster (2)
+Bike
+Holo Caster
 Fairy Gem
 Mega Charm
 Mega Glove
@@ -721,24 +721,24 @@ Acro Bike
 Wailmer Pail
 Devon Parts
 Soot Sack
-Basement Key (OR/AS)
+Basement Key
 Pokéblock Kit
 Letter
 Eon Ticket
 Scanner
 Go-Goggles
-Meteorite (1)
+Meteorite
 Key to Room 1
 Key to Room 2
 Key to Room 4
 Key to Room 6
-Storage Key (OR/AS)
+Storage Key
 Devon Scope
-S.S. Ticket (OR/AS)
+S.S. Ticket
 HM07
 Devon Scuba Gear
 Contest Costume
-Contest Costume (2)
+Contest Costume
 Magma Suit
 Aqua Suit
 Pair of Tickets
@@ -749,7 +749,7 @@ Mega Anchor
 Mega Stickpin
 Mega Tiara
 Mega Anklet
-Meteorite (2)
+Meteorite
 Swampertite
 Sceptilite
 Sablenite
@@ -769,8 +769,8 @@ Cameruptite
 Lopunnite
 Salamencite
 Beedrillite
-Meteorite (3)
-Meteorite (4)
+Meteorite
+Meteorite
 Key Stone
 Meteorite Shard
 Eon Flute
@@ -805,42 +805,42 @@ Aloraichium Z
 Snorlium Z
 Eevium Z
 Mewnium Z
-Normalium Z [Z]
-Firium Z [Z]
-Waterium Z [Z]
-Electrium Z [Z]
-Grassium Z [Z]
-Icium Z [Z]
-Fightinium Z [Z]
-Poisonium Z [Z]
-Groundium Z [Z]
-Flyinium Z [Z]
-Psychium Z [Z]
-Buginium Z [Z]
-Rockium Z [Z]
-Ghostium Z [Z]
-Dragonium Z [Z]
-Darkinium Z [Z]
-Steelium Z [Z]
-Fairium Z [Z]
-Pikanium Z [Z]
-Decidium Z [Z]
-Incinium Z [Z]
-Primarium Z [Z]
-Tapunium Z [Z]
-Marshadium Z [Z]
-Aloraichium Z [Z]
-Snorlium Z [Z]
-Eevium Z [Z]
-Mewnium Z [Z]
-Pikashunium Z [Z]
+Normalium Z
+Firium Z
+Waterium Z
+Electrium Z
+Grassium Z
+Icium Z
+Fightinium Z
+Poisonium Z
+Groundium Z
+Flyinium Z
+Psychium Z
+Buginium Z
+Rockium Z
+Ghostium Z
+Dragonium Z
+Darkinium Z
+Steelium Z
+Fairium Z
+Pikanium Z
+Decidium Z
+Incinium Z
+Primarium Z
+Tapunium Z
+Marshadium Z
+Aloraichium Z
+Snorlium Z
+Eevium Z
+Mewnium Z
+Pikashunium Z
 Pikashunium Z
 ???
 ???
 ???
 ???
 Forage Bag
-Fishing Rod (SM)
+Fishing Rod
 Professor’s Mask
 Festival Ticket
 Sparkling Stone
@@ -871,12 +871,12 @@ Golden Pinap Berry
 ???
 ???
 Secret Key
-S.S. Ticket (GP/GE)
+S.S. Ticket
 Silph Scope
 Parcel
 Card Key
 Gold Teeth
-Lift Key (GP/GE)
+Lift Key
 Terrain Extender
 Protective Pads
 Electric Seed
@@ -892,8 +892,8 @@ Gold Leaf
 Silver Leaf
 Polished Mud Ball
 Tropical Shell
-Leaf Letter (GP)
-Leaf Letter (GE)
+Leaf Letter
+Leaf Letter
 Small Bouquet
 ???
 ???
@@ -925,12 +925,12 @@ Ultranecrozium Z
 Mimikium Z
 Lycanium Z
 Kommonium Z
-Solganium Z [Z]
-Lunalium Z [Z]
-Ultranecrozium Z [Z]
-Mimikium Z [Z]
-Lycanium Z [Z]
-Kommonium Z [Z]
+Solganium Z
+Lunalium Z
+Ultranecrozium Z
+Mimikium Z
+Lycanium Z
+Kommonium Z
 Z-Power Ring
 Pink Petal
 Orange Petal
@@ -943,8 +943,8 @@ Rainbow Flower
 Surge Badge
 N-Solarizer
 N-Lunarizer
-N-Solarizer (2)
-N-Lunarizer (2)
+N-Solarizer
+N-Lunarizer
 Ilima’s Normalium Z
 Left Poké Ball
 Roto Hatch
@@ -1073,13 +1073,13 @@ Magmar Candy
 ???
 ???
 Endorsement
-Pokémon Box Link (2)
+Pokémon Box Link
 Wishing Star
 Dynamax Band
 ???
 ???
-Fishing Rod (SW/SH)
-Rotom Bike (1)
+Fishing Rod
+Rotom Bike
 ???
 ???
 Sausages
@@ -1264,7 +1264,7 @@ Instant Noodles
 Precooked Burger
 Gigantamix
 Wishing Chip
-Rotom Bike (2)
+Rotom Bike
 Catching Charm
 ???
 Old Letter
@@ -1583,13 +1583,13 @@ Galarica Twig
 Galarica Cuff
 Style Card
 Armor Pass
-Rotom Bike (3)
-Rotom Bike (4)
+Rotom Bike
+Rotom Bike
 Exp. Charm
 Armorite Ore
 Mark Charm
-Reins of Unity (1)
-Reins of Unity (2)
+Reins of Unity
+Reins of Unity
 Galarica Wreath
 Legendary Clue 1
 Legendary Clue 2
@@ -1605,7 +1605,7 @@ Shaderoot Carrot
 Dynite Ore
 Carrot Seeds
 Ability Patch
-Reins of Unity (3)
+Reins of Unity
 Time Balm
 Space Balm
 Mysterious Balm
@@ -1614,13 +1614,13 @@ Hometown Muffin
 Apricorn
 Jubilife Muffin
 Aux Powerguard
-Dire Hit (LA)
+Dire Hit
 Choice Dumpling
 Twice-Spiced Radish
 Swap Snack
 Caster Fern
 Seed of Mastery
-Poké Ball (-)
+Poké Ball
 ???
 Eternal Ice
 Uxie’s Claw
@@ -1638,44 +1638,44 @@ Crunchy Salt
 Wood
 King’s Leaf
 Marsh Balm
-Poké Ball (~)
-Great Ball (~)
-Ultra Ball (~)
-Feather Ball (~)
-Pokéshi Doll (~)
+Poké Ball
+Great Ball
+Ultra Ball
+Feather Ball
+Pokéshi Doll
 ???
-Smoke Bomb (~)
-Scatter Bang (~)
-Sticky Glob (~)
-Star Piece (~)
-Mushroom Cake (~)
+Smoke Bomb
+Scatter Bang
+Sticky Glob
+Star Piece
+Mushroom Cake
 Bugwort
-Honey Cake (~)
-Grain Cake (~)
-Bean Cake (~)
-Salt Cake (~)
-Potion (~)
-Super Potion (~)
-Hyper Potion (~)
-Max Potion (~)
-Full Restore (~)
-Remedy (~)
-Fine Remedy (~)
-Superb Remedy (~)
-Old Gateau (~)
-Jubilife Muffin (~)
-Full Heal (~)
-Revive (~)
-Max Revive (~)
-Max Ether (~)
-Max Elixir (~)
-Stealth Spray (~)
+Honey Cake
+Grain Cake
+Bean Cake
+Salt Cake
+Potion
+Super Potion
+Hyper Potion
+Max Potion
+Full Restore
+Remedy
+Fine Remedy
+Superb Remedy
+Old Gateau
+Jubilife Muffin
+Full Heal
+Revive
+Max Revive
+Max Ether
+Max Elixir
+Stealth Spray
 ???
-Aux Power (~)
-Aux Guard (~)
-Dire Hit (~)
-Aux Evasion (~)
-Aux Powerguard (~)
+Aux Power
+Aux Guard
+Dire Hit
+Aux Evasion
+Aux Powerguard
 Forest Balm
 Iron Chunk
 ???
@@ -1687,7 +1687,7 @@ Ball of Mud
 Pop Pod
 Sootfoot Root
 Spoiled Apricorn
-Snowball (LA)
+Snowball
 Sticky Glob
 Black Augurite
 Peat Block
@@ -1708,9 +1708,9 @@ Tempting Charm T
 Tempting Charm Y
 Candy Truffle
 Cake-Lure Base
-Poké Ball (LA)
-Great Ball (LA)
-Ultra Ball (LA)
+Poké Ball
+Great Ball
+Ultra Ball
 Feather Ball
 ???
 ???
@@ -1727,9 +1727,9 @@ Grain Cake
 Bean Cake
 Mushroom Cake
 Salt Cake
-Swap Snack (~)
-Choice Dumpling (~)
-Twice-Spiced Radish (~)
+Swap Snack
+Choice Dumpling
+Twice-Spiced Radish
 Survival Charm R
 Survival Charm B
 Survival Charm P
@@ -1746,12 +1746,12 @@ Basculegion Food
 Old Journal
 Wing Ball
 Jet Ball
-Heavy Ball (LA)
+Heavy Ball
 Leaden Ball
 Gigaton Ball
-Wing Ball (~)
-Jet Ball (~)
-Heavy Ball (~)
+Wing Ball
+Jet Ball
+Heavy Ball
 Hopo Berry
 Superb Remedy
 Aux Power
@@ -1761,13 +1761,13 @@ Grit Dust
 Grit Gravel
 Grit Pebble
 Grit Rock
-Secret Medicine (LA)
+Secret Medicine
 Tempting Charm R
-Lost Satchel (1)
-Lost Satchel (2)
-Lost Satchel (3)
-Lost Satchel (4)
-Lost Satchel (5)
+Lost Satchel
+Lost Satchel
+Lost Satchel
+Lost Satchel
+Lost Satchel
 ???
 Origin Ball
 ???
@@ -1781,8 +1781,8 @@ Griseous Core
 Blank Plate
 ???
 Crafting Kit
-Leaden Ball (~)
-Gigaton Ball (~)
+Leaden Ball
+Gigaton Ball
 Strange Ball
 Pokédex
 Old Verse 1
@@ -1832,8 +1832,8 @@ Sandwich
 Koraidon’s Poké Ball
 Miraidon’s Poké Ball
 Tera Orb
-Scarlet Book (1)
-Violet Book (1)
+Scarlet Book
+Violet Book
 Kofu’s Wallet
 
 
@@ -2311,24 +2311,24 @@ TM229
 
 Picnic Set
 
-Academy Bottle (1)
-Academy Bottle (2)
+Academy Bottle
+Academy Bottle
 Polka-Dot Bottle
 Striped Bottle
 Diamond Bottle
-Academy Cup (1)
-Academy Cup (2)
+Academy Cup
+Academy Cup
 Striped Cup
 Polka-Dot Cup
 Flower Pattern Cup
-Academy Tablecloth (1)
-Academy Tablecloth (2)
+Academy Tablecloth
+Academy Tablecloth
 Whimsical Tablecloth
 Leafy Tablecloth
 Spooky Tablecloth
 
-Academy Ball (1)
-Academy Ball (2)
+Academy Ball
+Academy Ball
 Marill Ball
 Yarn Ball
 Cyber Ball
@@ -2416,8 +2416,8 @@ Genius Mochi
 Clever Mochi
 Swift Mochi
 Simple Chairs
-Academy Chairs (SL)
-Academy Chairs (VL)
+Academy Chairs
+Academy Chairs
 Whimsical Chairs
 Leafy Chairs
 Spooky Chairs
@@ -2553,6 +2553,83 @@ Blueberry Tablecloth
 Blueberry Chairs
 Synchro Machine
 Meteorite
-Scarlet Book (2)
-Violet Book (2)
+Scarlet Book
+Violet Book
 Briar’s Book
+Seed of Mastery
+Clefablite
+Victreebelite
+Starminite
+Dragoninite
+Meganiumite
+Feraligite
+Skarmorite
+Froslassite
+
+
+Emboarite
+Excadrite
+Scolipite
+Scraftinite
+Eelektrossite
+Chandelurite
+Chesnaughtite
+Delphoxite
+Greninjite
+Pyroarite
+Floettite
+Malamarite
+Barbaracite
+Dragalgite
+Hawluchanite
+Zygardite
+Drampanite
+
+Falinksite
+Key to Room 202
+Super Lumiose Galette
+Lab Key Card A
+Lab Key Card B
+Lab Key Card C
+
+
+Pebble
+Cherished Ring
+Autographed Plush
+Tasty Trash
+Revitalizing Twig
+Lida’s Things
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mega Shard
+Colorful Screw
+Red Canari Plush
+Red Canari Plush
+Red Canari Plush
+Gold Canari Plush
+Gold Canari Plush
+Gold Canari Plush
+Pink Canari Plush
+Pink Canari Plush
+Pink Canari Plush
+Green Canari Plush
+Green Canari Plush
+Green Canari Plush
+Blue Canari Plush
+Blue Canari Plush
+Blue Canari Plush

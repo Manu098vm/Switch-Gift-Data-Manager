@@ -8,6 +8,7 @@ public enum Games : int
     BDSP = 3,
     PLA = 4,
     SCVI = 5,
+    ZA = 6,
 }
 
 public enum WCType
@@ -23,6 +24,7 @@ public enum WondercardSize : ushort
     WB8 = 0x2DC,
     WA8 = 0x2C8,
     WC9 = 0x2C8,
+    WA9 = 0x2C8,
 }
 
 public enum GiftType7 : byte
@@ -68,6 +70,15 @@ public enum GiftType9 : byte
     Pokemon = 1,
     Item = 2,
     LP = 3,
+    Clothing = 4,
+}
+
+public enum GiftType9A : byte
+{
+    None = 0,
+    Pokemon = 1,
+    Item = 2,
+    BP = 3,
     Clothing = 4,
 }
 

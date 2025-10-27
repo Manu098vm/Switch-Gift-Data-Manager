@@ -7,7 +7,7 @@ namespace SwitchGiftDataManager.Core;
 
 public class BCATManager
 {
-    public const string Version = "1.8.0";
+    public const string Version = "1.9.0";
 
     private const int FileNameOffset = 0x00;
     private const int UnkOffset = 0x20;
@@ -35,6 +35,7 @@ public class BCATManager
             Games.BDSP => new WB8(data),
             Games.PLA => new WA8(data),
             Games.SCVI => new WC9(data),
+            Games.ZA => new WA9(data),
             _ => throw new ArgumentOutOfRangeException(nameof(Game)),
         };
     }
@@ -341,10 +342,12 @@ public class BCATManager
             return Games.SWSH;
         else if (data.Length % (int)Wondercard.GetSize(Games.BDSP) == 0)
             return Games.BDSP;
-        else if (data.Length % (int)Wondercard.GetSize(Games.PLA) == 0 && data[Wondercard.GenOffset] != 0)
+        else if (data.Length % (int)Wondercard.GetSize(Games.PLA) == 0 && data[0x0F] != 0)
             return Games.PLA;
-        else if (data.Length % (int)Wondercard.GetSize(Games.SCVI) == 0 && data[Wondercard.GenOffset] == 0)
+        else if (data.Length % (int)Wondercard.GetSize(Games.SCVI) == 0 && data[0x0F] == 0 && data[0x2C0] == 0)
             return Games.SCVI;
+        else if (data.Length % (int)Wondercard.GetSize(Games.ZA) == 0 && data[0x2C0] != 0)
+            return Games.ZA;
         else
             return Games.None;
     }
@@ -358,6 +361,7 @@ public class BCATManager
             Games.BDSP => "99",
             Games.PLA => "normal",
             Games.SCVI => "normal",
+            Games.ZA => "normal",
             _ => throw new ArgumentOutOfRangeException(nameof(game)),
         };
     }
@@ -370,6 +374,7 @@ public class BCATManager
             Games.BDSP => "99",
             Games.PLA => "distribution_internet",
             Games.SCVI => "distribution_internet",
+            Games.ZA => "distribution_internet",
             _ => throw new ArgumentOutOfRangeException(nameof(game)),
         };
     }
