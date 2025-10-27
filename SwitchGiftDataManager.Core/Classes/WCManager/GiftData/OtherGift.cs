@@ -104,9 +104,14 @@ public class OtherGift
             if ((GiftType9A)type is GiftType9A.Item)
                 str = Properties.Resources.Items.Split(new String[] { "\n" }, StringSplitOptions.None)[id];
             else if ((GiftType9A)type is GiftType9A.Clothing)
-                str = Clothing9A[opt];
+            {
+                if (!Clothing9A.TryGetValue(opt, out str))
+                    str = "Unknown Clothing Item";
+            }
             else
+            {
                 str = ((GiftType9A)type).ToString();
+            }
         }
         return str;
     }
