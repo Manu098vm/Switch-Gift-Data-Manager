@@ -12,6 +12,7 @@ This allows wondercards to be redeemed through the in-game Mystery Gift menu. Th
 * Brilliant Diamond and Shining Pearl wondercard files (.wb8)
 * Legends Arceus wondercard files (.wa8)
 * Scarlet & Violet wondercard files (.wc9)
+* Legends Z-A wondercard files (.wa9)
 * BCAT wondercard files, containing either multiple or single wondercards (no file format extension)
 
 ### Compatible games
@@ -20,6 +21,7 @@ This allows wondercards to be redeemed through the in-game Mystery Gift menu. Th
 * Pokémon Brilliant Diamond and Shining Pearl
 * Pokémon Legends Arceus
 * Pokémon Scarlet and Violet
+* Pokémon Legends Z-A
 
 ## Disclosure
 Neither I nor the Project Pokémon staff take any responsibility for possible adverse outcomes or bans resulting from the use of this tool. Use it at your own discretion.
