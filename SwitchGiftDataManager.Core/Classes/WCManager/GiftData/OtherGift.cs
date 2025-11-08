@@ -101,7 +101,7 @@ public class OtherGift
         }
         else if (type.GetType() == typeof(GiftType9A))
         {
-            if ((GiftType9A)type is GiftType9A.Item)
+            if ((GiftType9A)type is GiftType9A.Item or GiftType9A.Flag)
                 str = Properties.Resources.Items.Split(new String[] { "\n" }, StringSplitOptions.None)[id];
             else if ((GiftType9A)type is GiftType9A.Clothing)
             {

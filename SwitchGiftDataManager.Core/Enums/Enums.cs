@@ -78,7 +78,7 @@ public enum GiftType9A : byte
     None = 0,
     Pokemon = 1,
     Item = 2,
-    BP = 3,
+    Flag = 3,
     Clothing = 4,
 }
 

@@ -13,6 +13,9 @@ public class WA9 : Wondercard
     private const int TIDOffset = 0x18;
     private const int SIDOffset = 0x1A;
     private const int PIDOffset = 0x24;
+    private const int FlagStringOffset = 0x28;
+    private const int FlagItemOffset = 0x6C;
+    private const int FlagItemQuantityOffset = 0x6E;
     private const int SpeciesOffset = 0x270;
     private const int ShinyTypeOffset = 0x278;
     private const int ChecksumOffset = 0x2C0;
@@ -82,8 +85,9 @@ public class WA9 : Wondercard
             }
             else
             {
-                item = BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(ItemOffset + (0x04 * i)));
-                quantity = type is GiftType9A.BP ? BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(ItemOffset + (0x04 * i))) : 
+                item = type is GiftType9A.Flag ? BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(FlagItemOffset + (0x04 * i))) :
+                    BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(ItemOffset + (0x04 * i)));
+                quantity = type is GiftType9A.Flag ? BinaryPrimitives.ReadUInt32LittleEndian(Data.AsSpan(FlagItemQuantityOffset + (0x04 * i))) : 
                     BinaryPrimitives.ReadUInt16LittleEndian(Data.AsSpan(QuantityOffset + (0x04 * i)));
             }
 
